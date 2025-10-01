@@ -1,0 +1,1005 @@
+    <!DOCTYPE html>
+    <html lang="en">
+
+      <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <head>
+
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9835219927652942"
+         crossorigin="anonymous"></script>
+
+
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Evan Club</title>
+        <link rel="icon" href="classroom.png" sizes="16x16 32x32" type="clasroom.png"">
+    </head>
+    <body>
+        <!-- Your HTML content here -->
+    </body>
+    </html>
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-T0ETD8FE1B"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-T0ETD8FE1B');
+      </script>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="style.css" rel="stylesheet" type="text/css" />
+      <style>
+        body {
+          font-size: 16px;
+          /* Default font size for the body */
+        }
+
+        .welcome-text {
+          margin-top: 1px;
+          font-size: 44px;
+          font-weight: bold;
+          color: #333;
+          font-family: 'Bungee Shade', sans-serif; /* Replace 'Bungee Shade' with the name of the scriptive font you want to use */
+        }
+
+
+
+
+        .flex-container {
+          margin-top: 60px;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-around;
+        }
+
+
+        .flex-item {
+            margin: 8px;
+            padding: 12px;
+            background-color: #fff;
+            text-align: center;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+        }
+
+        .flex-item:hover {
+            transform: scale(1.1); /* Slightly expand on hover */
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
+            border-radius: 8px;
+            border: 5px solid #000000;
+        }
+
+        .flex-item::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.2); /* Slightly dark overlay */
+            opacity: 0;
+            transition: opacity 0.2s ease-in-out;
+            border-radius: 8px;
+        }
+
+        .flex-item:hover::after {
+            opacity: 1;
+        }
+
+
+        .flex-item span {
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out; /* Faster transition duration */
+            position: absolute;
+            bottom: 10px; /* Lower the tooltip closer to the element */
+            left: 50%;
+            transform: translateX(-50%);
+            color: #ffffff; /* White text */
+            padding: 10px 15px;
+            font-size: 17px;
+            font-weight: 500;
+            white-space: nowrap;
+            z-index: 10;
+            pointer-events: none; /* Ensures the tooltip does not interfere with mouse events */
+        }
+
+        .flex-item:hover span {
+            visibility: visible;
+            opacity: 1;
+        }
+
+      </style>
+      <title>Evan Club</title>
+    </head>
+
+    <body>
+      <div class="welcome-text">Evan Club</div>
+      
+
+
+
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search for a game..." onkeypress="handleKeyPress(event)">
+        <button onclick="searchGames()"><i class="fas fa-search"></i></button>
+      </div>
+
+
+      <script>
+          function handleKeyPress(event) {
+              if (event.keyCode === 13) { // Check if the pressed key is "Enter"
+                  searchGames(); // Trigger the search function
+              }
+          }
+
+          function searchGames() {
+              // Your search functionality here
+              // This function will be called when either the "Search" button is clicked or Enter key is pressed in the input field
+          }
+      </script>
+
+
+
+
+
+
+
+
+
+
+      <!-- Rest of your website content goes here -->
+      <div class="flex-container">
+
+
+
+        <div class="flex-item" onclick="window.location.href='/1v1.lol.html';" style="background-image: url('images/1v1.lol.png'); background-repeat: no-repeat; background-size: cover;">
+          <span class="visually-hidden">1v1 LOL</span>
+        </div>
+
+
+        <div class="flex-item" onclick="window.location.href='/bitlife.html';" style="background-image: url('images/bitlife.png'); background-repeat: no-repeat; background-size: cover;">
+      <span class="visually-hidden">BitLife</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/amongus.html';" style="background-image: url('images/amongus.png'); background-repeat: no-repeat; background-size: cover;">
+      <span class="visually-hidden">Among Us</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/basketballstars.html';" style="background-image: url('images/basketballstars.png'); background-repeat: no-repeat; background-size: cover;">
+      <span class="visually-hidden">Basketball Stars</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/basketballlegends.html';" style="background-image: url('images/basketballlegends.png'); background-repeat: no-repeat; background-size: cover;">
+      <span class="visually-hidden">Basketball Legends</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/geometrydash.html';" style="background-image: url('images/geometrydash.png'); background-repeat: no-repeat; background-size: cover;">
+      <span class="visually-hidden">Geometry Dash</span>
+    </div>
+
+
+        <div class="flex-item" onclick="window.location.href='/retrobowlcollege.html';" style="background-image: url('images/retrobowlcollege.png'); background-repeat: no-repeat; background-size: cover;">
+          <span class="visually-hidden">Retro Bowl College</span>
+        </div>
+
+
+          
+    <div class="flex-item" onclick="window.location.href='/littlealchemy.html';" style="background-image: url('images/littlealchemy.png'); background-repeat: no-repeat; background-size: cover;">
+      <span class="visually-hidden">Little Alchemy</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/chromedino.html';" style="background-image: url('images/chromedino.png'); background-repeat: no-repeat; background-size: cover;">
+      <span class="visually-hidden">Chrome Dino</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/craftmine.html';" style="background-image: url('images/craftmine.png'); background-repeat: no-repeat; background-size: cover;">
+      <span class="visually-hidden">Craft Mine</span>
+    </div>
+        
+        
+    <div class="flex-item" onclick="window.location.href='/eggycar.html';" style="background-image: url('images/eggycar.png'); background-repeat: no-repeat; background-size: cover;">
+      <span class="visually-hidden">Eggy Car</span>
+    </div>
+
+    
+
+    <div class="flex-item" onclick="window.location.href='/motox3m.html';" style="background-image: url('images/motox3m.png'); background-repeat: no-repeat; background-size: cover;">
+      <span class="visually-hidden">Moto X3M</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/motox3m2.html';" style="background-image: url('images/motox3m2.png'); background-repeat: no-repeat; background-size: cover;">
+      <span class="visually-hidden">Moto X3M 2</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/motox3m3.html';" style="background-image: url('images/motox3m3.png'); background-repeat: no-repeat; background-size: cover;">
+      <span class="visually-hidden">Moto X3M 3</span>
+    </div>
+
+        <div class="flex-item" onclick="window.location.href='/motox3mpool.html';" style="background-image: url('images/motox3mpool.jpg'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+          <span>Moto X3M Pool</span>
+        </div>
+
+
+
+        <div class="flex-item" onclick="window.location.href='/motox3mspooky.html';" style="background-image: url('images/moto3mspooky.jpeg'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+          <span>Moto X3M Spooky</span>
+        </div>
+
+
+
+        <div class="flex-item" onclick="window.location.href='/motox3mwinter.html';" style="background-image: url('images/motox3mwinter.jpeg'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+          <span>Moto X3M Winter</span>
+        </div>
+
+
+        <div class="flex-item" onclick="window.location.href='/dogeminer.html';" style="background-image: url('images/dogeminer.png'); background-repeat: no-repeat; background-size: cover;">
+          <span class="visually-hidden">Doge Miner</span>
+        </div>
+
+
+        
+        <div class="flex-item" onclick="window.location.href='/driftboss.html';" style="background-image: url('images/driftboss.png'); background-repeat: no-repeat; background-size: cover;">
+          <span class="visually-hidden">Drift Boss</span>
+        </div>
+
+    <div class="flex-item" onclick="window.location.href='/ovo.html';" style="background-image: url('images/ovo.png'); background-repeat: no-repeat; background-size: cover;">
+      <span class="visually-hidden">Ovo</span>
+    </div>
+
+
+
+        <div class="flex-item" onclick="window.location.href='/awesometanks.html';" style="background-image: url('images/awesometanks.png'); background-repeat: no-repeat; background-size: cover;">
+      <span class="visually-hidden">Awesome Tanks</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/awesometanks2.html';" style="background-image: url('images/awesometanks2.png'); background-repeat: no-repeat; background-size: cover;">
+      <span class="visually-hidden">Awesome Tanks 2</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/flappybird.html';" style="background-image: url('images/flappybird.png'); background-repeat: no-repeat; background-size: cover;">
+      <span class="visually-hidden">Flappy Bird</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/bobtherobber.html';" style="background-image: url('images/bobtherobber.png'); background-repeat: no-repeat; background-size: cover;">
+      <span class="visually-hidden">Bob The Robber</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/paper.io2.html';" style="background-image: url('images/paper.io2.png'); background-repeat: no-repeat; background-size: cover;">
+      <span class="visually-hidden">Paper io 2</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/rabbitsamurai.html';" style="background-image: url('images/rabbitsamurai.png'); background-repeat: no-repeat; background-size: cover;">
+      <span class="visually-hidden">Rabbit Samurai</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/burritobison.html';" style="background-image: url('images/burritobison.png'); background-repeat: no-repeat; background-size: cover;">
+      <span class="visually-hidden">Burrito Bison</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/skyblock.html';" style="background-image: url('images/skyblock.png'); background-repeat: no-repeat; background-size: cover;">
+      <span class="visually-hidden">Sky Block</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/slope.html';" style="background-image: url('images/slope.png'); background-repeat: no-repeat; background-size: cover;">
+      <span class="visually-hidden">Slope</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/slope2.html';" style="background-image: url('images/slope2.png'); background-repeat: no-repeat; background-size: cover;">
+      <span class="visually-hidden">Slope 2</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/snakeio.html';" style="background-image: url('images/snakeio.png'); background-repeat: no-repeat; background-size: cover;">
+      <span class="visually-hidden">Snake io</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/spaceiskey.html';" style="background-image: url('images/spaceiskey.png'); background-repeat: no-repeat; background-size: cover;">
+      <span class="visually-hidden">Space is Key</span>
+    </div>
+
+
+
+    <div class="flex-item" onclick="window.location.href='/badicecream2.html';" style="background-image: url('images/badicecream2.png'); background-repeat: no-repeat; background-size: cover;">
+      <span class="visually-hidden">Bad Ice Cream 2</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/badpiggies.html';" style="background-image: url('images/badpiggies.png'); background-repeat: no-repeat; background-size: cover;">
+      <span class="visually-hidden">Bad Piggies</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/breakingthebank.html';" style="background-image: url('images/breakingthebank.png'); background-repeat: no-repeat; background-size: cover;">
+      <span class="visually-hidden">Breaking the Bank</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/cubefield.html';" style="background-image: url('images/cubefield.png'); background-repeat: no-repeat; background-size: cover;">
+      <span class="visually-hidden">Cube Field</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/crossyroad.html';" style="background-image: url('images/crossyroad.png'); background-repeat: no-repeat; background-size: cover;">
+      <span class="visually-hidden">Crossy Road</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/cuttherope.html';" style="background-image: url('images/cuttherope.png'); background-repeat: no-repeat; background-size: cover;">
+      <span class="visually-hidden">Cut the Rope</span>
+    </div>
+
+
+        <div class="flex-item" onclick="window.location.href='/dealornodeal.html';" style="background-image: url('images/dealornodeal.png'); background-repeat: no-repeat; background-size: cover;">
+          <span class="visually-hidden">Deal or No Deal</span>
+        </div>
+        
+
+        <div class="flex-item" onclick="window.location.href='/geometryrash.html';" style="background-image: url('images/geometryrash.png'); background-repeat: no-repeat; background-size: cover;">
+          <span class="visually-hidden">Geometry Rash</span>
+        </div>
+
+        <div class="flex-item" onclick="window.location.href='/golddigger.html';" style="background-image: url('images/golddigger.png'); background-repeat: no-repeat; background-size: cover;">
+          <span class="visually-hidden">Gold Digger FRVR</span>
+        </div>
+
+        <div class="flex-item" onclick="window.location.href='/helixjump.html';" style="background-image: url('images/helixjump.png'); background-repeat: no-repeat; background-size: cover;">
+          <span class="visually-hidden">Helix Jump</span>
+        </div>
+
+        <div class="flex-item" onclick="window.location.href='/hexgl.html';" style="background-image: url('images/hexgl.png'); background-repeat: no-repeat; background-size: cover;">
+          <span class="visually-hidden">Hex GL</span>
+        </div>
+
+        <div class="flex-item" onclick="window.location.href='/hextris.html';" style="background-image: url('images/hextris.png'); background-repeat: no-repeat; background-size: cover;">
+          <span class="visually-hidden">Hextris</span>
+        </div>
+
+        <div class="flex-item" onclick="window.location.href='/idlebreakout.html';" style="background-image: url('images/idlebreakout.png'); background-repeat: no-repeat; background-size: cover;">
+          <span class="visually-hidden">Idle Breakout</span>
+        </div>
+
+        <div class="flex-item" onclick="window.location.href='/justfalllol.html';" style="background-image: url('images/justfalllol.png'); background-repeat: no-repeat; background-size: cover;">
+          <span class="visually-hidden">Just Fall LOL</span>
+        </div>
+
+        <div class="flex-item" onclick="window.location.href='/knifehit.html';" style="background-image: url('images/knifehit.png'); background-repeat: no-repeat; background-size: cover;">
+          <span class="visually-hidden">Knife Hit</span>
+        </div>
+
+        <div class="flex-item" onclick="window.location.href='/mario.html';" style="background-image: url('images/mario.png'); background-repeat: no-repeat; background-size: cover;">
+          <span class="visually-hidden">Super 64 Mario</span>
+        </div>
+
+        <div class="flex-item" onclick="window.location.href='/ngon.html';" style="background-image: url('images/ngon.png'); background-repeat: no-repeat; background-size: cover;">
+          <span class="visually-hidden">N GON</span>
+        </div>
+
+        <div class="flex-item" onclick="window.location.href='/pacman.html';" style="background-image: url('images/pacman.png'); background-repeat: no-repeat; background-size: cover;">
+          <span class="visually-hidden">Pacman</span>
+        </div>
+
+        <div class="flex-item" onclick="window.location.href='/rocketleague.html';" style="background-image: url('images/rocketleague.png'); background-repeat: no-repeat; background-size: cover;">
+          <span class="visually-hidden">Rocket League</span>
+        </div>
+
+        <div class="flex-item" onclick="window.location.href='/rooftopsnipers.html';" style="background-image: url('images/rooftopsnipers.png'); background-repeat: no-repeat; background-size: cover;">
+          <span class="visually-hidden">Rooftop Snipers</span>
+        </div>
+
+        <div class="flex-item" onclick="window.location.href='/rooftopsnipers2.html';" style="background-image: url('images/rooftopsnipers2.png'); background-repeat: no-repeat; background-size: cover;">
+          <span class="visually-hidden">Rooftop Snipers 2</span>
+        </div>
+
+        <div class="flex-item" onclick="window.location.href='/skibiditoilet.html';" style="background-image: url('images/skibiditoilet.png'); background-repeat: no-repeat; background-size: cover;">
+          <span class="visually-hidden">Skibidi Toilet</span>
+        </div>
+
+
+        <div class="flex-item" onclick="window.location.href='/snowrider3d.html';" style="background-image: url('images/snowrider3d.png'); background-repeat: no-repeat; background-size: cover;">
+          <span class="visually-hidden">Snow Rider 3D</span>
+        </div>
+
+        <div class="flex-item" onclick="window.location.href='/spacebarclicker.html';" style="background-image: url('images/spacebarclicker.png'); background-repeat: no-repeat; background-size: cover;">
+          <span class="visually-hidden">Space Bar Clicker</span>
+        </div>
+
+        <div class="flex-item" onclick="window.location.href='/spankthemonkey.html';" style="background-image: url('images/spankthemonkey.png'); background-repeat: no-repeat; background-size: cover;">
+          <span class="visually-hidden">Spank the Monkey</span>
+        </div>
+
+        <div class="flex-item" onclick="window.location.href='/stack.html';" style="background-image: url('images/stack.png'); background-repeat: no-repeat; background-size: cover;">
+          <span class="visually-hidden">Stack</span>
+        </div>
+
+        <div class="flex-item" onclick="window.location.href='/sprinter.html';" style="background-image: url('images/sprinter.png'); background-repeat: no-repeat; background-size: cover;">
+          <span class="visually-hidden">Sprinter</span>
+        </div>
+
+        <div class="flex-item" onclick="window.location.href='/stealingthediamond.html';" style="background-image: url('images/stealingthediamond.png'); background-repeat: no-repeat; background-size: cover;">
+          <span class="visually-hidden">Stealing the Diamond</span>
+        </div>
+
+        <div class="flex-item" onclick="window.location.href='/stickmanhook.html';" style="background-image: url('images/stickmanhook.png'); background-repeat: no-repeat; background-size: cover;">
+          <span class="visually-hidden">Stickman Hook</span>
+        </div>
+
+        <div class="flex-item" onclick="window.location.href='/tetris.html';" style="background-image: url('images/tetris.png'); background-repeat: no-repeat; background-size: cover;">
+          <span class="visually-hidden">Tetris</span>
+        </div>
+
+        <div class="flex-item" onclick="window.location.href='/theimpossiblequiz.html';" style="background-image: url('images/theimpossiblequiz.png'); background-repeat: no-repeat; background-size: cover;">
+          <span class="visually-hidden">The Impossible Quiz</span>
+        </div>
+
+        <div class="flex-item" onclick="window.location.href='/tinyfishing.html';" style="background-image: url('images/tinyfishing.png'); background-repeat: no-repeat; background-size: cover;">
+          <span class="visually-hidden">Tiny Fishing</span>
+        </div>
+
+        <div class="flex-item" onclick="window.location.href='/cannonbasketball4.html';" style="background-image: url('images/cannonbasketball4.png'); background-repeat: no-repeat; background-size: cover;">
+          <span class="visually-hidden">Cannon Basketball 4</span>
+        </div>
+
+        <div class="flex-item" onclick="window.location.href='/2048cupcakes.html';" style="background-image: url('images/2048cupcake.png'); background-repeat: no-repeat; background-size: cover;">
+          <span class="visually-hidden">2048 Cupcakes</span>
+        </div>
+
+
+
+
+       <div class="flex-item" onclick="window.location.href='/defendthetank.html';" style="background-image: url('images/defendthetank.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+        <span>Defend the Tank</span>
+    </div>
+
+
+
+
+        <div class="flex-item" onclick="window.location.href='/bigredbutton.html';" style="background-image: url('images/thebigredbutton.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+        <span>Big Red Button</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/googlesnake.html';" style="background-image: url('images/googlesnake.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+        <span>Google Snake</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/meme2048.html';" style="background-image: url('images/meme2048.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+        <span>Meme 2048</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/minigolfmaster.html';" style="background-image: url('images/minigolf.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+        <span>Mini Golf Master</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/paperplanes.html';" style="background-image: url('images/paperplanes.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+        <span>Papery Planes</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/rollyvortex.html';" style="background-image: url('images/rollyvortex.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+        <span>Rolly Vortex</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/snowbattleio.html';" style="background-image: url('images/snowbattleio.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+        <span>Snow Battle io</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/soundboard.html';" style="background-image: url('images/soundboard.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+        <span>Meme Sound Board</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/minecraft.html';" style="background-image: url('images/minecraft.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+        <span>Minecraft</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/2048.html';" style="background-image: url('images/2048.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+        <span>2048</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/clickerheroes.html';" style="background-image: url('images/clickerheroes.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+        <span>Clicker Heroes</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/coreball.html';" style="background-image: url('images/coreball.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+        <span>Core Ball</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/dune.html';" style="background-image: url('images/dune.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+        <span>Dune</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/dadish.html';" style="background-image: url('images/dadish.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+        <span>Dadish</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/dadish2.html';" style="background-image: url('images/dadish2.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+        <span>Dadish 2</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/getawayshootout.html';" style="background-image: url('images/getawayshootout.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+        <span>Getaway Shootout</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/vex3.html';" style="background-image: url('images/vex3.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+        <span>Vex 3</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/vex4.html';" style="background-image: url('images/vex4.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+        <span>Vex 4</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/vex5.html';" style="background-image: url('images/vex5.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+        <span>Vex 5</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/vex6.html';" style="background-image: url('images/vex6.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+        <span>Vex 6</span>
+    </div>
+
+
+
+      <div class="flex-item" onclick="window.location.href='/vex7.html';" style="background-image: url('images/vex7.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+          <span>Vex 7</span>
+      </div>
+
+    <div class="flex-item" onclick="window.location.href='/baldisbasics.html';" style="background-image: url('images/baldisbasics.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+        <span>Baldi's Basics</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/basketbros.html';" style="background-image: url('images/basketbros.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+        <span>Basket Bros</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/basketrandom.html';" style="background-image: url('images/basketrandom.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+        <span>Basket Random</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/btd4.html';" style="background-image: url('images/btd4.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+        <span>BTD 4</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/clusterrush.html';" style="background-image: url('images/clusterrush.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+        <span>Cluster Rush</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/colormatch.html';" style="background-image: url('images/colormatch.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+        <span>Color Match</span>
+    </div>
+
+
+
+
+        <div class="flex-item" onclick="window.location.href='/drifthunters.html';" style="background-image: url('images/drifthunters.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+        <span>Drift Hunters</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/ducklife.html';" style="background-image: url('images/ducklife.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+        <span>Duck Life</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/ducklife2.html';" style="background-image: url('images/ducklife2.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+        <span>Duck Life 2</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/ducklife3.html';" style="background-image: url('images/ducklife3.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+        <span>Duck Life 3</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/ducklife4.html';" style="background-image: url('images/ducklife4.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+        <span>Duck Life 4</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/edgenotfound.html';" style="background-image: url('images/edgenotfound.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+        <span>Edge Not Found</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/letssurf.html';" style="background-image: url('images/letssurf.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+        <span>Let's Surf</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/mergeroundracers.html';" style="background-image: url('images/mergeroundracers.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+        <span>Merge Round Racers</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/monkeymart.html';" style="background-image: url('images/monkeymart.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+        <span>Monkey Mart</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/tanukisunset.html';" style="background-image: url('images/tanukisunset.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+        <span>Tanuki Sunset</span>
+    </div>
+
+    <div class="flex-item" onclick="window.location.href='/tombofthemask.html';" style="background-image: url('images/tombofthemask.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+        <span>Tomb of The Mask</span>
+    </div>
+
+
+        <div class="flex-item" onclick="window.location.href='/towermaster.html';" style="background-image: url('images/towerbuilder.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+            <span>Tower Builder</span>
+        </div>
+
+
+        <div class="flex-item" onclick="window.location.href='/particleclicker.html';" style="background-image: url('images/particleclicker.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+            <span>Particle Clicker</span>
+        </div>
+
+
+        <div class="flex-item" onclick="window.location.href='/run3.html';" style="background-image: url('images/run3.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+            <span>Run 3</span>
+        </div>
+
+
+          
+        <div class="flex-item" onclick="window.location.href='/learntofly2.html';" style="background-image: url('images/learntofly2.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+            <span>Learn to Fly 2</span>
+        </div>
+
+
+
+        <div class="flex-item" onclick="window.location.href='/googlefued.html';" style="background-image: url('images/googlefeud.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+            <span>Google Feud</span>
+        </div>
+
+
+
+        <div class="flex-item" onclick="window.location.href='/bloxors.html';" style="background-image: url('images/bloxors.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+            <span>Bloxors</span>
+        </div>
+
+
+
+        <div class="flex-item" onclick="window.location.href='/sonic.html';" style="background-image: url('images/sonic.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+            <span>Sonic</span>
+        </div>
+
+        
+
+        <div class="flex-item" onclick="window.location.href='/donkeykong.html';" style="background-image: url('images/donkeykong.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+            <span>Donkey Kong</span>
+        </div>
+
+
+
+        <div class="flex-item" onclick="window.location.href='/blockblast.html';" style="background-image: url('images/blockblast.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+            <span>Block Blast</span>
+        </div>
+
+
+          <div class="flex-item" onclick="window.location.href='/fireboyandwatergirl.html';" style="background-image: url('images/fireboyandwatergirl.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+            <span>Fireboy and Watergirl</span>
+        </div>
+
+
+
+
+            <div class="flex-item" onclick="window.location.href='/fireboyandwatergirl2.html';" style="background-image: url('images/fireboyandwatergirl2.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+            <span>Fireboy and Watergirl 2</span>
+        </div>
+
+
+
+
+            <div class="flex-item" onclick="window.location.href='/fireboyandwatergirl3.html';" style="background-image: url('images/fireboyandwatergirl3.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+            <span>Fireboy and Watergirl 3</span>
+        </div>
+
+
+
+            <div class="flex-item" onclick="window.location.href='/fireboyandwatergirl4.html';" style="background-image: url('images/fireboyandwatergirl4.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+            <span>Fireboy and Watergirl 4</span>
+        </div>
+
+
+
+
+ <div class="flex-item" onclick="window.location.href='/chess.html';" style="background-image: url('images/chess.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+            <span>Chess</span>
+        </div>
+
+          
+
+ <div class="flex-item" onclick="window.location.href='/flappy2048.html';" style="background-image: url('images/flappy2048.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+            <span>Flappy 2048</span>
+        </div>
+
+
+
+           <div class="flex-item" onclick="window.location.href='/shuttledeck.html';" style="background-image: url('images/shuttledeck.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
+            <span>Shuttle Deck</span>
+        </div>
+        
+
+        
+      </div>
+
+
+
+
+
+
+
+
+
+
+ <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Tip</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f3f3f3;
+        font-size: 14px;
+      }
+      /* Main Container */
+      .container {
+        max-width: 500px;
+        margin: 30px auto;
+        padding: 10px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      /* Tip Section */
+      .tip {
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      .tip-text {
+        font-size: 14px;
+        color: #333;
+        line-height: 1.4;
+      }
+      .tip-img {
+        width: 30px;
+        height: 30px;
+        vertical-align: middle;
+      }
+      /* Footer Section */
+      footer {
+        background-color: #2c3e50;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+      .footer-links {
+        margin-top: 5px;
+      }
+      .footer-links a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 5px;
+        transition: color 0.3s ease;
+      }
+      .footer-links a:hover {
+        color: #3498db;
+      }
+      .hit-counter {
+        margin-top: 10px;
+      }
+      .hit-counter img {
+        width: 80px;
+        height: auto;
+      }
+    </style>
+    </head>
+    <body>
+
+    <!-- Main Content Container -->
+    <div class="container">
+      <!-- Student Tip Section -->
+      <div class="tip">
+        <div class="tip-text">
+          🚀 Attention, Students! Activate School Panic Mode with this button
+          <img class="tip-img" src="http://zachattack.oyosite.com/totallyscience/kissclipart-tilde-key-clipart-computer-keyboard-tilda-clip-art-72f644fb9dccbc89.png" alt="Tilde key"> 
+          when the teacher is near! 📚✨ It instantly transforms into a study screen!
+
+        </div>
+      </div>
+    </div>
+
+  <!-- Footer Section -->
+<footer>
+  <div class="bottomFoot">2024 Evan Club LLC. An Evan Yadegari Production&trade;</div>
+  <div class="footer-links">
+    <a href="privacypolicy.html">Privacy Policy</a>
+    <a href="https://www.tiktok.com/@problempal_official" target="_blank">Follow our TikTok</a>
+  </div>
+</footer>
+
+<!-- JavaScript for Panic Key Functionality -->
+<script>
+  window.addEventListener('keydown', function (e) {
+    if(e.key === '') {
+      window.open('https://classroom.google.com/u/0/h', '_blank');
+    }
+  }, false);
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        function searchGames() {
+          var input, filter, flexContainer, flexItem, a, i, txtValue;
+          input = document.getElementById('searchInput');
+          filter = input.value.toUpperCase();
+          flexContainer = document.getElementsByClassName('flex-container')[0];
+          flexItem = flexContainer.getElementsByClassName('flex-item');
+
+          for (i = 0; i < flexItem.length; i++) {
+            a = flexItem[i];
+            txtValue = a.textContent || a.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              flexItem[i].style.display = '';
+            } else {
+              flexItem[i].style.display = 'none';
+            }
+          }
+        }
+
+        // Call searchGames function when user types in the search input
+        document.getElementById('searchInput').addEventListener('input', searchGames);
+      });
+    </script>
+
+
+
+ <style>
+      .random-game {
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          padding: 12px 24px;
+          background: linear-gradient(135deg, #6e8efb, #a777e3);
+          color: #fff;
+          text-transform: uppercase;
+          font-weight: bold;
+          font-family: 'Roboto', sans-serif;
+          cursor: pointer;
+          border: none;
+          border-radius: 25px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          transition: background 0.3s, transform 0.2s;
+      }
+
+      .random-game:hover {
+          background: linear-gradient(135deg, #a777e3, #6e8efb);
+          transform: translateY(-2px);
+      }
+    </style>
+
+    <button class="random-game" onclick="randomGame()">Random Game</button>
+
+    <script>
+      const gameUrls = [
+          '/1v1.lol.html',
+          '/bitlife.html',
+          '/amongus.html',
+          '/basketballstars.html',
+          '/basketballlegends.html',
+          '/geometrydash.html',
+          '/littlealchemy.html',
+          '/chromedino.html',
+          '/craftmine.html',
+          '/eggycar.html',
+          '/dogeminer.html',
+          '/motox3m.html',
+          '/motox3m2.html',
+          '/motox3m3.html',
+          '/ovo.html',
+          '/awesometanks.html',
+          '/awesometanks2.html',
+          '/flappybird.html',
+          '/bobtherobber.html',
+          '/paper.io2.html',
+          '/rabbitsamurai.html',
+          '/burritobison.html',
+          '/skyblock.html',
+          '/slope.html',
+          '/slope2.html',
+          '/snakeio.html',
+          '/spaceiskey.html',
+          '/badicecream2.html',
+          '/badpiggies.html',
+          '/breakingthebank.html',
+          '/cubefield.html',
+          '/crossyroad.html',
+          '/cuttherope.html',
+          '/dealornodeal.html',
+          '/driftboss.html',
+          '/geometryrash.html',
+          '/golddigger.html',
+          '/helixjump.html',
+          '/hexgl.html',
+          '/hextris.html',
+          '/idlebreakout.html',
+          '/justfalllol.html',
+          '/knifehit.html',
+          '/mario.html',
+          '/ngon.html',
+          '/pacman.html',
+          '/rocketleague.html',
+          '/rooftopsnipers.html',
+          '/rooftopsnipers2.html',
+          '/skibiditoilet.html',
+          '/snowrider3d.html',
+          '/spacebarclicker.html',
+          '/spankthemonkey.html',
+          '/stack.html',
+          '/sprinter.html',
+          '/stealingthediamond.html',
+          '/stickmanhook.html',
+          '/tetris.html',
+          '/theimpossiblequiz.html',
+          '/tinyfishing.html',
+          '/cannonbasketball4.html',
+          '/2048cupcakes.html',
+          '/defendthetank.html',
+          '/bigredbutton.html',
+          '/googlesnake.html',
+          '/meme2048.html',
+          '/minigolfmaster.html',
+          '/paperplanes.html',
+          '/rollyvortex.html',
+          '/snowbattleio.html',
+          '/soundboard.html',
+          '/minecraft.html',
+          '/2048.html',
+          '/clickerheroes.html',
+          '/coreball.html',
+          '/dune.html',
+          '/dadish.html',
+          '/dadish2.html',
+          '/getawayshootout.html',
+          '/vex3.html',
+          '/vex4.html',
+          '/vex5.html',
+          '/vex6.html',
+          '/baldisbasics.html',
+          '/basketbros.html',
+          '/basketrandom.html',
+          '/btd4.html',
+          '/clusterrush.html',
+          '/colormatch.html',
+          '/drifthunters.html',
+          '/ducklife.html',
+          '/ducklife2.html',
+          '/ducklife3.html',
+          '/ducklife4.html',
+          '/edgenotfound.html',
+          '/letssurf.html',
+          '/mergeroundracers.html',
+          '/monkeymart.html',
+          '/tanukisunset.html',
+          '/tombofthemask.html',
+          '/towermaster.html',
+          '/particleclicker.html',
+          '/learntofly.html',
+          '/learntofly2.html',
+          '/run3.html',
+
+      ];
+
+      function randomGame() {
+          const randomIndex = Math.floor(Math.random() * gameUrls.length);
+          window.location.href = gameUrls[randomIndex];
+      }
+    </script>  
