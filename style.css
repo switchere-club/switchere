@@ -1,0 +1,146 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ensure HTML & body fill the window height */
+html, body {
+  height: 100%;
+}
+
+/* Basic styling */
+body {
+  line-height: 1.6;
+  /* Background image fixes */
+  background-image: url('webbackground.png');
+  background-repeat: no-repeat;       /* Do not tile the image */
+  background-position: center bottom; /* Position image at the bottom center */
+  background-size: cover;            /* Scale the image to cover the entire screen */
+  background-attachment: fixed;       /* Keeps the image fixed during scroll (optional) */
+
+  color: #333;
+  font-family: 'Montserrat', sans-serif; /* Modern sans-serif font */
+  font-size: 16px;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header styling */
+header {
+  background-color: #2ecc71; /* Vibrant green header */
+  color: #fff; /* White text */
+  padding: 20px 0;
+  text-align: center; /* Centered header content */
+  width: 100%;
+}
+
+h1 {
+  font-size: 3em; /* Larger header font size */
+  margin-bottom: 20px;
+  font-family: 'Pacifico', cursive; /* Playful script font */
+}
+
+/* Welcome text styling */
+.welcome-text {
+  margin-left: 10px;
+  margin-top: 20px;
+  font-size: 28px; /* Larger font size */
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Search bar styling */
+.search-bar {
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.search-bar input {
+  padding: 10px;
+  border: 2px solid #3f51b5; /* Indigo */
+  border-right: none;
+  border-radius: 20px 0 0 20px;
+  font-size: 14px;
+  width: 40%;
+  max-width: 400px;
+  outline: none;
+  background: #fff;
+  color: #333;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.search-bar input::placeholder {
+  color: #aaa;
+}
+
+.search-bar input:focus {
+  border-color: #303f9f; /* Darker Indigo */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar button {
+  padding: 10px 15px; /* Reduced padding */
+  cursor: pointer;
+  background: #3f51b5; /* Indigo */
+  color: #fff;
+  border: 2px solid #3f51b5; /* Indigo */
+  border-radius: 0 20px 20px 0;
+  border-left: none;
+  font-size: 14px;
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-bar button:hover {
+  background-color: #303f9f; /* Darker Indigo on Hover */
+}
+
+.search-bar button:active {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar button i {
+  font-size: 16px; /* Adjusted the size of the icon */
+}
+
+/* Flex container styling */
+.flex-container {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Flex item styling */
+.flex-item {
+  margin: 20px;
+  width: 200px;
+  height: 200px;
+  background-color: #3498db; /* Bright blue background for flex items */
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.flex-item:hover {
+  transform: scale(1.1); /* Slightly expand on hover */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
+}
+
