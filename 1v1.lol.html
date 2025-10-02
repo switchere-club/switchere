@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>1v1 LOL</title>
+
   <style>
-    /* --- Your existing styles --- */
     body, html {
       margin: 0; padding: 0; width: 100%; height: 100%;
       overflow: hidden; position: relative; background-color: #f0f0f0;
@@ -18,6 +18,7 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
     iframe { width: 100%; height: 100%; border: none; }
+
     .fullscreen-button, .home-button {
       position: absolute; font-size: 16px; border: none; border-radius: 5px;
       cursor: pointer; z-index: 1;
@@ -40,70 +41,19 @@
     }
     .home-button:hover { background: linear-gradient(to right, #4facfe, #00acfe); }
     .home-button:active { transform: scale(0.95); }
-
-    .ad-container { width: 100%; text-align: center; margin: 10px 0; }
-    .ad-left, .ad-right {
-      position: absolute; top: 50%; transform: translateY(-50%);
-      width: 120px; height: auto;
-    }
-    .ad-left { left: 10px; }
-    .ad-right { right: 10px; }
-    .ad-top, .ad-bottom {
-      position: absolute; width: 100%; text-align: center; margin: 10px;
-    }
-    .ad-top { top: 0; }
-    .ad-bottom { bottom: 0; }
-
-    /* --- Popup styles (NEW) --- */
-    #main-content { transition: filter 0.3s ease; }
-    #main-content.blurred { filter: blur(8px); pointer-events: none; }
-    .popup-overlay {
-      position: fixed; top:0; left:0; width:100%; height:100%;
-      background: rgba(0,0,0,0.6); display:grid; place-items:center;
-      z-index: 1000; opacity:0; visibility:hidden; transition:0.3s;
-    }
-    .popup-overlay.visible { opacity:1; visibility:visible; }
-    .popup-content {
-      background:#fff; padding:30px; border-radius:15px; text-align:center;
-      max-width:450px; width:90%; position:relative;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.25);
-    }
-    #unlock-ad-btn {
-      padding:15px; width:100%; font-size:20px; font-weight:600;
-      color:#fff; background:#1a73e8; border:none; border-radius:8px; cursor:pointer;
-      margin-top: 10px;
-    }
-    #unlock-ad-btn:disabled { background:#5f6368; cursor:not-allowed; opacity:0.7; }
-    .popup-close-btn { position:absolute; top:10px; right:15px; font-size:28px; cursor:pointer; }
   </style>
 </head>
 
 <body>
-  <!-- 1️⃣ Wrap your main content (everything except the popup) -->
   <div id="main-content">
-    
     <div class="content">
       <iframe id="gameFrame" src="https://sciencemathlearning.github.io/1v1lol.html/" onload="focusGame()"></iframe>
       <button class="fullscreen-button" onclick="toggleFullScreen()">Fullscreen</button>
     </div>
-
     <button class="home-button" onclick="goToHomePage()">Home</button>
   </div>
-  <!-- /#main-content -->
 
-  <!-- 2️⃣ Popup HTML (after main-content) -->
-  <div class="popup-overlay" id="reward-popup-overlay">
-    <div class="popup-content">
-      <span class="popup-close-btn" id="popup-close">&times;</span>
-      <h2>Your Free Game is Ready!</h2>
-      <p>Watch a quick ad to unlock content.</p>
-      <button id="unlock-ad-btn" disabled>Loading Ad...</button>
-    </div>
-  </div>
-
-  <!-- Scripts -->
   <script>
-    // Existing helpers
     function toggleFullScreen() {
       var iframe = document.getElementById('gameFrame');
       if (iframe.requestFullscreen) iframe.requestFullscreen();
@@ -117,92 +67,6 @@
       iframe?.focus();
     }
     function goToHomePage() { window.location.href = '/'; }
-  </script>
-
-  <!-- 5️⃣ Rewarded Ad JS Logic (end of body) -->
-  <script>
-    const mainContent = document.getElementById('main-content');
-    const popup = document.getElementById('reward-popup-overlay');
-    const unlockBtn = document.getElementById('unlock-ad-btn');
-    const closeBtn = document.getElementById('popup-close');
-    let rewardedAdEvent = null;
-    let rewardGranted = false; // ✅ track if user earned reward
-
-    function showPopup(){ mainContent.classList.add('blurred'); popup.classList.add('visible'); }
-    function hidePopup(){ mainContent.classList.remove('blurred'); popup.classList.remove('visible'); }
-    function focusContent(){
-      const iframe = document.getElementById('gameFrame');
-      iframe?.focus();
-      console.log("Content unlocked.");
-    }
-
-    window.googletag = window.googletag || {cmd:[]};
-    googletag.cmd.push(function(){
-      const adUnit = '/231917939,43671922/Display/Userwave/evanclub.github.io/rewarded_video_1';
-      const slot = googletag.defineOutOfPageSlot(adUnit, googletag.enums.OutOfPageFormat.REWARDED);
-      if (slot) {
-        slot.addService(googletag.pubads());
-        slot.setTargeting("segment","UW1");
-        slot.setTargeting("client","51796");
-
-        googletag.pubads().addEventListener('rewardedSlotReady', e => {
-          console.log('Ad ready'); rewardedAdEvent = e;
-          unlockBtn.disabled = false; unlockBtn.textContent = '▶ Unlock & Play Now';
-        });
-
-        googletag.pubads().addEventListener('rewardedSlotClosed', e => {
-          console.log('Ad closed');
-          if (unlockBtn.textContent !== 'Success! Game Unlocked') {
-            unlockBtn.disabled = false; unlockBtn.textContent = '▶ Unlock & Play Now';
-          }
-          googletag.pubads().refresh([slot]);
-        });
-
-        // ✅ Update reward flag when user completes ad
-        googletag.pubads().addEventListener('rewardedSlotGranted', e => {
-          console.log('Reward granted');
-          rewardGranted = true;
-          unlockBtn.textContent = 'Success! Game Unlocked';
-          setTimeout(() => { hidePopup(); focusContent(); }, 1000);
-        });
-
-        googletag.pubads().addEventListener('slotRenderEnded', e => {
-          if (e.slot === slot && e.isEmpty) {
-            console.error('No ad (no fill)');
-            unlockBtn.textContent = 'Ad Error. Unlocking...';
-            setTimeout(() => { hidePopup(); focusContent(); }, 1500);
-          }
-        });
-
-        googletag.enableServices();
-        googletag.display(slot);
-      } else {
-        console.error('Slot error');
-        unlockBtn.textContent = 'Ad Error. Unlocking...';
-        setTimeout(() => { hidePopup(); focusContent(); }, 1500);
-      }
-    });
-
-    unlockBtn.addEventListener('click', () => {
-      if (rewardedAdEvent) {
-        unlockBtn.disabled = true;
-        unlockBtn.textContent = 'Ad is playing...';
-        rewardedAdEvent.makeRewardedVisible();
-      }
-    });
-
-    // ✅ Close button: redirect if reward not earned
-    closeBtn.addEventListener('click', function () {
-      if (!rewardGranted) {
-        window.location.href = 'https://www.switchere.online/';
-      } else {
-        hidePopup();
-        focusContent();
-      }
-    });
-
-    // Show popup on load (or call showPopup() from a Start/Play button instead)
-    window.addEventListener('load', showPopup);
   </script>
 </body>
 </html>
