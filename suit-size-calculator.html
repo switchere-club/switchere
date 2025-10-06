@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Suit Size Calculator - Find Your Perfect Fit Instantly (US, UK, EU)</title>
+    <meta name="description" content="The most accurate Suit Size Calculator for US, UK, and EU sizes. Find your jacket and trouser measurements for slim, modern, or classic fits. Get a perfect fit for your body type.">
+    <meta name="keywords" content="suit size calculator, what is my suit size, suit measurement calculator, men's suit size, jacket size calculator, trouser size calculator, find suit size, suit size chart, US suit size, EU suit size converter, how a suit should fit">
+    <meta name="author" content="Switchere Club">
+    <link rel="canonical" href="https://www.switchere.online/">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21V11.5M12 21H6.8C6.35817 21 6 20.6418 6 20.2V8.8C6 8.35817 6.35817 8 6.8 8H17.2C17.6418 8 18 8.35817 18 8.8V20.2C18 20.6418 17.6418 21 17.2 21H12Z' stroke='%231a237e' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M12 2L9 8H15L12 2Z' stroke='%231a237e' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M12 11.5L9 8' stroke='%231a237e' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M12 11.5L15 8' stroke='%231a237e' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa; /* Light grey background */
+            color: #212529; /* Dark grey text */
+        }
+        .hero-section {
+            background: linear-gradient(135deg, #1a237e 0%, #283593 100%); /* Deep blue gradient */
+        }
+        .btn-primary {
+            background-color: #fbc02d; /* Accent gold/yellow */
+            color: #212529;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            background-color: #fdd835;
+        }
+        .btn-secondary {
+            background-color: #e0e0e0;
+            color: #212529;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        .btn-secondary:hover {
+            background-color: #bdbdbd;
+        }
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+             transform: translateY(-5px);
+             box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+        }
+        .input-field {
+            border-color: #ced4da;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .input-field:focus {
+            border-color: #283593;
+            box-shadow: 0 0 0 3px rgba(40, 53, 147, 0.1);
+            outline: none;
+        }
+        .results-card {
+            background: linear-gradient(135deg, #3949ab, #1e88e5);
+            color: white;
+        }
+        .faq-item {
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        /* Custom Radio Button Styles */
+        .radio-label {
+            border: 1px solid #ced4da;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            text-align: center;
+            width: 100%;
+        }
+        .radio-input:checked + .radio-label {
+            background-color: #e8eaf6;
+            border-color: #3f51b5;
+            font-weight: 600;
+            color: #3f51b5;
+        }
+        .radio-input {
+            display: none;
+        }
+        /* Unit Switch Styles */
+        .switch {
+          position: relative;
+          display: inline-block;
+          width: 110px;
+          height: 34px;
+        }
+        .switch input { 
+          opacity: 0;
+          width: 0;
+          height: 0;
+        }
+        .slider {
+          position: absolute;
+          cursor: pointer;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: #ccc;
+          transition: .4s;
+          border-radius: 34px;
+        }
+        .slider:before {
+          position: absolute;
+          content: "";
+          height: 26px;
+          width: 50px;
+          left: 4px;
+          bottom: 4px;
+          background-color: white;
+          transition: .4s;
+          border-radius: 34px;
+        }
+        input:checked + .slider {
+          background-color: #283593;
+        }
+        input:checked + .slider:before {
+          transform: translateX(52px);
+        }
+    </style>
+
+    <!-- SEO Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Measure for a Suit",
+      "description": "Follow these steps to accurately measure yourself for a suit to use in our calculator.",
+      "step": [
+        { "@type": "HowToStep", "name": "Measure Chest", "text": "Wrap the measuring tape around the fullest part of your chest, under your armpits. Keep the tape level and snug, but not tight." },
+        { "@type": "HowToStep", "name": "Measure Shoulders", "text": "Measure from the edge of one shoulder to the other across your back. This is the seam-to-seam measurement." },
+        { "@type": "HowToStep", "name": "Measure Waist", "text": "Measure around your natural waistline, which is typically just above your belly button. Don't pull the tape too tight." },
+        { "@type": "HowToStep", "name": "Measure Inseam", "text": "Measure from the crotch seam of a well-fitting pair of pants down to the bottom of the hem." },
+        { "@type": "HowToStep", "name": "Measure Height", "text": "Stand straight against a wall without shoes and measure from the floor to the top of your head." }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What's the difference between suit cuts (slim, modern, classic)?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Classic fit is the most traditional, with more room in the chest and waist for comfort. Modern fit is a middle ground, slightly tapered for a more defined silhouette without being tight. Slim fit is the most form-fitting, cut close to the body for a sharp, contemporary look." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the most important part of a suit's fit?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The shoulders are the most critical part of a suit jacket's fit. While a tailor can easily adjust the waist or sleeve length, altering the shoulders is a complex and expensive job. The shoulder seam of the jacket should end exactly where your natural shoulder does." }
+        },
+        {
+          "@type": "Question",
+          "name": "What do 'R', 'S', or 'L' mean in a suit size?",
+          "acceptedAnswer": { "@type": "Answer", "text": "'S' stands for Short, 'R' for Regular, and 'L' for Long. This refers to the length of the jacket torso and sleeves. Your height primarily determines which length you need. Our calculator automatically suggests the correct length based on your height." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I convert my US suit size to European (EU) size?",
+          "acceptedAnswer": { "@type": "Answer", "text": "It's simple! To get your EU jacket size, add 10 to your US/UK jacket size. For example, a US 40R is equivalent to an EU 50R. Our calculator does this conversion for you automatically." }
+        },
+        {
+            "@type": "Question",
+            "name": "What is the 'drop' of a suit?",
+            "acceptedAnswer": { "@type": "Answer", "text": "The 'drop' is the numerical difference between the jacket chest size and the trouser waist size. A standard suit has a 6-inch drop (e.g., a 40R jacket comes with 34-inch waist trousers). Different body types may require a different drop, which is why buying suit separates can be a great option." }
+        }
+      ]
+    }
+    </script>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-gray-800 flex items-center">
+                <span class="mr-2">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="inline-block">
+                        <path d="M12 21V11.5M12 21H6.8C6.35817 21 6 20.6418 6 20.2V8.8C6 8.35817 6.35817 8 6.8 8H17.2C17.6418 8 18 8.35817 18 8.8V20.2C18 20.6418 17.6418 21 17.2 21H12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M12 2L9 8H15L12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M12 11.5L9 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M12 11.5L15 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </span>
+                SuitSize Pro
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#calculator" class="text-gray-600 hover:text-blue-800">Calculator</a>
+                <a href="#how-to-measure" class="text-gray-600 hover:text-blue-800">Measure Guide</a>
+                <a href="#fit-guide" class="text-gray-600 hover:text-blue-800">Fit Guide</a>
+                <a href="#faq" class="text-gray-600 hover:text-blue-800">FAQ</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero and Calculator Section -->
+    <main id="calculator" class="hero-section text-white pt-16 pb-20">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">The Ultimate Suit Size Calculator</h1>
+            <p class="text-lg md:text-xl text-indigo-200 mb-10 max-w-4xl mx-auto">Tired of guessing your size? Get a precise recommendation for your suit jacket and trousers in US, UK, and EU sizes. Perfect for online shopping and confident fitting.</p>
+
+            <div class="card max-w-4xl mx-auto p-6 text-left text-gray-800">
+                <form id="suit-size-form" novalidate>
+                    <div id="error-message" class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg relative mb-6" role="alert">
+                        <strong class="font-bold">Error:</strong>
+                        <span class="block sm:inline" id="error-text"></span>
+                    </div>
+
+                    <div class="flex justify-center mb-6 items-center">
+                        <span class="font-medium mr-3">Inches</span>
+                        <label class="switch">
+                          <input type="checkbox" id="unit-switch">
+                          <span class="slider"></span>
+                        </label>
+                        <span class="font-medium ml-3">Centimeters</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3">
+                        <!-- Left Column: Measurements -->
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3 text-gray-700">1. Your Measurements</h3>
+                            <div class="mb-2.5">
+                                <label for="height-ft" class="block text-sm font-medium text-gray-600 mb-1">Height (Required)</label>
+                                <div class="flex space-x-2" id="height-imperial">
+                                    <input type="number" step="any" id="height-ft" placeholder="ft" class="w-1/2 p-3 rounded-md border input-field">
+                                    <input type="number" step="any" id="height-in" placeholder="in" class="w-1/2 p-3 rounded-md border input-field">
+                                </div>
+                                <div class="hidden" id="height-metric">
+                                    <input type="number" step="any" id="height-cm" placeholder="cm" class="w-full p-3 rounded-md border input-field">
+                                </div>
+                            </div>
+                            <div class="mb-2.5">
+                                <label for="chest" class="block text-sm font-medium text-gray-600 mb-1">Chest (Required)</label>
+                                <input type="number" step="any" id="chest" class="w-full p-3 rounded-md border input-field" placeholder="e.g., 40">
+                            </div>
+                            <div class="mb-2.5">
+                                <label for="waist" class="block text-sm font-medium text-gray-600 mb-1">Waist (Optional)</label>
+                                <input type="number" step="any" id="waist" class="w-full p-3 rounded-md border input-field" placeholder="e.g., 34">
+                            </div>
+                             <div class="mb-2.5">
+                                <label for="inseam" class="block text-sm font-medium text-gray-600 mb-1">Inseam (Optional)</label>
+                                <input type="number" step="any" id="inseam" class="w-full p-3 rounded-md border input-field" placeholder="e.g., 32">
+                            </div>
+                        </div>
+
+                        <!-- Right Column: Preferences -->
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3 text-gray-700">2. Your Preferences</h3>
+                             <div class="mb-4">
+                                <label class="block text-sm font-medium text-gray-600 mb-3">Fit Preference</label>
+                                <div class="grid grid-cols-3 gap-2">
+                                    <div><input type="radio" name="fit-preference" value="slim" id="fit-slim" class="radio-input"><label for="fit-slim" class="radio-label">Slim</label></div>
+                                    <div><input type="radio" name="fit-preference" value="modern" id="fit-modern" class="radio-input" checked><label for="fit-modern" class="radio-label">Modern</label></div>
+                                    <div><input type="radio" name="fit-preference" value="classic" id="fit-classic" class="radio-input"><label for="fit-classic" class="radio-label">Classic</label></div>
+                                </div>
+                            </div>
+                             <div>
+                                <label class="block text-sm font-medium text-gray-600 mb-3">Body Type</label>
+                                <div class="grid grid-cols-3 gap-2">
+                                    <div><input type="radio" name="body-type" value="athletic" id="body-athletic" class="radio-input"><label for="body-athletic" class="radio-label">Athletic</label></div>
+                                    <div><input type="radio" name="body-type" value="average" id="body-average" class="radio-input" checked><label for="body-average" class="radio-label">Average</label></div>
+                                    <div><input type="radio" name="body-type" value="husky" id="body-husky" class="radio-input"><label for="body-husky" class="radio-label">Husky</label></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 text-center flex flex-col md:flex-row gap-4 justify-center">
+                        <button type="submit" class="btn-primary w-full md:w-auto px-10 py-3 rounded-lg text-base">Calculate My Size</button>
+                        <button type="reset" id="reset-btn" class="btn-secondary w-full md:w-auto px-8 py-3 rounded-lg text-base">Reset</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Results Section -->
+    <section id="results-section" class="hidden py-10 bg-gray-50">
+         <div class="container mx-auto px-6 text-center">
+              <div class="max-w-4xl mx-auto card results-card p-8">
+                <h2 class="text-3xl font-bold mb-2">Your Recommended Suit Size</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                    <!-- Jacket -->
+                    <div class="text-center p-6 bg-white/20 rounded-lg">
+                        <h3 class="text-lg font-semibold text-indigo-100 mb-2">Jacket Size</h3>
+                        <div class="flex justify-around items-baseline">
+                            <div>
+                                <p class="text-sm">US / UK</p>
+                                <p id="jacket-size-result-us" class="text-4xl font-bold">-</p>
+                            </div>
+                            <div>
+                                <p class="text-sm">EU</p>
+                                <p id="jacket-size-result-eu" class="text-4xl font-bold">-</p>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Trousers -->
+                    <div class="text-center p-6 bg-white/20 rounded-lg">
+                        <h3 class="text-lg font-semibold text-indigo-100 mb-2">Trouser Size</h3>
+                         <div class="flex justify-around items-baseline">
+                            <div>
+                                <p class="text-sm">US / UK</p>
+                                <p id="trouser-size-result-us" class="text-3xl font-bold">-</p>
+                            </div>
+                            <div>
+                                <p class="text-sm">EU</p>
+                                <p id="trouser-size-result-eu" class="text-3xl font-bold">-</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 p-4 bg-black/20 rounded-lg text-left">
+                    <h4 class="font-semibold mb-2">Fit Notes & Recommendations:</h4>
+                    <ul id="fit-notes" class="text-sm text-indigo-200 list-disc list-inside space-y-1"></ul>
+                </div>
+              </div>
+         </div>
+    </section>
+
+    <!-- How to Measure Section -->
+    <section id="how-to-measure" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">How to Measure Yourself Accurately</h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">For the best results, use a soft measuring tape and have a friend assist you.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+                <!-- Measurement Cards -->
+                <div class="card card-hover p-6 flex items-center space-x-5">
+                    <div class="flex-shrink-0 flex items-center justify-center h-16 w-16 rounded-full bg-indigo-100">
+                        <svg class="w-8 h-8 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 17.25h15M4.5 12h15m-15-5.25h15M5.25 3v18" /></svg>
+                    </div>
+                    <div><h3 class="font-semibold text-lg">Height</h3><p class="text-gray-600 mt-1">Stand straight without shoes and measure from the floor to the top of your head.</p></div>
+                </div>
+                <div class="card card-hover p-6 flex items-center space-x-5">
+                    <div class="flex-shrink-0 flex items-center justify-center h-16 w-16 rounded-full bg-indigo-100">
+                        <svg class="w-8 h-8 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 7.5l.415-.207a.75.75 0 011.085.67V10.5m0 0h6m-6 0a.75.75 0 001.085.67l.415-.207M3.75 17.25V5.25c0-.966.784-1.75 1.75-1.75h13c.966 0 1.75.784 1.75 1.75v12c0 .966-.784 1.75-1.75 1.75h-13A1.75 1.75 0 013.75 17.25z" /></svg>
+                    </div>
+                    <div><h3 class="font-semibold text-lg">Chest</h3><p class="text-gray-600 mt-1">Wrap the tape around the fullest part of your chest, under your armpits. Keep it level.</p></div>
+                </div>
+                 <div class="card card-hover p-6 flex items-center space-x-5">
+                    <div class="flex-shrink-0 flex items-center justify-center h-16 w-16 rounded-full bg-indigo-100">
+                        <svg class="w-8 h-8 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" /></svg>
+                    </div>
+                    <div><h3 class="font-semibold text-lg">Shoulders</h3><p class="text-gray-600 mt-1">Measure from the edge of one shoulder to the other across your back, following the curve.</p></div>
+                </div>
+                <div class="card card-hover p-6 flex items-center space-x-5">
+                    <div class="flex-shrink-0 flex items-center justify-center h-16 w-16 rounded-full bg-indigo-100">
+                         <svg class="w-8 h-8 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.658-.463 1.243-1.117 1.243H4.5a1.125 1.125 0 01-1.117-1.243l1.263-12a1.125 1.125 0 011.117-1.007h8.477c.653 0 1.187.585 1.117 1.243z" /></svg>
+                    </div>
+                    <div><h3 class="font-semibold text-lg">Waist</h3><p class="text-gray-600 mt-1">Measure your natural waistline, just above the belly button. Don't suck in your stomach!</p></div>
+                </div>
+                <div class="card card-hover p-6 flex items-center space-x-5">
+                     <div class="flex-shrink-0 flex items-center justify-center h-16 w-16 rounded-full bg-indigo-100">
+                        <svg class="w-8 h-8 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-6h6" /></svg>
+                    </div>
+                    <div><h3 class="font-semibold text-lg">Inseam</h3><p class="text-gray-600 mt-1">On well-fitting pants, measure from the crotch seam down to the bottom of the hem.</p></div>
+                </div>
+                <div class="card card-hover p-6 flex items-center space-x-5">
+                    <div class="flex-shrink-0 flex items-center justify-center h-16 w-16 rounded-full bg-yellow-100">
+                        <svg class="w-8 h-8 text-yellow-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.311a7.5 7.5 0 01-7.5 0c-1.421-.492-2.682-.908-3.75-1.433M3.75 14.25c.623.313 1.27.605 1.948.872m12.604-.872c.677-.267 1.325-.56 1.948-.872M9 10.5a3 3 0 116 0 3 3 0 01-6 0z" /></svg>
+                    </div>
+                    <div><h3 class="font-semibold text-lg">Pro Tip</h3><p class="text-gray-600 mt-1">Wear a thin shirt for jacket measurements. Empty your pockets before measuring your waist.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Visual Fit Guide Section -->
+    <section id="fit-guide" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">The Perfect Fit: A Visual Guide</h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">Knowing your size is the first step. Here’s what to look for in a well-fitting suit.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Fit Point 1: Shoulders -->
+                <div class="card p-6 text-center card-hover">
+                    <div class="flex justify-center mb-4">
+                        <svg class="w-16 h-16 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">1. The Shoulders</h3>
+                    <p class="text-gray-600">The jacket seam should end precisely where your natural shoulder does. No divots or overhang.</p>
+                </div>
+                
+                <!-- Fit Point 2: Jacket Closure -->
+                <div class="card p-6 text-center card-hover">
+                    <div class="flex justify-center mb-4">
+                        <svg class="w-16 h-16 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">2. The Closure</h3>
+                    <p class="text-gray-600">When buttoned, the jacket should not pull into a tight 'X'. Lapels should lie flat and smooth.</p>
+                </div>
+
+                <!-- Fit Point 3: Sleeve Length -->
+                <div class="card p-6 text-center card-hover">
+                    <div class="flex justify-center mb-4">
+                        <svg class="w-16 h-16 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                     <h3 class="text-xl font-bold text-gray-800 mb-2">3. Sleeve Length</h3>
+                    <p class="text-gray-600">Sleeves should end just above the wrist, allowing ¼ to ½ inch of your shirt cuff to show.</p>
+                </div>
+
+                <!-- Fit Point 4: Trouser Break -->
+                <div class="card p-6 text-center card-hover">
+                     <div class="flex justify-center mb-4">
+                        <svg class="w-16 h-16 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">4. Trouser Break</h3>
+                    <p class="text-gray-600">For a modern look, trousers should have a slight break, gently resting on the top of your shoes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6 max-w-4xl">
+             <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Frequently Asked Questions</h2>
+            </div>
+            <div class="bg-white rounded-lg shadow-md">
+                <div class="faq-item p-6">
+                    <h3 class="font-semibold text-lg mb-2">What's the difference between suit cuts?</h3>
+                    <p class="text-gray-600"><strong>Classic Fit:</strong> Most traditional, with more room for comfort. <strong>Modern Fit:</strong> A popular middle ground, slightly tapered for a defined silhouette. <strong>Slim Fit:</strong> The most form-fitting, cut close to the body for a sharp look.</p>
+                </div>
+                <div class="faq-item p-6">
+                    <h3 class="font-semibold text-lg mb-2">How do I convert between US and EU suit sizes?</h3>
+                    <p class="text-gray-600">It's easy! For jackets, add 10 to your US size to get your EU size (e.g., US 40R = EU 50R). For trousers, it can vary, but our calculator handles the conversion automatically for you.</p>
+                </div>
+                 <div class="faq-item p-6">
+                    <h3 class="font-semibold text-lg mb-2">Should I size up or down if I'm between sizes?</h3>
+                    <p class="text-gray-600">It depends on your fit preference. For a tighter, 'slim' fit, consider sizing down. For a more comfortable, 'classic' fit, sizing up is often better. It's almost always easier for a tailor to take a suit in than to let it out.</p>
+                </div>
+                <div class="faq-item p-6">
+                    <h3 class="font-semibold text-lg mb-2">What's the most important measurement for a suit jacket?</h3>
+                    <p class="text-gray-600">The shoulder measurement is the most critical. A tailor can adjust almost anything on a jacket—sleeve length, waist suppression—but altering the shoulders is complex and expensive. Make sure the shoulder seams sit squarely on your natural shoulder line.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center text-gray-400">
+            <p>&copy; <span id="year"></span> SuitSize Pro. All Rights Reserved.</p>
+            <p class="text-sm mt-2">A tool to help you look your best. Sizing may vary by brand; always check the manufacturer's size chart.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('suit-size-form');
+            const unitSwitch = document.getElementById('unit-switch');
+            
+            const heightImperial = document.getElementById('height-imperial');
+            const heightMetric = document.getElementById('height-metric');
+            const heightFtInput = document.getElementById('height-ft');
+            const heightInInput = document.getElementById('height-in');
+            const heightCmInput = document.getElementById('height-cm');
+            
+            const chestInput = document.getElementById('chest');
+            const waistInput = document.getElementById('waist');
+            const inseamInput = document.getElementById('inseam');
+
+            const resultsSection = document.getElementById('results-section');
+            const jacketResultUsElem = document.getElementById('jacket-size-result-us');
+            const jacketResultEuElem = document.getElementById('jacket-size-result-eu');
+            const trouserResultUsElem = document.getElementById('trouser-size-result-us');
+            const trouserResultEuElem = document.getElementById('trouser-size-result-eu');
+            const fitNotesElem = document.getElementById('fit-notes');
+            const resetBtn = document.getElementById('reset-btn');
+            
+            const errorMessageDiv = document.getElementById('error-message');
+            const errorTextElem = document.getElementById('error-text');
+
+            function showError(message) {
+                errorTextElem.textContent = message;
+                errorMessageDiv.classList.remove('hidden');
+            }
+
+            function hideError() {
+                errorMessageDiv.classList.add('hidden');
+            }
+
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            unitSwitch.addEventListener('change', () => {
+                const isMetric = unitSwitch.checked;
+                heightImperial.classList.toggle('hidden', isMetric);
+                heightMetric.classList.toggle('hidden', !isMetric);
+                
+                heightFtInput.value = '';
+                heightInInput.value = '';
+                heightCmInput.value = '';
+
+                chestInput.placeholder = isMetric ? "e.g., 102" : "e.g., 40";
+                waistInput.placeholder = isMetric ? "e.g., 86" : "e.g., 34";
+                inseamInput.placeholder = isMetric ? "e.g., 81" : "e.g., 32";
+            });
+            
+            resetBtn.addEventListener('click', () => {
+                resultsSection.classList.add('hidden');
+                fitNotesElem.innerHTML = '';
+                hideError();
+            });
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                hideError();
+                
+                const isMetric = unitSwitch.checked;
+                const fitPreference = document.querySelector('input[name="fit-preference"]:checked').value;
+                const bodyType = document.querySelector('input[name="body-type"]:checked').value;
+                let wasWaistEstimated = false;
+                
+                let heightInInches, chestInInches, waistInInches, inseamInInches;
+
+                // --- Data Conversion & Validation ---
+                if (isMetric) {
+                    const heightCm = parseFloat(heightCmInput.value);
+                    if (!heightCm || heightCm <= 0) {
+                        showError('Please enter a valid height.');
+                        return;
+                    }
+                    heightInInches = heightCm / 2.54;
+                    chestInInches = parseFloat(chestInput.value) / 2.54;
+                    waistInInches = parseFloat(waistInput.value) / 2.54;
+                    inseamInInches = parseFloat(inseamInput.value) / 2.54;
+                } else {
+                    const ft = parseFloat(heightFtInput.value) || 0;
+                    const inches = parseFloat(heightInInput.value) || 0;
+                    if ((ft === 0 && inches === 0) || ft < 0 || inches < 0) {
+                        showError('Please enter a valid height.');
+                        return;
+                    }
+                    heightInInches = (ft * 12) + inches;
+                    chestInInches = parseFloat(chestInput.value);
+                    waistInInches = parseFloat(waistInput.value);
+                    inseamInInches = parseFloat(inseamInput.value);
+                }
+
+                if (!chestInInches || chestInInches <= 0) {
+                    showError('Please enter a valid chest measurement.');
+                    return;
+                }
+
+                // --- Calculation Logic ---
+                let chestMeasurement = chestInInches;
+                
+                if (fitPreference === 'classic') {
+                    chestMeasurement += 1;
+                } else if (fitPreference === 'slim') {
+                    chestMeasurement -= 0.5;
+                }
+
+                let jacketSize = Math.round(chestMeasurement);
+                if (jacketSize % 2 !== 0) jacketSize += 1;
+
+                let jacketLength = (heightInInches < 67) ? 'S' : (heightInInches <= 72) ? 'R' : 'L';
+                const finalJacketSizeUs = `${jacketSize}${jacketLength}`;
+                const finalJacketSizeEu = `${jacketSize + 10}${jacketLength}`;
+
+                let trouserWaist;
+                if (!waistInInches || waistInInches <= 0) {
+                    wasWaistEstimated = true;
+                    let drop = 6; // Standard drop for 'average'
+                    if (bodyType === 'athletic') drop = 8;
+                    else if (bodyType === 'husky') drop = 4;
+                    trouserWaist = jacketSize - drop;
+                } else {
+                    trouserWaist = Math.round(waistInInches);
+                }
+                
+                let finalTrouserSizeUs = `${trouserWaist}W`;
+                if (inseamInInches && inseamInInches > 0) {
+                    finalTrouserSizeUs += ` x ${Math.round(inseamInInches)}L`;
+                }
+                
+                const trouserWaistCm = trouserWaist * 2.54;
+                let euTrouserSize = Math.round(trouserWaistCm / 2);
+                let finalTrouserSizeEu = `${euTrouserSize}`;
+
+                // --- Generate Intelligent Fit Notes ---
+                let notes = [];
+                notes.push(`<li>This recommendation is for a <strong>${fitPreference} fit</strong>. Remember that sizing can vary significantly by brand.</li>`);
+                
+                if (wasWaistEstimated) {
+                    notes.push(`<li>Your trouser size was <strong>estimated</strong> for an '${bodyType}' build. For the best accuracy, measure your natural waist.</li>`);
+                }
+
+                const finalDrop = jacketSize - trouserWaist;
+
+                // Sanity Checks and Proactive Advice
+                if (!wasWaistEstimated && waistInInches > chestInInches) {
+                    notes.push(`<li><strong>Pro Tip:</strong> Your waist is larger than your chest. We strongly recommend buying <strong>suit separates</strong> or consulting a tailor for a comfortable fit.</li>`);
+                } else if (!wasWaistEstimated && finalDrop > 10) {
+                     notes.push(`<li><strong>Pro Tip:</strong> You have a large chest-to-waist drop. To avoid extensive tailoring, look for <strong>'athletic fit' suits</strong> or buy your jacket and trousers separately.</li>`);
+                } else if (!wasWaistEstimated && bodyType === 'athletic' && finalDrop < 7) {
+                    notes.push(`<li>As an <strong>athletic build</strong> with a smaller drop, you may find 'athletic fit' suits or suit separates offer the best comfort.</li>`);
+                }
+
+                if (!inseamInInches || inseamInInches <= 0) {
+                    notes.push(`<li>Inseam was not provided. Plan to have your trousers hemmed by a tailor for the perfect length.</li>`);
+                }
+                
+                fitNotesElem.innerHTML = notes.map(note => note).join('');
+
+                // --- Display Results ---
+                jacketResultUsElem.textContent = finalJacketSizeUs;
+                jacketResultEuElem.textContent = finalJacketSizeEu;
+                trouserResultUsElem.textContent = finalTrouserSizeUs;
+                trouserResultEuElem.textContent = finalTrouserSizeEu;
+                
+                resultsSection.classList.remove('hidden');
+                resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
