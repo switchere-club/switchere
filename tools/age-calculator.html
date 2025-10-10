@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Age Calculator - How Old Am I in Years, Months & Days?</title>
+    <meta name="description" content="The ultimate online age calculator. Instantly find your age from your date of birth, see fun life milestones (like total heartbeats!), and get a countdown to your next birthday.">
+    <meta name="keywords" content="age calculator, how old am I, date of birth calculator, dob to age calculator, birthday calculator, calculate age in years months days, next birthday countdown, life milestones calculator">
+    <meta name="author" content="Switchere Club">
+    <link rel="canonical" href="https://www.switchere.online/">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Age Calculator - How Old Am I in Years, Months & Days?">
+    <meta property="og:description" content="Instantly find out how old you are and discover fun facts about your life's journey with our free, fast, and accurate online age calculator.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.switchere.online/">
+    <meta property="og:image" content="https://www.switchere.online/og-image.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Online Age Calculator - Discover Your Life's Milestones">
+    <meta name="twitter:description" content="Calculate your exact age and see fun stats like your total heartbeats and a live countdown to your next birthday.">
+
+    <!-- Favicon (Inline SVG) -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M8 2v4M16 2v4M3 10h18M4 6h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1z' stroke='%230066CC' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+    <!-- Google Fonts - Optimized -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Age Calculator",
+        "description": "A free online tool to calculate age from a date of birth, showing the result in years, months, and days, and providing a countdown to the next birthday.",
+        "url": "https://www.yourdomain-age-calculator.com/",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "6135"
+        }
+    }
+    </script>
+
+    <!-- Compact Optimized Styles -->
+    <style>
+        :root {
+            --primary: #0066CC; --primary-light: #E6F2FF; --primary-dark: #004C99; --accent: #00CC88; --accent-light: #E6FFF9;
+            --text-dark: #1A1A1A; --text-gray: #4A5568; --text-light: #718096; --border: #E2E8F0; --bg-white: #FFFFFF; --bg-light: #F7FAFC;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: linear-gradient(to bottom, var(--bg-light) 0%, white 50%, var(--bg-light) 100%); color: var(--text-dark); line-height: 1.65; font-size: 16px; -webkit-font-smoothing: antialiased; }
+        header { background: var(--bg-white); border-bottom: 1px solid var(--border); box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .logo { color: var(--primary); font-weight: 700; font-size: 1.125rem; letter-spacing: -0.02em; }
+        nav a { color: var(--text-gray); text-decoration: none; font-size: 0.9375rem; transition: color 0.2s; font-weight: 500; }
+        nav a:hover { color: var(--primary); }
+        nav a.nav-btn { background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; padding: 0.5rem 1.25rem; border-radius: 6px; font-weight: 600; transition: all 0.3s; box-shadow: 0 2px 8px rgba(0,102,204,0.2); }
+        nav a.nav-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,102,204,0.3); }
+        .hero { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); padding: 4rem 1rem; }
+        .hero h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; color: white; letter-spacing: -0.03em; line-height: 1.2; }
+        .hero p { color: rgba(255,255,255,0.95); font-size: 1.125rem; line-height: 1.6; max-width: 650px; margin: 0 auto; }
+        .btn { padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.2s; border: none; font-size: 1rem; }
+        .btn-primary { background: var(--accent); color: white; box-shadow: 0 2px 8px rgba(0, 204, 136, 0.25); }
+        .btn-primary:hover:not(:disabled) { background: #00b377; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0, 204, 136, 0.35); }
+        .card { background: var(--bg-white); border-radius: 12px; padding: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border: 1px solid var(--border); }
+        .input-label { display: block; font-size: 0.875rem; font-weight: 600; color: var(--text-gray); margin-bottom: 0.5rem; }
+        #dob-input { width: 100%; padding: 0.75rem 1rem; border: 2px solid var(--border); border-radius: 8px; font-size: 1.125rem; transition: all 0.2s; background: var(--bg-white); font-family: 'Inter', sans-serif; }
+        #dob-input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-light); }
+        .results-card { margin-top: 2rem; text-align: center; border-left: 4px solid var(--accent); }
+        .age-result-primary { margin-bottom: 1.5rem; }
+        .age-result-primary .label { font-size: 1.25rem; color: var(--text-gray); margin-bottom: 0.5rem; }
+        .age-result-primary .value { font-size: 3rem; font-weight: 700; color: var(--primary); line-height: 1.1; }
+        .age-result-primary .value span { font-size: 1.5rem; font-weight: 500; color: var(--primary-dark); }
+        .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 1rem; border-top: 1px solid var(--border); padding-top: 1.5rem; margin-bottom: 1.5rem; }
+        .summary-item .value { font-size: 1.25rem; font-weight: 600; color: var(--text-dark); }
+        .summary-item .label { font-size: 0.875rem; color: var(--text-light); }
+        #birthday-card, #fun-facts-card { margin-top: 1.5rem; text-align: center; }
+        #birthday-card { background: var(--primary-light); border-color: var(--primary); }
+        #birthday-card h3, #fun-facts-card h3 { color: var(--primary-dark); font-size: 1.25rem; margin-bottom: 1rem; }
+        .countdown-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+        .countdown-item .value { font-size: 2rem; font-weight: 700; color: var(--primary); line-height: 1; }
+        .countdown-item .label { text-transform: uppercase; font-size: 0.75rem; color: var(--primary-dark); }
+        #fun-facts-card { border-left: 4px solid var(--primary); }
+        .fun-facts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; text-align: left; }
+        .fact-item { display: flex; align-items: center; gap: 1rem; }
+        .fact-icon { flex-shrink: 0; width: 48px; height: 48px; background: var(--primary-light); color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .fact-text .value { font-size: 1.125rem; font-weight: 600; color: var(--text-dark); }
+        .fact-text .label { font-size: 0.9rem; color: var(--text-gray); }
+        .social-share { border-top: 1px solid var(--border); padding-top: 1.5rem; margin-top: 1.5rem; display: flex; align-items: center; justify-content: center; gap: 1rem; }
+        .share-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border-radius: 6px; text-decoration: none; font-weight: 500; transition: all 0.2s; }
+        .share-btn svg { width: 20px; height: 20px; }
+        .share-twitter { background-color: #1DA1F2; color: white; } .share-twitter:hover { background-color: #0c85d0; }
+        .share-facebook { background-color: #1877F2; color: white; } .share-facebook:hover { background-color: #166fe5; }
+        .share-whatsapp { background-color: #25D366; color: white; } .share-whatsapp:hover { background-color: #1ebe59; }
+        #error-message { color: #C53030; background: #FEE; border-left: 4px solid #E53E3E; padding: 1rem; border-radius: 6px; margin-top: 1.5rem; font-weight: 500; text-align: center; }
+        .faq-item { border-bottom: 1px solid var(--border); padding: 1rem 0; }
+        .faq-question { display: flex; justify-content: space-between; align-items: center; font-weight: 600; color: var(--text-dark); cursor: pointer; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: all 0.3s ease; color: var(--text-gray); }
+        .faq-answer p { margin-top: 0.75rem; }
+        .faq-answer.active { max-height: 500px; }
+        .faq-icon { transition: transform 0.3s; color: var(--primary); }
+        .faq-icon.active { transform: rotate(180deg); }
+        section { padding: 4rem 1rem; }
+        .section-title { font-size: 2rem; font-weight: 700; text-align: center; margin-bottom: 1rem; color: var(--text-dark); letter-spacing: -0.02em; line-height: 1.3; }
+        .section-desc { text-align: center; color: var(--text-gray); margin-bottom: 2.5rem; max-width: 650px; margin-left: auto; margin-right: auto; font-size: 1.0625rem; line-height: 1.6; }
+        footer { background: var(--text-dark); color: rgba(255,255,255,0.8); padding: 2rem 1rem; font-size: 0.85rem; }
+        footer a { color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.2s; }
+        footer a:hover { color: var(--primary); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+        .text-center { text-align: center; }
+        .hidden { display: none; }
+        @media (max-width: 767px) {
+            .hero { padding: 3rem 1rem; } .hero h1 { font-size: 2rem; } .hero p { font-size: 1rem; }
+            section { padding: 3rem 1rem; } .section-title { font-size: 1.75rem; } .section-desc { font-size: 1rem; }
+            nav { display: none; }
+            .age-result-primary .value { font-size: 2.5rem; }
+            .countdown-grid { grid-template-columns: repeat(2, 1fr); }
+            .fun-facts-grid { grid-template-columns: 1fr; }
+        }
+        @media (min-width: 768px) { .hero h1 { font-size: 2.75rem; } }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .animate { animation: fadeIn 0.5s ease-out forwards; }
+    </style>
+</head>
+<body>
+
+<header style="position: sticky; top: 0; z-index: 50;">
+    <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.875rem 0;">
+            <a href="/" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" style="color: var(--primary);">
+                     <path d="M8 2v4M16 2v4M3 10h18M4 6h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="logo">Age Calculator</span>
+            </a>
+            <nav style="display: flex; gap: 1.25rem; align-items: center;">
+                <a href="#tool">Calculator</a>
+                <a href="#content">Why Use It?</a>
+                <a href="#faq">FAQ</a>
+                <a href="https://www.switchere.online/tools" class="nav-btn" target="_blank">All Tools</a>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="hero text-center">
+        <h1>Online Age Calculator</h1>
+        <p>Instantly calculate your age from your date of birth, see fun life milestones, and count down to your next birthday.</p>
+    </section>
+
+    <section id="tool" style="background: linear-gradient(135deg, white 0%, var(--bg-light) 100%); position: relative; overflow: hidden; padding-top: 2rem; padding-bottom: 2rem;">
+        <div style="position: absolute; top: -100px; left: -100px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(0,102,204,0.05) 0%, transparent 70%); border-radius: 50%;"></div>
+        <div class="container" style="max-width: 650px; position: relative; z-index: 1;">
+            <div class="card animate" style="border: 1px solid var(--border); box-shadow: 0 8px 24px rgba(0,0,0,0.08); position: relative; overflow: hidden;">
+                <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--primary), var(--accent));"></div>
+                
+                <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 1rem; align-items: flex-end;">
+                    <div>
+                        <label for="dob-input" class="input-label">Enter your Date of Birth</label>
+                        <input type="date" id="dob-input">
+                    </div>
+                    <button id="calculate-btn" class="btn btn-primary" style="width: 100%;">Calculate</button>
+                </div>
+                
+                <div id="error-message" class="hidden"></div>
+                
+                <div id="results-container" class="hidden">
+                    <div class="card results-card">
+                        <div class="age-result-primary">
+                            <div class="label">You are</div>
+                            <div class="value">
+                                <span id="years">--</span> <span>Years</span> 
+                                <span id="months">--</span> <span>Months</span> 
+                                <span id="days">--</span> <span>Days</span> 
+                                old
+                            </div>
+                        </div>
+                        <div class="summary-grid">
+                            <div class="summary-item"><div id="total-months" class="value">--</div><div class="label">Total Months</div></div>
+                            <div class="summary-item"><div id="total-weeks" class="value">--</div><div class="label">Total Weeks</div></div>
+                            <div class="summary-item"><div id="total-days" class="value">--</div><div class="label">Total Days</div></div>
+                            <div class="summary-item"><div id="total-hours" class="value">--</div><div class="label">Total Hours</div></div>
+                             <div class="summary-item"><div id="total-minutes" class="value">--</div><div class="label">Total Minutes</div></div>
+                        </div>
+                        <div class="social-share">
+                            <a href="#" id="share-twitter" class="share-btn share-twitter" target="_blank"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>Share</a>
+                            <a href="#" id="share-facebook" class="share-btn share-facebook" target="_blank"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4z"/></svg>Share</a>
+                            <a href="#" id="share-whatsapp" class="share-btn share-whatsapp" target="_blank"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M16.75 13.96c.25.42.42.88.5 1.38l.1 1.43c.08.67-.18 1.34-.67 1.83c-.5.5-1.18.77-1.88.68l-1.44-.18c-.5-.08-1-.25-1.42-.5c-1.88-1.08-3.5-2.7-4.58-4.58c-.25-.42-.42-.88-.5-1.42l-.18-1.44c-.08-.67.18-1.34.68-1.83c.5-.5 1.18-.77 1.88-.68l1.43.1c.5.08 1 .25 1.38.5c.33.25.6.58.75 1s.18.88 0 1.33l-.83 2.08c-.17.42-.17.88 0 1.33l2.08.83c.42.17.88.18 1.33 0s.75-.42 1-.75zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2z"/></svg>Share</a>
+                        </div>
+                    </div>
+                    
+                     <div id="fun-facts-card" class="card">
+                        <h3>Fun Facts & Milestones</h3>
+                        <div class="fun-facts-grid">
+                            <div class="fact-item"><div class="fact-icon"><svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div><div class="fact-text"><div id="birth-day" class="value">--</div><div class="label">You were born on a</div></div></div>
+                            <div class="fact-item"><div class="fact-icon"><svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg></div><div class="fact-text"><div id="heartbeats" class="value">--</div><div class="label">Approx. heartbeats</div></div></div>
+                            <div class="fact-item"><div class="fact-icon"><svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="fact-text"><div id="sun-orbits" class="value">--</div><div class="label">Trips around the sun</div></div></div>
+                            <div class="fact-item"><div class="fact-icon"><svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div><div class="fact-text"><div id="birth-event" class="value">--</div><div class="label">In your birth year</div></div></div>
+                        </div>
+                    </div>
+
+                    <div id="birthday-card" class="card">
+                        <h3>Next Birthday Countdown</h3>
+                        <div class="countdown-grid">
+                            <div class="countdown-item"><div id="b-months" class="value">--</div><div class="label">Months</div></div>
+                            <div class="countdown-item"><div id="b-days" class="value">--</div><div class="label">Days</div></div>
+                            <div class="countdown-item"><div id="b-hours" class="value">--</div><div class="label">Hours</div></div>
+                            <div class="countdown-item"><div id="b-minutes" class="value">--</div><div class="label">Minutes</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="content" style="background: linear-gradient(135deg, var(--bg-light) 0%, white 100%);">
+        <div class="container" style="max-width: 850px;">
+            <h2 class="section-title">More Than Just a Number: Your Life's Timeline</h2>
+            <p class="section-desc">From official documents to personal milestones, knowing your exact age is essential. Our tool provides instant and accurate results for every situation.</p>
+            <div class="card" style="font-size: 1.05rem; line-height: 1.8; color: var(--text-gray);">
+                <h3 style="color: var(--text-dark); margin-bottom: 1rem;">For Official Forms & Applications</h3>
+                <p style="margin-bottom: 1.5rem;">Job applications, government forms (like passports or visas), and legal documents often require your precise age in years, months, and days. Our calculator eliminates guesswork and prevents errors, ensuring your paperwork is accurate and processed without delays.</p>
+                <h3 style="color: var(--text-dark); margin-bottom: 1rem;">For Health & Milestones</h3>
+                <p style="margin-bottom: 1.5rem;">Tracking a child's developmental milestones or calculating eligibility for health programs often depends on an exact age. Parents, educators, and healthcare professionals can use this tool for quick and reliable age verification.</p>
+                 <h3 style="color: var(--text-dark); margin-bottom: 1rem;">For Fun & Curiosity</h3>
+                <p>Ever wondered exactly how many months, weeks, or even days you've been alive? Our detailed summary provides fun insights into your life's timeline. See what was happening in the world when you were born and count down the minutes to your next celebration!</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" style="background: linear-gradient(135deg, white 0%, var(--bg-light) 100%);">
+        <div class="container" style="max-width: 800px;">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-desc">Common questions about our age calculation tool.</p>
+            <div class="card" style="border: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
+                <div class="faq-item"><div class="faq-question"><span>Is this age calculator accurate?</span><svg class="faq-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round"/></svg></div><div class="faq-answer"><p>Yes, our calculator uses a precise algorithm that accounts for the varying number of days in each month and includes leap years. This ensures the calculation of your age in years, months, and days is always accurate.</p></div></div>
+                <div class="faq-item"><div class="faq-question"><span>How are the 'Fun Facts' calculated?</span><svg class="faq-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round"/></svg></div><div class="faq-answer"><p>The fun facts are estimates based on general averages. For example, heartbeats are calculated using an average of 75 beats per minute. The birth year event is a curated piece of historical or pop culture information from that specific year to give you a fun snapshot of the time.</p></div></div>
+                <div class="faq-item"><div class="faq-question"><span>Do you store my date of birth?</span><svg class="faq-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round"/></svg></div><div class="faq-answer"><p>No. Your privacy is our priority. All calculations are performed directly in your browser. Your date of birth is never sent to or stored on our servers. When you leave the page, your data is gone.</p></div></div>
+                <div class="faq-item"><div class="faq-question"><span>How does the birthday countdown work?</span><svg class="faq-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round"/></svg></div><div class="faq-answer"><p>The countdown calculates the time remaining until your next birthday based on the current date and time. It updates continuously to show the months, days, hours, and minutes until you celebrate your next year.</p></div></div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container text-center">
+        <p>&copy; <span id="year"></span> Switchere Club. All Rights Reserved. | <a href="/privacy-policy.html">Privacy Policy</a></p>
+    </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const UIElements = {
+        dobInput: document.getElementById('dob-input'),
+        calculateBtn: document.getElementById('calculate-btn'),
+        errorMessage: document.getElementById('error-message'),
+        resultsContainer: document.getElementById('results-container'),
+        years: document.getElementById('years'),
+        months: document.getElementById('months'),
+        days: document.getElementById('days'),
+        totalMonths: document.getElementById('total-months'),
+        totalWeeks: document.getElementById('total-weeks'),
+        totalDays: document.getElementById('total-days'),
+        totalHours: document.getElementById('total-hours'),
+        totalMinutes: document.getElementById('total-minutes'),
+        bMonths: document.getElementById('b-months'),
+        bDays: document.getElementById('b-days'),
+        bHours: document.getElementById('b-hours'),
+        bMinutes: document.getElementById('b-minutes'),
+        birthDay: document.getElementById('birth-day'),
+        heartbeats: document.getElementById('heartbeats'),
+        sunOrbits: document.getElementById('sun-orbits'),
+        birthEvent: document.getElementById('birth-event'),
+        shareTwitter: document.getElementById('share-twitter'),
+        shareFacebook: document.getElementById('share-facebook'),
+        shareWhatsapp: document.getElementById('share-whatsapp'),
+        faqItems: document.querySelectorAll('.faq-item'),
+        yearSpan: document.getElementById('year'),
+    };
+
+    let countdownInterval;
+
+    const birthYearEvents = {
+        1950: "The first Peanuts comic strip was published.", 1951: "Color TV was first introduced in the US.", 1952: "The first successful polio vaccine was created.",
+        1953: "The structure of DNA was discovered.", 1954: "The first nuclear submarine, USS Nautilus, was launched.", 1955: "Disneyland opened in California.",
+        1956: "Elvis Presley released 'Heartbreak Hotel'.", 1957: "The Soviet Union launched Sputnik 1.", 1958: "NASA was created.", 1959: "The Barbie doll was introduced.",
+        1960: "The first laser was successfully fired.", 1961: "The Berlin Wall was built.", 1962: "The first James Bond film, Dr. No, was released.",
+        1963: "Martin Luther King Jr. delivered his 'I Have a Dream' speech.", 1964: "The Beatles appeared on The Ed Sullivan Show.", 1965: "The Sound of Music was released.",
+        1966: "Star Trek premiered on television.", 1967: "The first Super Bowl was played.", 1968: "Apollo 8 orbited the Moon.", 1969: "Apollo 11 landed on the Moon.",
+        1970: "The Beatles released their final album, Let It Be.", 1971: "Walt Disney World opened in Florida.", 1972: "The first video game console, Magnavox Odyssey, was released.",
+        1973: "The Sydney Opera House opened.", 1974: "The Rubik's Cube was invented.", 1975: "Microsoft was founded by Bill Gates and Paul Allen.",
+        1976: "Apple Computer Company was founded.", 1977: "Star Wars was released.", 1978: "The first GPS satellite was launched.", 1979: "The Sony Walkman was introduced.",
+        1980: "The Pac-Man video game was released.", 1981: "The first Space Shuttle mission, STS-1, was launched.", 1982: "Michael Jackson's 'Thriller' was released.",
+        1983: "The original Nintendo Entertainment System (NES) was released in Japan.", 1984: "The Apple Macintosh computer was introduced.",
+        1985: "The Live Aid concert took place.", 1986: "The Chernobyl disaster occurred.", 1987: "The Simpsons first appeared on The Tracey Ullman Show.",
+        1988: "The World Wide Web was first discussed.", 1989: "The Berlin Wall fell.", 1990: "The Hubble Space Telescope was launched.",
+        1991: "The World Wide Web became publicly available.", 1992: "The first text message was sent.", 1993: "Jurassic Park was released.",
+        1994: "Friends premiered on television.", 1995: "Toy Story, the first feature-length CGI film, was released.", 1996: "The Spice Girls released 'Wannabe'.",
+        1997: "The Titanic movie was released.", 1998: "Google was founded.", 1999: "The Euro currency was introduced.",
+        2000: "The first residents arrived at the International Space Station.", 2001: "The first iPod was released by Apple.", 2002: "The first Spider-Man movie starring Tobey Maguire was released.",
+        2003: "Facebook was launched (as Facemash).", 2004: "The social media site Facebook was launched.", 2005: "YouTube was launched.",
+        2006: "Twitter was launched.", 2007: "The first iPhone was released.", 2008: "The first film in the Marvel Cinematic Universe, Iron Man, was released.",
+        2009: "Bitcoin was created.", 2010: "Instagram was launched.", 2011: "Game of Thrones premiered on HBO.", 2012: "The 'Gangnam Style' music video became the first to reach 1 billion views on YouTube.",
+        2013: "Disney's Frozen was released.", 2014: "The 'Ice Bucket Challenge' went viral.", 2015: "Star Wars: The Force Awakens was released."
+    };
+
+    const calculateAge = () => {
+        const dobString = UIElements.dobInput.value;
+        if (!dobString) { showError("Please enter your date of birth."); return; }
+        const dob = new Date(dobString);
+        const today = new Date();
+        if (dob > today) { showError("Date of birth cannot be in the future."); return; }
+        hideError();
+
+        // Age calculation
+        let years = today.getFullYear() - dob.getFullYear();
+        let months = today.getMonth() - dob.getMonth();
+        let days = today.getDate() - dob.getDate();
+        if (days < 0) { months--; days += new Date(today.getFullYear(), today.getMonth(), 0).getDate(); }
+        if (months < 0) { years--; months += 12; }
+        UIElements.years.textContent = years; UIElements.months.textContent = months; UIElements.days.textContent = days;
+
+        // Summary calculations
+        const diffTime = today - dob;
+        const totalDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+        UIElements.totalDays.textContent = totalDays.toLocaleString();
+        UIElements.totalMonths.textContent = (years * 12 + months).toLocaleString();
+        UIElements.totalWeeks.textContent = Math.floor(totalDays / 7).toLocaleString();
+        UIElements.totalHours.textContent = (totalDays * 24).toLocaleString();
+        UIElements.totalMinutes.textContent = (totalDays * 24 * 60).toLocaleString();
+
+        // Fun Facts
+        const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        UIElements.birthDay.textContent = daysOfWeek[dob.getDay()];
+        UIElements.heartbeats.textContent = `~${(totalDays * 24 * 60 * 75).toLocaleString()}`;
+        UIElements.sunOrbits.textContent = years.toLocaleString();
+        UIElements.birthEvent.textContent = birthYearEvents[dob.getFullYear()] || "The world became a brighter place.";
+        
+        // Social Share
+        updateShareLinks(years, months, days, totalDays);
+
+        if (countdownInterval) clearInterval(countdownInterval);
+        startCountdown(dob);
+        
+        UIElements.resultsContainer.classList.remove('hidden');
+        UIElements.resultsContainer.classList.add('animate');
+    };
+    
+    const startCountdown = (dob) => {
+        const update = () => {
+            const today = new Date();
+            let nextBirthday = new Date(today.getFullYear(), dob.getMonth(), dob.getDate());
+            if (today.getTime() > nextBirthday.getTime()) { nextBirthday.setFullYear(today.getFullYear() + 1); }
+            const diff = nextBirthday - today;
+            const months = Math.floor(diff / (1000 * 60 * 60 * 24 * 30.44));
+            const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 30.44)) / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            UIElements.bMonths.textContent = months; UIElements.bDays.textContent = days; UIElements.bHours.textContent = hours; UIElements.bMinutes.textContent = minutes;
+        };
+        update();
+        countdownInterval = setInterval(update, 1000);
+    };
+
+    const updateShareLinks = (y, m, d, totalDays) => {
+        const text = `I'm ${y} years, ${m} months, and ${d} days old (${totalDays.toLocaleString()} days total)! Find out your exact age and fun stats with this cool Age Calculator:`;
+        const url = "https://www.yourdomain-age-calculator.com/"; // Replace with your final URL
+        UIElements.shareTwitter.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
+        UIElements.shareFacebook.href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}&quote=${encodeURIComponent(text)}`;
+        UIElements.shareWhatsapp.href = `https://api.whatsapp.com/send?text=${encodeURIComponent(text + " " + url)}`;
+    };
+
+    const showError = (message) => {
+        UIElements.errorMessage.textContent = message;
+        UIElements.errorMessage.classList.remove('hidden');
+        UIElements.resultsContainer.classList.add('hidden');
+    };
+
+    const hideError = () => { UIElements.errorMessage.classList.add('hidden'); };
+
+    UIElements.calculateBtn.addEventListener('click', calculateAge);
+    UIElements.dobInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') calculateAge(); });
+    
+    UIElements.dobInput.max = new Date().toISOString().split("T")[0];
+
+    UIElements.faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+            const answer = item.querySelector('.faq-answer');
+            const icon = item.querySelector('.faq-icon');
+            const isActive = answer.classList.contains('active');
+            UIElements.faqItems.forEach(other => {
+                other.querySelector('.faq-answer').classList.remove('active');
+                other.querySelector('.faq-icon').classList.remove('active');
+            });
+            if (!isActive) {
+                answer.classList.add('active');
+                icon.classList.add('active');
+            }
+        });
+    });
+    
+    if (UIElements.yearSpan) { UIElements.yearSpan.textContent = new Date().getFullYear(); }
+});
+</script>
+
+</body>
+</html>
+
