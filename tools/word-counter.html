@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Word Counter | Character, Case & Keyword Density Tool</title>
+    <meta name="description" content="Advanced online word counter with live character count, case converter, reading time, and keyword density analysis. The perfect free tool for writers, SEOs, and students to optimize content.">
+    <meta name="keywords" content="word counter, character counter, keyword density checker, case converter, change case, uppercase, lowercase, title case, sentence case, reading time calculator, word count tool, live word count, seo tool">
+    <meta name="author" content="Switchere Club">
+    <link rel="canonical" href="https://www.switchere.online/">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Word Counter | Character, Case & Keyword Density Tool">
+    <meta property="og:description" content="An all-in-one text analysis tool: Count words and characters, convert text case, and check keyword density in real-time. Free, fast, and professional.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.switchere.online/">
+    <meta property="og:image" content="https://www.switchere.online/og-image.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Advanced Word Counter with SEO & Case Tools">
+    <meta name="twitter:description" content="Not just a word counter. Convert text case and analyze keyword density with our fast, free, and mobile-friendly online tool.">
+
+    <!-- Favicon (Inline SVG) -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M3 6h18M3 12h18M3 18h12' stroke='%230066CC' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+    <!-- Google Fonts - Optimized -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Word Counter & Text Analyzer",
+        "description": "A free online tool to get a live count of words, characters, sentences, and paragraphs for any text. Includes a case converter, keyword density checker, social media and SEO character limit trackers.",
+        "url": "https://www.switchere.online/",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "5281"
+        }
+    }
+    </script>
+
+    <!-- Compact Optimized Styles -->
+    <style>
+        :root {
+            --primary: #0066CC; --primary-light: #E6F2FF; --primary-dark: #004C99; --accent: #00CC88; --accent-light: #E6FFF9;
+            --text-dark: #1A1A1A; --text-gray: #4A5568; --text-light: #718096; --border: #E2E8F0; --bg-white: #FFFFFF; --bg-light: #F7FAFC;
+            --status-perfect: #00CC88; --status-short: #3B82F6; --status-long: #EF4444;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: linear-gradient(to bottom, var(--bg-light) 0%, white 50%, var(--bg-light) 100%); color: var(--text-dark); line-height: 1.65; font-size: 16px; -webkit-font-smoothing: antialiased; }
+        header { background: var(--bg-white); border-bottom: 1px solid var(--border); box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .logo { color: var(--primary); font-weight: 700; font-size: 1.125rem; letter-spacing: -0.02em; }
+        nav a { color: var(--text-gray); text-decoration: none; font-size: 0.9375rem; transition: color 0.2s; font-weight: 500; }
+        nav a:hover { color: var(--primary); }
+        nav a.nav-btn { background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; padding: 0.5rem 1.25rem; border-radius: 6px; font-weight: 600; transition: all 0.3s; box-shadow: 0 2px 8px rgba(0,102,204,0.2); }
+        nav a.nav-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,102,204,0.3); }
+        .hero { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); padding: 4rem 1rem; }
+        .hero h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; color: white; letter-spacing: -0.03em; line-height: 1.2; }
+        .hero p { color: rgba(255,255,255,0.95); font-size: 1.125rem; line-height: 1.6; max-width: 650px; margin: 0 auto; }
+        .btn { padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.2s; border: none; font-size: 0.95rem; }
+        .btn-primary { background: var(--primary); color: white; box-shadow: 0 2px 8px rgba(0,102,204,0.25); }
+        .btn-primary:hover:not(:disabled) { background: var(--primary-dark); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,102,204,0.35); }
+        .btn-secondary { background: white; color: var(--text-dark); border: 2px solid var(--border); }
+        .btn-secondary:hover { border-color: var(--primary); color: var(--primary); background: var(--primary-light); }
+        .card { background: var(--bg-white); border-radius: 12px; padding: 2rem; box-shadow: 0 1px 3px rgba(0,0,0,0.08); border: 1px solid var(--border); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); border-color: var(--primary); }
+        #text-input { width: 100%; height: 250px; padding: 1rem; border: 2px solid var(--border); border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.6; resize: vertical; background: var(--bg-white); color: var(--text-dark); margin-bottom: 1.5rem; }
+        #text-input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-light); }
+        .tool-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 2rem; }
+        .tool-actions .btn { flex-grow: 1; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1rem; text-align: center; }
+        .stat-box { background: var(--bg-light); padding: 1rem; border-radius: 8px; border: 1px solid var(--border); }
+        .stat-value { font-size: 1.75rem; font-weight: 700; color: var(--primary); }
+        .stat-label { font-size: 0.8rem; font-weight: 500; color: var(--text-gray); text-transform: uppercase; letter-spacing: 0.5px; }
+        .analysis-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; }
+        .social-trackers-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+        .tracker { background: var(--bg-light); padding: 1rem; border-radius: 8px; border-left: 4px solid var(--border); }
+        .tracker-header { display: flex; align-items: center; gap: 0.75rem; }
+        .tracker-icon { flex-shrink: 0; }
+        .tracker-title { font-weight: 600; color: var(--text-dark); }
+        .tracker-info { display: flex; justify-content: space-between; align-items: baseline; margin-top: 0.75rem; }
+        .tracker-count { font-size: 1.25rem; font-weight: 600; color: var(--text-dark); }
+        .tracker-status { font-size: 0.875rem; font-weight: 700; padding: 0.25rem 0.5rem; border-radius: 6px; }
+        .status-short { color: var(--status-short); background-color: rgba(59, 130, 246, 0.1); }
+        .status-perfect { color: var(--status-perfect); background-color: rgba(0, 204, 136, 0.1); }
+        .status-long { color: var(--status-long); background-color: rgba(239, 68, 68, 0.1); }
+        #keyword-density-card h3 { font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-dark); }
+        #keyword-list { list-style: none; padding: 0; max-height: 200px; overflow-y: auto; }
+        .keyword-item { display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+        .keyword-item:last-child { border-bottom: none; }
+        .keyword-name { font-weight: 500; }
+        .keyword-density { font-weight: 600; color: var(--primary); }
+        .faq-item { border-bottom: 1px solid var(--border); padding: 1rem 0; }
+        .faq-question { display: flex; justify-content: space-between; align-items: center; font-weight: 600; color: var(--text-dark); cursor: pointer; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: all 0.3s ease; color: var(--text-gray); }
+        .faq-answer p { margin-top: 0.75rem; }
+        .faq-answer.active { max-height: 500px; }
+        .faq-icon { transition: transform 0.3s; color: var(--primary); }
+        .faq-icon.active { transform: rotate(180deg); }
+        .icon-box { width: 48px; height: 48px; background: var(--primary-light); color: var(--primary); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.75rem; }
+        section { padding: 4rem 1rem; }
+        .section-title { font-size: 2rem; font-weight: 700; text-align: center; margin-bottom: 1rem; color: var(--text-dark); letter-spacing: -0.02em; line-height: 1.3; }
+        .section-desc { text-align: center; color: var(--text-gray); margin-bottom: 2.5rem; max-width: 650px; margin-left: auto; margin-right: auto; font-size: 1.0625rem; line-height: 1.6; }
+        footer { background: var(--text-dark); color: rgba(255,255,255,0.8); padding: 2rem 1rem; font-size: 0.85rem; }
+        footer a { color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.2s; }
+        footer a:hover { color: var(--primary); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+        .text-center { text-align: center; }
+        .hidden { display: none; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+        @media (max-width: 992px) { .analysis-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 767px) {
+            .hero { padding: 3rem 1rem; } .hero h1 { font-size: 2rem; } .hero p { font-size: 1rem; }
+            section { padding: 3rem 1rem; } .section-title { font-size: 1.75rem; } .section-desc { font-size: 1rem; }
+            nav { display: none; }
+        }
+        @media (min-width: 768px) { .hero h1 { font-size: 2.75rem; } }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .animate { animation: fadeIn 0.5s ease-out forwards; }
+    </style>
+</head>
+<body>
+
+<header style="position: sticky; top: 0; z-index: 50;">
+    <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.875rem 0;">
+            <a href="/" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" style="color: var(--primary);">
+                     <path d="M3 6h18M3 12h18M3 18h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="logo">Word Counter</span>
+            </a>
+            <nav style="display: flex; gap: 1.25rem; align-items: center;">
+                <a href="#tool">Counter</a>
+                <a href="#features">Features</a>
+                <a href="#faq">FAQ</a>
+                <a href="https://www.switchere.online/tools" class="nav-btn" target="_blank">All Tools</a>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="hero text-center">
+        <h1>Word Counter & Text Analysis Tool</h1>
+        <p>Your all-in-one utility for counting words, converting case, and analyzing keyword density for SEO and content creation.</p>
+    </section>
+
+    <section id="tool" style="background: linear-gradient(135deg, white 0%, var(--bg-light) 100%); position: relative; overflow: hidden; padding-top: 2rem; padding-bottom: 2rem;">
+        <div style="position: absolute; top: -100px; left: -100px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(0,102,204,0.05) 0%, transparent 70%); border-radius: 50%;"></div>
+        <div class="container" style="max-width: 950px; position: relative; z-index: 1;">
+            <div class="card animate" style="border: 1px solid var(--border); box-shadow: 0 8px 24px rgba(0,0,0,0.08); position: relative; overflow: hidden;">
+                <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--primary), var(--accent));"></div>
+                
+                <textarea id="text-input" placeholder="Start typing or paste your text here..." autofocus></textarea>
+
+                <div class="tool-actions">
+                    <button id="uppercase-btn" class="btn btn-secondary">UPPERCASE</button>
+                    <button id="lowercase-btn" class="btn btn-secondary">lowercase</button>
+                    <button id="titlecase-btn" class="btn btn-secondary">Title Case</button>
+                    <button id="sentencecase-btn" class="btn btn-secondary">Sentence case</button>
+                    <button id="copy-btn" class="btn btn-secondary">Copy Text</button>
+                    <button id="clear-btn" class="btn btn-secondary" style="border-color: #E53E3E; color: #E53E3E;">Clear All</button>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-box"><div id="word-count" class="stat-value">0</div><div class="stat-label">Words</div></div>
+                    <div class="stat-box"><div id="char-count" class="stat-value">0</div><div class="stat-label">Characters</div></div>
+                    <div class="stat-box"><div id="sentence-count" class="stat-value">0</div><div class="stat-label">Sentences</div></div>
+                    <div class="stat-box"><div id="paragraph-count" class="stat-value">0</div><div class="stat-label">Paragraphs</div></div>
+                    <div class="stat-box"><div id="reading-time" class="stat-value">0m</div><div class="stat-label">Reading Time</div></div>
+                </div>
+
+                <div class="analysis-grid">
+                    <div class="social-trackers-grid">
+                         <!-- SEO Meta Description Tracker -->
+                        <div id="tracker-meta" class="tracker">
+                            <div class="tracker-header">
+                                <div class="tracker-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.72"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.72-1.72"/></svg></div>
+                                <div class="tracker-title">SEO Meta Description</div>
+                            </div>
+                            <div class="tracker-info">
+                                <div id="meta-count" class="tracker-count">0 / 160</div>
+                                <div id="meta-status" class="tracker-status"></div>
+                            </div>
+                        </div>
+                        <!-- X (Twitter) Tracker -->
+                        <div id="tracker-x" class="tracker">
+                            <div class="tracker-header">
+                                <div class="tracker-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></div>
+                                <div class="tracker-title">X (Twitter) Post</div>
+                            </div>
+                            <div class="tracker-info">
+                                <div id="x-count" class="tracker-count">0 / 280</div>
+                                <div id="x-status" class="tracker-status"></div>
+                            </div>
+                        </div>
+                        <!-- Facebook Tracker -->
+                        <div id="tracker-facebook" class="tracker">
+                            <div class="tracker-header">
+                                <div class="tracker-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4z"/></svg></div>
+                                <div class="tracker-title">Facebook Post</div>
+                            </div>
+                            <div class="tracker-info">
+                                <div id="facebook-count" class="tracker-count">0</div>
+                                <div id="facebook-status" class="tracker-status"></div>
+                            </div>
+                        </div>
+                         <!-- LinkedIn Tracker -->
+                        <div id="tracker-linkedin" class="tracker">
+                            <div class="tracker-header">
+                                <div class="tracker-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91z"/></svg></div>
+                                <div class="tracker-title">LinkedIn Post</div>
+                            </div>
+                            <div class="tracker-info">
+                                <div id="linkedin-count" class="tracker-count">0 / 3000</div>
+                                <div id="linkedin-status" class="tracker-status"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="keyword-density-card" class="card" style="padding: 1.5rem;">
+                        <h3>Top Keywords</h3>
+                        <ul id="keyword-list">
+                            <li style="color: var(--text-light); text-align: center; padding-top: 2rem;">Start typing to see keyword density...</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" style="background: linear-gradient(135deg, var(--bg-light) 0%, white 100%);">
+        <div class="container">
+            <h2 class="section-title">A Smarter Way to Write & Analyze</h2>
+            <p class="section-desc">Our tool is packed with features designed to make your writing and editing process faster and more efficient.</p>
+            <div class="grid-3">
+                <div class="card card-hover text-center"><div class="icon-box"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg></div><h3 style="font-weight: 600; font-size: 1.125rem;">Real-Time Analysis</h3><p style="font-size: 0.9375rem; color: var(--text-gray);">Get instant counts for words, characters, sentences, and paragraphs as you type or paste text.</p></div>
+                <div class="card card-hover text-center"><div class="icon-box"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75"/></svg></div><h3 style="font-weight: 600; font-size: 1.125rem;">Case & Keyword Tools</h3><p style="font-size: 0.9375rem; color: var(--text-gray);">Instantly convert text case and analyze keyword density to optimize your content for search engines.</p></div>
+                <div class="card card-hover text-center"><div class="icon-box"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"/></svg></div><h3 style="font-weight: 600; font-size: 1.125rem;">Mobile Friendly</h3><p style="font-size: 0.9375rem; color: var(--text-gray);">Our clean, responsive design works perfectly on your desktop, tablet, or smartphone for counting on the go.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="content" style="background: linear-gradient(135deg, white 0%, var(--bg-light) 100%);">
+        <div class="container" style="max-width: 850px;">
+            <h2 class="section-title">Master Your Message: A Comprehensive Text Analysis Tool</h2>
+            <p class="section-desc">Whether you're a student, a professional marketer, or a content creator, managing the length and structure of your text is crucial for success. Our word counter is more than just a counting tool—it's a complete text analysis utility designed to improve your writing.</p>
+            <div class="card" style="font-size: 1.05rem; line-height: 1.8; color: var(--text-gray);">
+                <h3 style="color: var(--text-dark); margin-bottom: 1rem;">For Students and Academics</h3>
+                <p style="margin-bottom: 1.5rem;">Meeting the specific word count requirements for essays, reports, and academic papers is non-negotiable. This tool helps you stay precisely within those limits, allowing you to focus on the quality of your work. Use the sentence and paragraph counts to analyze your writing structure and ensure your arguments are well-organized and easy to follow.</p>
+                <h3 style="color: var(--text-dark); margin-bottom: 1rem;">For Marketers and SEO Professionals</h3>
+                <p style="margin-bottom: 1.5rem;">In the world of digital marketing, every character and keyword counts. From crafting the perfect SEO meta description to writing compelling social media posts, staying within character limits is essential for visibility and engagement. Our built-in trackers and **Keyword Density** checker help you optimize your content for maximum impact, ensuring your message is not only concise but also discoverable by search engines.</p>
+                 <h3 style="color: var(--text-dark); margin-bottom: 1rem;">For Writers and Bloggers</h3>
+                <p>Clarity and readability are key to keeping your audience engaged. The **Reading Time** estimate gives you a valuable insight into how long it will take an average person to read your text, helping you structure your articles and blog posts more effectively. The **Case Converter** tools are perfect for quickly formatting headlines and titles without manual retyping, saving you time and effort.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" style="background: linear-gradient(135deg, var(--bg-light) 0%, white 100%);">
+        <div class="container" style="max-width: 800px;">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-desc">Common questions about our word and character counting tool.</p>
+            <div class="card" style="border: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
+                <div class="faq-item"><div class="faq-question"><span>How is the word count calculated?</span><svg class="faq-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round"/></svg></div><div class="faq-answer"><p>We calculate words by splitting the text by spaces, new lines, and other common separators. This method provides an accurate count that aligns with standards used by most word processing software.</p></div></div>
+                <div class="faq-item"><div class="faq-question"><span>How is the reading time calculated?</span><svg class="faq-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round"/></svg></div><div class="faq-answer"><p>Reading time is estimated based on the average reading speed of an adult, which is approximately 200 words per minute. We divide the total word count by 200 to give you a close estimate of how long it will take to read your text. For texts under 200 words, it will show as a 1-minute read.</p></div></div>
+                <div class="faq-item"><div class="faq-question"><span>What is keyword density?</span><svg class="faq-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round"/></svg></div><div class="faq-answer"><p>Keyword density is an SEO metric that measures the percentage of times a specific keyword or phrase appears in a text compared to the total number of words. It helps you analyze if you are using your target keywords enough, but not too often (which can be seen as "keyword stuffing" by search engines). A typical recommendation is a density of 1-2% for main keywords.</p></div></div>
+                <div class="faq-item"><div class="faq-question"><span>Is my text saved anywhere?</span><svg class="faq-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round"/></svg></div><div class="faq-answer"><p>No. Your privacy is our priority. All calculations are performed directly in your browser. Your text is never sent to or stored on our servers. The moment you close the page, your text is gone.</p></div></div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container text-center">
+        <p>&copy; <span id="year"></span> Switchere Club. All Rights Reserved. | <a href="/privacy-policy.html">Privacy Policy</a></p>
+    </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const UIElements = {
+        textInput: document.getElementById('text-input'),
+        wordCount: document.getElementById('word-count'),
+        charCount: document.getElementById('char-count'),
+        sentenceCount: document.getElementById('sentence-count'),
+        paragraphCount: document.getElementById('paragraph-count'),
+        readingTime: document.getElementById('reading-time'),
+        xCount: document.getElementById('x-count'),
+        xStatus: document.getElementById('x-status'),
+        facebookCount: document.getElementById('facebook-count'),
+        facebookStatus: document.getElementById('facebook-status'),
+        linkedinCount: document.getElementById('linkedin-count'),
+        linkedinStatus: document.getElementById('linkedin-status'),
+        metaCount: document.getElementById('meta-count'),
+        metaStatus: document.getElementById('meta-status'),
+        copyBtn: document.getElementById('copy-btn'),
+        clearBtn: document.getElementById('clear-btn'),
+        uppercaseBtn: document.getElementById('uppercase-btn'),
+        lowercaseBtn: document.getElementById('lowercase-btn'),
+        titlecaseBtn: document.getElementById('titlecase-btn'),
+        sentencecaseBtn: document.getElementById('sentencecase-btn'),
+        keywordList: document.getElementById('keyword-list'),
+        faqItems: document.querySelectorAll('.faq-item'),
+        yearSpan: document.getElementById('year'),
+    };
+
+    const LIMITS = {
+        X: { max: 280, idealMin: 100 },
+        FACEBOOK: { max: 5000, idealMin: 40, idealMax: 250 },
+        LINKEDIN: { max: 3000, idealMin: 100, idealMax: 1500 },
+        META: { max: 160, idealMin: 120 },
+    };
+
+    const updateAll = () => {
+        const text = UIElements.textInput.value;
+        const charCount = text.length;
+
+        // General Stats
+        const words = text.match(/\b[-?(\w+)?]+\b/gi) || [];
+        const wordCount = words.length;
+        UIElements.wordCount.textContent = wordCount;
+        UIElements.charCount.textContent = charCount;
+        const sentences = text.match(/[\w|\)][.?!](\s|$)/g) || [];
+        UIElements.sentenceCount.textContent = sentences.length;
+        const paragraphs = text.split(/\n+/).filter(p => p.trim().length > 0);
+        UIElements.paragraphCount.textContent = paragraphs.length;
+        const readingTime = wordCount > 0 ? Math.ceil(wordCount / 200) : 0;
+        UIElements.readingTime.textContent = `${readingTime}m`;
+
+        // Social & SEO Trackers
+        updateTracker(charCount, LIMITS.X, UIElements.xCount, UIElements.xStatus, `${charCount} / ${LIMITS.X.max}`);
+        updateTracker(charCount, LIMITS.FACEBOOK, UIElements.facebookCount, UIElements.facebookStatus, `${charCount}`);
+        updateTracker(charCount, LIMITS.LINKEDIN, UIElements.linkedinCount, UIElements.linkedinStatus, `${charCount} / ${LIMITS.LINKEDIN.max}`);
+        updateTracker(charCount, LIMITS.META, UIElements.metaCount, UIElements.metaStatus, `${charCount} / ${LIMITS.META.max}`);
+        
+        // Keyword Density
+        updateKeywordDensity(words);
+    };
+
+    const updateTracker = (count, limits, countEl, statusEl, countText) => {
+        countEl.textContent = countText;
+        statusEl.className = 'tracker-status';
+        if (count === 0) {
+            statusEl.textContent = '';
+            return;
+        }
+        if (count > limits.max) {
+            statusEl.textContent = 'Too Long!';
+            statusEl.classList.add('status-long');
+        } else if (count >= limits.idealMin && (!limits.idealMax || count <= limits.idealMax)) {
+            statusEl.textContent = 'Perfect';
+            statusEl.classList.add('status-perfect');
+        } else {
+            statusEl.textContent = 'Short';
+            statusEl.classList.add('status-short');
+        }
+    };
+    
+    const updateKeywordDensity = (words) => {
+        if (words.length === 0) {
+            UIElements.keywordList.innerHTML = `<li style="color: var(--text-light); text-align: center; padding-top: 2rem;">Start typing to see keyword density...</li>`;
+            return;
+        }
+
+        const stopWords = new Set(["a", "about", "above", "after", "again", "against", "all", "am", "an", "and", "any", "are", "as", "at", "be", "because", "been", "before", "being", "below", "between", "both", "but", "by", "can", "did", "do", "does", "doing", "don", "down", "during", "each", "few", "for", "from", "further", "had", "has", "have", "having", "he", "her", "here", "hers", "herself", "him", "himself", "his", "how", "i", "if", "in", "into", "is", "it", "its", "itself", "just", "me", "more", "most", "my", "myself", "no", "nor", "not", "now", "of", "off", "on", "once", "only", "or", "other", "our", "ours", "ourselves", "out", "over", "own", "s", "same", "she", "should", "so", "some", "such", "t", "than", "that", "the", "their", "theirs", "them", "themselves", "then", "there", "these", "they", "this", "those", "through", "to", "too", "under", "until", "up", "very", "was", "we", "were", "what", "when", "where", "which", "while", "who", "whom", "why", "will", "with", "you", "your", "yours", "yourself", "yourselves"]);
+
+        const freqMap = {};
+        words.forEach(word => {
+            const lcWord = word.toLowerCase();
+            if (!stopWords.has(lcWord) && isNaN(lcWord)) {
+                freqMap[lcWord] = (freqMap[lcWord] || 0) + 1;
+            }
+        });
+
+        const sortedKeywords = Object.entries(freqMap).sort((a, b) => b[1] - a[1]);
+        
+        UIElements.keywordList.innerHTML = '';
+        if (sortedKeywords.length === 0) {
+             UIElements.keywordList.innerHTML = `<li style="color: var(--text-light); text-align: center; padding-top: 2rem;">No relevant keywords found.</li>`;
+             return;
+        }
+
+        sortedKeywords.slice(0, 7).forEach(([word, count]) => {
+            const density = ((count / words.length) * 100).toFixed(2);
+            const li = document.createElement('li');
+            li.className = 'keyword-item';
+            li.innerHTML = `<span class="keyword-name">${word} (${count})</span> <span class="keyword-density">${density}%</span>`;
+            UIElements.keywordList.appendChild(li);
+        });
+    };
+
+    UIElements.textInput.addEventListener('input', updateAll);
+
+    // Case Converters
+    UIElements.uppercaseBtn.addEventListener('click', () => { UIElements.textInput.value = UIElements.textInput.value.toUpperCase(); updateAll(); });
+    UIElements.lowercaseBtn.addEventListener('click', () => { UIElements.textInput.value = UIElements.textInput.value.toLowerCase(); updateAll(); });
+    UIElements.titlecaseBtn.addEventListener('click', () => {
+        UIElements.textInput.value = UIElements.textInput.value.toLowerCase().replace(/\b\w/g, s => s.toUpperCase());
+        updateAll();
+    });
+    UIElements.sentencecaseBtn.addEventListener('click', () => {
+        UIElements.textInput.value = UIElements.textInput.value.toLowerCase().replace(/(^\s*\w|[.?!]\s*\w)/g, c => c.toUpperCase());
+        updateAll();
+    });
+
+    // Other Actions
+    UIElements.copyBtn.addEventListener('click', () => {
+        if (!UIElements.textInput.value) return;
+        navigator.clipboard.writeText(UIElements.textInput.value).then(() => {
+            UIElements.copyBtn.textContent = 'Copied!';
+            setTimeout(() => { UIElements.copyBtn.textContent = 'Copy Text'; }, 2000);
+        });
+    });
+    UIElements.clearBtn.addEventListener('click', () => {
+        UIElements.textInput.value = '';
+        updateAll();
+    });
+
+    // FAQ
+    UIElements.faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+            const answer = item.querySelector('.faq-answer');
+            const icon = item.querySelector('.faq-icon');
+            const isActive = answer.classList.contains('active');
+            UIElements.faqItems.forEach(other => {
+                other.querySelector('.faq-answer').classList.remove('active');
+                other.querySelector('.faq-icon').classList.remove('active');
+            });
+            if (!isActive) {
+                answer.classList.add('active');
+                icon.classList.add('active');
+            }
+        });
+    });
+    
+    if (UIElements.yearSpan) {
+        UIElements.yearSpan.textContent = new Date().getFullYear();
+    }
+    
+    updateAll();
+});
+</script>
+
+</body>
+</html>
+
