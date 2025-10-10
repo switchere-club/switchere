@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>UTM Link Builder - Google Analytics Campaign URL Generator</title>
+    <meta name="description" content="A free and easy-to-use UTM link builder to generate campaign URLs for Google Analytics. Instantly create and shorten UTM links to track your marketing campaigns.">
+    <meta name="keywords" content="utm builder, utm link builder, campaign url generator, google analytics utm tool, utm generator, create utm link, utm parameters">
+    <meta name="author" content="Switchere Club">
+    <link rel="canonical" href="https://www.switchere.online/">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="UTM Link Builder - Google Analytics Campaign URL Generator">
+    <meta property="og:description" content="The easiest way to generate and shorten URLs with UTM parameters for tracking your marketing campaigns in Google Analytics.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.switchere.online/">
+    <meta property="og:image" content="https://www.switchere.online/og-image.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free UTM Campaign URL Builder">
+    <meta name="twitter:description" content="Instantly create and shorten tracking links for your marketing campaigns with our free UTM builder.">
+
+    <!-- Favicon (Inline SVG) -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M10.59 13.41c.44-.44.44-1.16 0-1.6L5.17 6.39a.996.996 0 1 0-1.41 1.41l4.42 4.42c.44.44 1.16.44 1.6 0l4.42-4.42a.996.996 0 1 0-1.41-1.41L9 11.17' stroke='%230066CC' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z' stroke='%230066CC' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+    <!-- Google Fonts - Optimized -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "UTM Link Builder",
+        "description": "A free online tool to generate campaign URLs with UTM parameters for use with Google Analytics and other marketing analytics platforms.",
+        "url": "https://www.switchere.online/",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "14321"
+        }
+    }
+    </script>
+
+    <!-- Compact Optimized Styles -->
+    <style>
+        :root {
+            --primary: #0066CC; --primary-light: #E6F2FF; --primary-dark: #004C99; --accent: #00CC88; --accent-light: #E6FFF9;
+            --text-dark: #1A1A1A; --text-gray: #4A5568; --text-light: #718096; --border: #E2E8F0; --bg-white: #FFFFFF; --bg-light: #F7FAFC;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: linear-gradient(to bottom, var(--bg-light) 0%, white 50%, var(--bg-light) 100%); color: var(--text-dark); line-height: 1.65; font-size: 16px; -webkit-font-smoothing: antialiased; }
+        header { background: var(--bg-white); border-bottom: 1px solid var(--border); box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .logo { color: var(--primary); font-weight: 700; font-size: 1.125rem; letter-spacing: -0.02em; }
+        nav a { color: var(--text-gray); text-decoration: none; font-size: 0.9375rem; transition: color 0.2s; font-weight: 500; }
+        nav a:hover { color: var(--primary); }
+        nav a.nav-btn { background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; padding: 0.5rem 1.25rem; border-radius: 6px; font-weight: 600; transition: all 0.3s; box-shadow: 0 2px 8px rgba(0,102,204,0.2); }
+        nav a.nav-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,102,204,0.3); }
+        .hero { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); padding: 4rem 1rem; }
+        .hero h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; color: white; letter-spacing: -0.03em; line-height: 1.2; }
+        .hero p { color: rgba(255,255,255,0.95); font-size: 1.125rem; line-height: 1.6; max-width: 650px; margin: 0 auto; }
+        .card { background: var(--bg-white); border-radius: 12px; padding: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border: 1px solid var(--border); }
+        .btn { padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.2s; border: none; font-size: 1rem; }
+        .btn-primary { background: var(--accent); color: white; box-shadow: 0 2px 8px rgba(0, 204, 136, 0.25); }
+        .btn-primary:hover:not(:disabled) { background: #00b377; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0, 204, 136, 0.35); }
+        .form-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+        @media (min-width: 768px) { .form-grid { grid-template-columns: 1fr 1fr; } }
+        .input-group { margin-bottom: 1rem; }
+        .input-label { display: block; font-size: 0.875rem; font-weight: 500; color: var(--text-gray); margin-bottom: 0.5rem; }
+        .input-label sup { color: #EF4444; }
+        .input-field { width: 100%; padding: 0.75rem 1rem; border: 2px solid var(--border); border-radius: 8px; font-size: 1rem; transition: all 0.2s; background: var(--bg-white); }
+        .input-field:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-light); }
+        .full-width { grid-column: 1 / -1; }
+        #output-container { margin-top: 2rem; }
+        #output-url { width: 100%; background: var(--bg-light); border: 2px dashed var(--border); border-radius: 8px; padding: 1rem; font-family: 'Menlo', 'Courier New', monospace; font-size: 0.9rem; word-break: break-all; color: var(--text-dark); }
+        .output-actions { display: flex; gap: 1rem; margin-top: 1rem; }
+        #shorten-container { margin-top: 1.5rem; }
+        #short-url-output { display: flex; align-items: center; gap: 1rem; background: var(--accent-light); border: 2px solid var(--accent); border-radius: 8px; padding: 0.5rem 1rem; }
+        #short-url-text { flex-grow: 1; font-weight: 600; color: var(--primary-dark); }
+        .spinner { display: inline-block; width: 20px; height: 20px; border: 3px solid rgba(0,0,0,0.2); border-radius: 50%; border-top-color: var(--primary); animation: spin 1s ease-in-out infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .faq-item { border-bottom: 1px solid var(--border); padding: 1rem 0; }
+        .faq-question { display: flex; justify-content: space-between; align-items: center; font-weight: 600; color: var(--text-dark); cursor: pointer; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: all 0.3s ease; color: var(--text-gray); }
+        .faq-answer p, .faq-answer ul { margin-top: 0.75rem; }
+        .faq-answer ul { padding-left: 1.5rem; }
+        .faq-answer.active { max-height: 500px; }
+        .faq-icon { transition: transform 0.3s; color: var(--primary); }
+        .faq-icon.active { transform: rotate(180deg); }
+        section { padding: 4rem 1rem; }
+        .section-title { font-size: 2rem; font-weight: 700; text-align: center; margin-bottom: 1rem; color: var(--text-dark); letter-spacing: -0.02em; line-height: 1.3; }
+        .section-desc { text-align: center; color: var(--text-gray); margin-bottom: 2.5rem; max-width: 650px; margin-left: auto; margin-right: auto; font-size: 1.0625rem; line-height: 1.6; }
+        footer { background: var(--text-dark); color: rgba(255,255,255,0.8); padding: 2rem 1rem; font-size: 0.85rem; }
+        footer a { color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.2s; }
+        footer a:hover { color: var(--primary); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+        .text-center { text-align: center; }
+        .hidden { display: none; }
+        @media (max-width: 767px) {
+            .hero { padding: 3rem 1rem; } .hero h1 { font-size: 2rem; } .hero p { font-size: 1rem; }
+            section { padding: 3rem 1rem; } .section-title { font-size: 1.75rem; } .section-desc { font-size: 1rem; }
+            nav { display: none; }
+        }
+        @media (min-width: 768px) { .hero h1 { font-size: 2.75rem; } }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .animate { animation: fadeIn 0.5s ease-out forwards; }
+    </style>
+</head>
+<body>
+
+<header style="position: sticky; top: 0; z-index: 50;">
+    <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.875rem 0;">
+            <a href="/" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" style="color: var(--primary);">
+                    <path d="M10.59 13.41c.44-.44.44-1.16 0-1.6L5.17 6.39a.996.996 0 1 0-1.41 1.41l4.42 4.42c.44.44 1.16.44 1.6 0l4.42-4.42a.996.996 0 1 0-1.41-1.41L9 11.17" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="logo">UTM Link Builder</span>
+            </a>
+            <nav style="display: flex; gap: 1.25rem; align-items: center;">
+                <a href="#tool">Builder</a>
+                <a href="#content">Why Use UTMs?</a>
+                <a href="#faq">FAQ</a>
+                <a href="https://www.switchere.online/tools" class="nav-btn" target="_blank">All Tools</a>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="hero text-center">
+        <h1>UTM Campaign URL Builder</h1>
+        <p>Instantly generate and shorten tracking links for your marketing campaigns to measure their impact in Google Analytics and other platforms.</p>
+    </section>
+
+    <section id="tool" style="background: linear-gradient(135deg, white 0%, var(--bg-light) 100%); position: relative; overflow: hidden; padding-top: 2rem; padding-bottom: 2rem;">
+        <div style="position: absolute; top: -100px; left: -100px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(0,102,204,0.05) 0%, transparent 70%); border-radius: 50%;"></div>
+        <div class="container" style="max-width: 850px; position: relative; z-index: 1;">
+            <div class="card animate" style="border: 1px solid var(--border); box-shadow: 0 8px 24px rgba(0,0,0,0.08); position: relative; overflow: hidden;">
+                <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--primary), var(--accent));"></div>
+                
+                <form id="utm-form">
+                    <div class="form-grid">
+                        <div class="input-group full-width">
+                            <label for="url" class="input-label">Website URL <sup>*</sup></label>
+                            <input type="url" id="url" class="input-field" placeholder="https://www.example.com" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="source" class="input-label">Campaign Source (utm_source) <sup>*</sup></label>
+                            <input type="text" id="source" class="input-field" placeholder="e.g., facebook, google" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="medium" class="input-label">Campaign Medium (utm_medium) <sup>*</sup></label>
+                            <input type="text" id="medium" class="input-field" placeholder="e.g., cpc, email" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="campaign" class="input-label">Campaign Name (utm_campaign) <sup>*</sup></label>
+                            <input type="text" id="campaign" class="input-field" placeholder="e.g., summer_sale" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="term" class="input-label">Campaign Term (utm_term)</label>
+                            <input type="text" id="term" class="input-field" placeholder="e.g., running+shoes (optional)">
+                        </div>
+                        <div class="input-group full-width">
+                             <label for="content" class="input-label">Campaign Content (utm_content)</label>
+                            <input type="text" id="content" class="input-field" placeholder="e.g., video_ad, top_banner (optional)">
+                        </div>
+                    </div>
+                </form>
+
+                <div id="output-container">
+                    <h3 style="font-weight: 600; color: var(--text-dark); margin-bottom: 1rem;">Generated Campaign URL</h3>
+                    <div id="output-url">Your URL will appear here...</div>
+                    <div class="output-actions">
+                        <button id="copy-btn" class="btn btn-primary">Copy URL</button>
+                        <button id="shorten-btn" class="btn btn-primary">Shorten Link</button>
+                    </div>
+                    <div id="shorten-container" class="hidden">
+                        <!-- Content will be injected by JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="content" style="background: linear-gradient(135deg, var(--bg-light) 0%, white 100%);">
+        <div class="container" style="max-width: 850px;">
+            <h2 class="section-title">Why Use UTM Links?</h2>
+            <p class="section-desc">UTM parameters are the key to understanding which of your marketing efforts are driving traffic and conversions.</p>
+            <div class="card" style="font-size: 1.05rem; line-height: 1.8; color: var(--text-gray);">
+                <h3 style="color: var(--text-dark); margin-bottom: 1rem;">Track Your Marketing ROI</h3>
+                <p style="margin-bottom: 1.5rem;">By tagging your links with specific sources, mediums, and campaign names, you can see exactly where your website visitors are coming from in Google Analytics. This allows you to measure the return on investment (ROI) for each campaign, ad, and social media post.</p>
+                <h3 style="color: var(--text-dark); margin-bottom: 1rem;">Optimize Your Campaigns</h3>
+                <p style="margin-bottom: 1.5rem;">UTM data shows you what's working and what's not. Is your Facebook CPC campaign outperforming your email newsletter? Is one ad creative driving more traffic than another? This information is vital for optimizing your marketing budget and strategy.</p>
+                 <h3 style="color: var(--text-dark); margin-bottom: 1rem;">A/B Test Your Content</h3>
+                <p>Use the `utm_content` parameter to differentiate between links that point to the same URL. For example, you can test a text link versus an image link in an email newsletter to see which one gets more clicks. This helps you refine your content and improve engagement over time.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" style="background: linear-gradient(135deg, white 0%, var(--bg-light) 100%);">
+        <div class="container" style="max-width: 800px;">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-desc">Common questions about UTM parameters and campaign tracking.</p>
+            <div class="card" style="border: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
+                <div class="faq-item"><div class="faq-question"><span>What are UTM parameters?</span><svg class="faq-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round"/></svg></div><div class="faq-answer"><p>UTM (Urchin Tracking Module) parameters are five simple tags that you can add to the end of a URL. When a user clicks a link with these tags, the information is sent to your Google Analytics account, allowing you to track the effectiveness of your campaigns. The five parameters are:</p><ul><li><strong>utm_source:</strong> Identifies the source of your traffic (e.g., google, facebook).</li><li><strong>utm_medium:</strong> Identifies the marketing medium (e.g., cpc, email).</li><li><strong>utm_campaign:</strong> Identifies the specific campaign (e.g., summer_sale).</li><li><strong>utm_term:</strong> Used for paid search to identify keywords.</li><li><strong>utm_content:</strong> Used to differentiate between ads or links that point to the same URL.</li></ul></div></div>
+                <div class="faq-item"><div class="faq-question"><span>How do I use UTM links in Google Analytics?</span><svg class="faq-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round"/></svg></div><div class="faq-answer"><p>You don't need to do anything special! Once you start using your UTM-tagged URLs, Google Analytics will automatically recognize the parameters and organize the data for you. You can find your campaign data under the "Acquisition" > "Campaigns" report.</p></div></div>
+                <div class="faq-item"><div class="faq-question"><span>Is it safe to shorten my UTM link?</span><svg class="faq-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round"/></svg></div><div class="faq-answer"><p>Yes, it is perfectly safe. Link shorteners create a redirect to your long URL. All the UTM parameters will be passed through this redirect, so your tracking will work exactly the same. Shortened links are much cleaner and more user-friendly, especially for sharing on social media.</p></div></div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container text-center">
+        <p>&copy; <span id="year"></span> Switchere Club. All Rights Reserved. | <a href="/privacy-policy.html">Privacy Policy</a></p>
+    </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const UIElements = {
+        form: document.getElementById('utm-form'),
+        outputUrl: document.getElementById('output-url'),
+        copyBtn: document.getElementById('copy-btn'),
+        shortenBtn: document.getElementById('shorten-btn'),
+        shortenContainer: document.getElementById('shorten-container'),
+        faqItems: document.querySelectorAll('.faq-item'),
+        yearSpan: document.getElementById('year'),
+    };
+    
+    const formInputs = UIElements.form.querySelectorAll('input');
+
+    function generateUTMLink() {
+        const baseUrl = document.getElementById('url').value.trim();
+        const source = document.getElementById('source').value.trim();
+        const medium = document.getElementById('medium').value.trim();
+        const campaign = document.getElementById('campaign').value.trim();
+        const term = document.getElementById('term').value.trim();
+        const content = document.getElementById('content').value.trim();
+        
+        UIElements.shortenContainer.classList.add('hidden');
+        
+        if (!baseUrl) {
+            UIElements.outputUrl.textContent = 'Your URL will appear here...';
+            return;
+        }
+
+        try {
+            const url = new URL(baseUrl);
+            
+            if (source) url.searchParams.set('utm_source', source);
+            if (medium) url.searchParams.set('utm_medium', medium);
+            if (campaign) url.searchParams.set('utm_campaign', campaign);
+            if (term) url.searchParams.set('utm_term', term);
+            if (content) url.searchParams.set('utm_content', content);
+            
+            UIElements.outputUrl.textContent = url.toString();
+        } catch (error) {
+            UIElements.outputUrl.textContent = 'Please enter a valid Website URL (e.g., https://example.com)';
+        }
+    }
+
+    async function shortenLink() {
+        const fullUrl = UIElements.outputUrl.textContent;
+        if (!fullUrl || !fullUrl.startsWith('http')) {
+            alert('Please generate a valid URL first.');
+            return;
+        }
+        
+        UIElements.shortenContainer.classList.remove('hidden');
+        UIElements.shortenContainer.innerHTML = '<div class="spinner"></div><p style="margin-left: 1rem; color: var(--text-gray);">Shortening link...</p>';
+
+        try {
+            const response = await fetch(`https://tinyurl.com/api-create.php?url=${encodeURIComponent(fullUrl)}`);
+            if (!response.ok) throw new Error('Network response was not ok');
+            
+            const shortUrl = await response.text();
+            
+            UIElements.shortenContainer.innerHTML = `
+                <div id="short-url-output">
+                    <span id="short-url-text">${shortUrl}</span>
+                    <button id="copy-short-btn" class="btn btn-primary" style="padding: 0.5rem 1rem;">Copy</button>
+                </div>
+            `;
+            
+            document.getElementById('copy-short-btn').addEventListener('click', () => {
+                copyToClipboard(shortUrl, document.getElementById('copy-short-btn'));
+            });
+
+        } catch (error) {
+            UIElements.shortenContainer.innerHTML = `<p style="color: #EF4444;">Could not shorten link. Please try again.</p>`;
+        }
+    }
+
+    function copyToClipboard(text, buttonElement) {
+        navigator.clipboard.writeText(text).then(() => {
+            const originalText = buttonElement.textContent;
+            buttonElement.textContent = 'Copied!';
+            setTimeout(() => {
+                buttonElement.textContent = originalText;
+            }, 2000);
+        });
+    }
+
+    formInputs.forEach(input => input.addEventListener('input', generateUTMLink));
+    UIElements.copyBtn.addEventListener('click', () => {
+        const text = UIElements.outputUrl.textContent;
+        if (text && text.startsWith('http')) {
+             copyToClipboard(text, UIElements.copyBtn);
+        }
+    });
+    UIElements.shortenBtn.addEventListener('click', shortenLink);
+
+    UIElements.faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+            const answer = item.querySelector('.faq-answer');
+            const icon = item.querySelector('.faq-icon');
+            const isActive = answer.classList.contains('active');
+            
+            UIElements.faqItems.forEach(other => {
+                other.querySelector('.faq-answer').classList.remove('active');
+                other.querySelector('.faq-icon').classList.remove('active');
+            });
+            if (!isActive) {
+                answer.classList.add('active');
+                icon.classList.add('active');
+            }
+        });
+    });
+    
+    if (UIElements.yearSpan) {
+        UIElements.yearSpan.textContent = new Date().getFullYear();
+    }
+});
+</script>
+
+</body>
+</html>

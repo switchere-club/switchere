@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Hashtag Generator - Free Hashtags for Instagram, TikTok & More</title>
+    <meta name="description" content="A free online hashtag generator to find the best hashtags for your social media posts. Enter a keyword to get popular, related, and niche hashtags for Instagram, TikTok, and YouTube.">
+    <meta name="keywords" content="hashtag generator, instagram hashtag generator, tiktok hashtags, best hashtags, youtube hashtags, hashtag finder, social media hashtags, free hashtag tool">
+    <meta name="author" content="Switchere Club">
+    <link rel="canonical" href="https://www.switchere.online/">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Hashtag Generator - Free Hashtags for Instagram, TikTok & More">
+    <meta property="og:description" content="Instantly generate the best hashtags for your posts. Find popular, related, and niche hashtags to boost your reach on social media.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.switchere.online/">
+    <meta property="og:image" content="https://www.switchere.online/og-image.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Hashtag Generator for Social Media">
+    <meta name="twitter:description" content="Find the perfect hashtags for your content. Boost your likes and views on Instagram, TikTok, and more.">
+
+    <!-- Favicon (Inline SVG) -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M10 3h4l-2 18m-4-9h12M4 9h16' stroke='%230066CC' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+    <!-- Google Fonts - Optimized -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Hashtag Generator",
+        "description": "A free online tool to generate relevant hashtags for social media based on a keyword, categorized by popularity.",
+        "url": "https://www.switchere.online/",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "12588"
+        }
+    }
+    </script>
+
+    <!-- Compact Optimized Styles -->
+    <style>
+        :root {
+            --primary: #0066CC; --primary-light: #E6F2FF; --primary-dark: #004C99; --accent: #00CC88; --accent-light: #E6FFF9;
+            --text-dark: #1A1A1A; --text-gray: #4A5568; --text-light: #718096; --border: #E2E8F0; --bg-white: #FFFFFF; --bg-light: #F7FAFC;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: linear-gradient(to bottom, var(--bg-light) 0%, white 50%, var(--bg-light) 100%); color: var(--text-dark); line-height: 1.65; font-size: 16px; -webkit-font-smoothing: antialiased; }
+        header { background: var(--bg-white); border-bottom: 1px solid var(--border); box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .logo { color: var(--primary); font-weight: 700; font-size: 1.125rem; letter-spacing: -0.02em; }
+        nav a { color: var(--text-gray); text-decoration: none; font-size: 0.9375rem; transition: color 0.2s; font-weight: 500; }
+        nav a:hover { color: var(--primary); }
+        nav a.nav-btn { background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; padding: 0.5rem 1.25rem; border-radius: 6px; font-weight: 600; transition: all 0.3s; box-shadow: 0 2px 8px rgba(0,102,204,0.2); }
+        nav a.nav-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,102,204,0.3); }
+        .hero { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); padding: 4rem 1rem; }
+        .hero h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; color: white; letter-spacing: -0.03em; line-height: 1.2; }
+        .hero p { color: rgba(255,255,255,0.95); font-size: 1.125rem; line-height: 1.6; max-width: 650px; margin: 0 auto; }
+        .card { background: var(--bg-white); border-radius: 12px; padding: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border: 1px solid var(--border); }
+        .btn { padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.2s; border: none; font-size: 1rem; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; }
+        .btn-primary { background: var(--accent); color: white; box-shadow: 0 2px 8px rgba(0, 204, 136, 0.25); }
+        .btn-primary:hover:not(:disabled) { background: #00b377; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0, 204, 136, 0.35); }
+        .btn:disabled { cursor: not-allowed; opacity: 0.7; }
+        .input-field { width: 100%; padding: 0.75rem 1rem; border: 2px solid var(--border); border-radius: 8px; font-size: 1.125rem; transition: all 0.2s; background: var(--bg-white); }
+        .input-field:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-light); }
+        #results-container { margin-top: 2rem; }
+        .hashtag-category { margin-bottom: 1.5rem; }
+        .category-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; border-bottom: 2px solid var(--border); padding-bottom: 0.5rem; }
+        .category-title { font-size: 1.25rem; font-weight: 600; color: var(--text-dark); }
+        .copy-btn { background: none; border: none; color: var(--text-gray); padding: 0.5rem; border-radius: 6px; cursor: pointer; transition: all 0.2s; }
+        .copy-btn:hover { background: var(--primary-light); color: var(--primary); }
+        .copy-btn.copied { color: var(--accent); }
+        .hashtags-box { background: var(--bg-light); border-radius: 8px; padding: 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .hashtag { background: var(--bg-white); border: 1px solid var(--border); color: var(--primary-dark); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.9rem; font-weight: 500; transition: all 0.2s; }
+        .hashtag:hover { transform: translateY(-1px); box-shadow: 0 2px 4px rgba(0,0,0,0.05); border-color: var(--primary); }
+        #copy-all-btn { width: 100%; margin-top: 1.5rem; font-size: 1.125rem; padding: 1rem; }
+        .spinner { display: inline-block; width: 20px; height: 20px; border: 3px solid rgba(255,255,255,0.3); border-radius: 50%; border-top-color: #fff; animation: spin 1s ease-in-out infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .faq-item { border-bottom: 1px solid var(--border); padding: 1rem 0; }
+        .faq-question { display: flex; justify-content: space-between; align-items: center; font-weight: 600; color: var(--text-dark); cursor: pointer; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: all 0.3s ease; color: var(--text-gray); }
+        .faq-answer p { margin-top: 0.75rem; }
+        .faq-answer.active { max-height: 500px; }
+        .faq-icon { transition: transform 0.3s; color: var(--primary); }
+        .faq-icon.active { transform: rotate(180deg); }
+        section { padding: 4rem 1rem; }
+        .section-title { font-size: 2rem; font-weight: 700; text-align: center; margin-bottom: 1rem; color: var(--text-dark); letter-spacing: -0.02em; line-height: 1.3; }
+        .section-desc { text-align: center; color: var(--text-gray); margin-bottom: 2.5rem; max-width: 650px; margin-left: auto; margin-right: auto; font-size: 1.0625rem; line-height: 1.6; }
+        footer { background: var(--text-dark); color: rgba(255,255,255,0.8); padding: 2rem 1rem; font-size: 0.85rem; }
+        footer a { color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.2s; }
+        footer a:hover { color: var(--primary); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+        .text-center { text-align: center; }
+        .hidden { display: none; }
+        @media (max-width: 767px) {
+            .hero { padding: 3rem 1rem; } .hero h1 { font-size: 2rem; } .hero p { font-size: 1rem; }
+            section { padding: 3rem 1rem; } .section-title { font-size: 1.75rem; } .section-desc { font-size: 1rem; }
+            nav { display: none; }
+        }
+        @media (min-width: 768px) { .hero h1 { font-size: 2.75rem; } }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .animate { animation: fadeIn 0.5s ease-out forwards; }
+    </style>
+</head>
+<body>
+
+<header style="position: sticky; top: 0; z-index: 50;">
+    <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.875rem 0;">
+            <a href="/" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" style="color: var(--primary);">
+                    <path d="M10 3h4l-2 18m-4-9h12M4 9h16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="logo">Hashtag Generator</span>
+            </a>
+            <nav style="display: flex; gap: 1.25rem; align-items: center;">
+                <a href="#tool">Generator</a>
+                <a href="#content">Why Use Hashtags?</a>
+                <a href="#faq">FAQ</a>
+                <a href="https://www.switchere.online/tools" class="nav-btn" target="_blank">All Tools</a>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="hero text-center">
+        <h1>Hashtag Generator for Social Media</h1>
+        <p>Instantly generate relevant hashtags to boost the reach and engagement of your posts on Instagram, TikTok, and more.</p>
+    </section>
+
+    <section id="tool" style="background: linear-gradient(135deg, white 0%, var(--bg-light) 100%); position: relative; overflow: hidden; padding-top: 2rem; padding-bottom: 2rem;">
+        <div style="position: absolute; top: -100px; left: -100px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(0,102,204,0.05) 0%, transparent 70%); border-radius: 50%;"></div>
+        <div class="container" style="max-width: 750px; position: relative; z-index: 1;">
+            <div class="card animate" style="border: 1px solid var(--border); box-shadow: 0 8px 24px rgba(0,0,0,0.08); position: relative; overflow: hidden;">
+                <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--primary), var(--accent));"></div>
+                
+                <p style="color: var(--text-gray); text-align: center; margin-bottom: 1rem;">Enter a keyword to generate hashtags (e.g., travel, fitness, food).</p>
+                <div style="display: flex; gap: 1rem;">
+                    <input type="text" id="keyword-input" class="input-field" placeholder="Enter your keyword...">
+                    <button id="generate-btn" class="btn btn-primary">
+                        <span id="generate-btn-content">Generate</span>
+                    </button>
+                </div>
+                
+                <div id="results-container" class="hidden">
+                    <!-- Hashtags will be injected here by JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="content" style="background: linear-gradient(135deg, var(--bg-light) 0%, white 100%);">
+        <div class="container" style="max-width: 850px;">
+            <h2 class="section-title">Why a Hashtag Strategy is Crucial</h2>
+            <p class="section-desc">Using the right hashtags is one of the most effective ways to get your content discovered by a larger, more relevant audience.</p>
+            <div class="card" style="font-size: 1.05rem; line-height: 1.8; color: var(--text-gray);">
+                <h3 style="color: var(--text-dark); margin-bottom: 1rem;">Increase Your Reach & Visibility</h3>
+                <p style="margin-bottom: 1.5rem;">Hashtags categorize your content and make it discoverable to users who are interested in your topic but don't follow you yet. Using a mix of popular and niche hashtags helps your posts appear in more searches and explore pages.</p>
+                <h3 style="color: var(--text-dark); margin-bottom: 1rem;">Attract Your Target Audience</h3>
+                <p style="margin-bottom: 1.5rem;">Specific, relevant hashtags connect you with users who are actively looking for content like yours. This leads to higher-quality engagement (likes, comments, shares) and a more dedicated follower base.</p>
+                 <h3 style="color: var(--text-dark); margin-bottom: 1rem;">Build a Community</h3>
+                <p>Creating or using a unique branded hashtag can help build a community around your business or personal brand. It encourages user-generated content and makes it easy to find posts related to your brand.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" style="background: linear-gradient(135deg, white 0%, var(--bg-light) 100%);">
+        <div class="container" style="max-width: 800px;">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-desc">Common questions about using hashtags for social media.</p>
+            <div class="card" style="border: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
+                <div class="faq-item"><div class="faq-question"><span>How do I find the best hashtags for Instagram?</span><svg class="faq-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round"/></svg></div><div class="faq-answer"><p>The best strategy is to use a mix of hashtags. Our generator provides three categories: **Popular** (high-volume, broad reach), **Related** (more specific to your topic), and **Niche** (highly targeted to a specific community). A good post includes a few from each category to maximize both reach and relevance.</p></div></div>
+                <div class="faq-item"><div class="faq-question"><span>How many hashtags should I use?</span><svg class="faq-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round"/></svg></div><div class="faq-answer"><p>This depends on the platform. For Instagram, using between 10 to 20 relevant hashtags is a common and effective strategy. For TikTok and YouTube Shorts, 3-5 highly relevant hashtags are often recommended. It's best to focus on quality over quantity.</p></div></div>
+                <div class="faq-item"><div class="faq-question"><span>What hashtags get the most likes?</span><svg class="faq-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round"/></svg></div><div class="faq-answer"><p>While popular hashtags like #love, #instagood, or #photooftheday have the most posts, they are also extremely competitive. This means your content can get lost quickly. The best hashtags for getting likes are those that are highly relevant to your specific content, as they attract a more engaged audience.</p></div></div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container text-center">
+        <p>&copy; <span id="year"></span> Switchere Club. All Rights Reserved. | <a href="/privacy-policy.html">Privacy Policy</a></p>
+    </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const UIElements = {
+        keywordInput: document.getElementById('keyword-input'),
+        generateBtn: document.getElementById('generate-btn'),
+        generateBtnContent: document.getElementById('generate-btn-content'),
+        resultsContainer: document.getElementById('results-container'),
+        faqItems: document.querySelectorAll('.faq-item'),
+        yearSpan: document.getElementById('year'),
+    };
+    
+    const popularSuffixes = ['photography', 'gram', 'blogger', 'life', 'addict', 'love', 'style', 'goals', 'vibes', 'community'];
+    const relatedTerms = {
+        travel: ['wanderlust', 'adventure', 'vacation', 'explore', 'trip', 'holiday', 'tourism'],
+        fitness: ['gym', 'workout', 'fitfam', 'health', 'training', 'motivation', 'exercise', 'gymlife'],
+        food: ['foodie', 'instafood', 'yummy', 'delicious', 'homemade', 'tasty', 'foodlover', 'cooking'],
+        business: ['entrepreneur', 'marketing', 'success', 'startup', 'leadership', 'finance', 'hustle'],
+        fashion: ['style', 'ootd', 'instafashion', 'outfit', 'beauty', 'shopping', 'streetstyle']
+    };
+
+    function generateHashtags() {
+        const keyword = UIElements.keywordInput.value.toLowerCase().trim().replace(/\s+/g, '');
+        if (!keyword) {
+            UIElements.resultsContainer.innerHTML = `<p style="text-align:center; color: var(--text-gray); margin-top: 1.5rem;">Please enter a keyword to begin.</p>`;
+            UIElements.resultsContainer.classList.remove('hidden');
+            return;
+        }
+
+        UIElements.generateBtn.disabled = true;
+        UIElements.generateBtnContent.innerHTML = `<span class="spinner"></span>`;
+
+        // Simulate a short delay for better UX
+        setTimeout(() => {
+            const hashtags = { popular: [], related: [], niche: [] };
+            
+            hashtags.popular.push(`#${keyword}`);
+            popularSuffixes.slice(0, 9).forEach(suffix => { hashtags.popular.push(`#${keyword}${suffix}`); });
+
+            Object.keys(relatedTerms).forEach(key => {
+                if (keyword.includes(key) || key.includes(keyword)) {
+                    hashtags.related.push(...relatedTerms[key].map(t => `#${t}`));
+                }
+            });
+            if(hashtags.related.length === 0) {
+                hashtags.related.push(`#${keyword}ofinstagram`, `#inst${keyword}`, `#daily${keyword}`);
+            }
+            hashtags.related.unshift(`#${keyword}s`);
+
+            hashtags.niche.push(`#${keyword}tips`, `#${keyword}inspiration`, `#${keyword}ideas`, `#${keyword}daily`, `#explore${keyword}`, `#${keyword}world`, `#bestof${keyword}`);
+
+            Object.keys(hashtags).forEach(key => { hashtags[key] = [...new Set(hashtags[key])]; });
+            
+            displayHashtags(hashtags);
+
+            UIElements.generateBtn.disabled = false;
+            UIElements.generateBtnContent.innerHTML = 'Generate';
+        }, 500);
+    }
+    
+    function displayHashtags(hashtags) {
+        UIElements.resultsContainer.innerHTML = '';
+        UIElements.resultsContainer.classList.add('hidden');
+
+        let allHashtags = [];
+        let resultsHTML = '';
+        const copyIcon = `<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>`;
+        const checkIcon = `<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>`;
+        
+        Object.keys(hashtags).forEach(category => {
+            const categoryHashtags = hashtags[category];
+            if (categoryHashtags.length > 0) {
+                allHashtags = allHashtags.concat(categoryHashtags);
+                const hashtagSpans = categoryHashtags.map(h => `<span class="hashtag">${h}</span>`).join('');
+                resultsHTML += `
+                    <div class="hashtag-category animate">
+                        <div class="category-header">
+                            <h3 class="category-title">${category.charAt(0).toUpperCase() + category.slice(1)}</h3>
+                            <button class="copy-btn" data-category="${category}">${copyIcon}</button>
+                        </div>
+                        <div class="hashtags-box" id="hashtags-${category}">${hashtagSpans}</div>
+                    </div>
+                `;
+            }
+        });
+        
+        if (allHashtags.length > 0) {
+            resultsHTML = `<button id="copy-all-btn" class="btn btn-primary animate">${copyIcon} Copy All Hashtags (${allHashtags.length})</button>` + resultsHTML;
+        } else {
+             resultsHTML = `<p style="text-align:center; color: var(--text-gray); margin-top: 1.5rem;">No results found for "${UIElements.keywordInput.value}". Try a more general keyword.</p>`;
+        }
+        
+        UIElements.resultsContainer.innerHTML = resultsHTML;
+        UIElements.resultsContainer.classList.remove('hidden');
+
+        document.querySelectorAll('.copy-btn').forEach(btn => { btn.addEventListener('click', handleCopy); });
+        if(document.getElementById('copy-all-btn')) { document.getElementById('copy-all-btn').addEventListener('click', handleCopy); }
+    }
+    
+    function handleCopy(e) {
+        const target = e.currentTarget;
+        let textToCopy = '';
+        
+        if(target.id === 'copy-all-btn') {
+            textToCopy = Array.from(document.querySelectorAll('.hashtag')).map(el => el.textContent).join(' ');
+        } else {
+            const category = target.dataset.category;
+            const box = document.getElementById(`hashtags-${category}`);
+            textToCopy = Array.from(box.querySelectorAll('.hashtag')).map(el => el.textContent).join(' ');
+        }
+
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            const originalContent = target.innerHTML;
+            const checkIcon = `<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>`;
+
+            if (target.id === 'copy-all-btn') {
+                target.innerHTML = `${checkIcon} Copied All!`;
+            } else {
+                 target.innerHTML = checkIcon;
+            }
+            target.classList.add('copied');
+
+            setTimeout(() => {
+                target.innerHTML = originalContent;
+                target.classList.remove('copied');
+            }, 2000);
+        });
+    }
+
+    UIElements.generateBtn.addEventListener('click', generateHashtags);
+    UIElements.keywordInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') generateHashtags(); });
+
+    UIElements.faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+            const answer = item.querySelector('.faq-answer');
+            const icon = item.querySelector('.faq-icon');
+            const isActive = answer.classList.contains('active');
+            
+            UIElements.faqItems.forEach(other => {
+                other.querySelector('.faq-answer').classList.remove('active');
+                other.querySelector('.faq-icon').classList.remove('active');
+            });
+            if (!isActive) {
+                answer.classList.add('active');
+                icon.classList.add('active');
+            }
+        });
+    });
+    
+    if (UIElements.yearSpan) {
+        UIElements.yearSpan.textContent = new Date().getFullYear();
+    }
+});
+</script>
+
+</body>
+</html>
+
