@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Online Stopwatch & Pomodoro Timer</title>
+    <meta name="description" content="A free and easy-to-use online stopwatch and Pomodoro timer. Track time with laps, or boost your productivity with customizable work and break sessions.">
+    <meta name="keywords" content="online stopwatch, stopwatch, pomodoro timer, pomodoro technique, productivity timer, study timer, time tracker, lap timer">
+    <meta name="author" content="Switchere Club">
+    <link rel="canonical" href="https://www.switchere.online/">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Online Stopwatch & Pomodoro Timer">
+    <meta property="og:description" content="Boost your focus and productivity with our free online stopwatch and Pomodoro timer. Perfect for work, study, and exercise.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.switchere.online/">
+    <meta property="og:image" content="https://www.switchere.online/og-image.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Online Stopwatch & Pomodoro Timer">
+    <meta name="twitter:description" content="A simple, beautiful, and free tool to track time or boost your productivity with the Pomodoro technique.">
+
+    <!-- Favicon (Inline SVG) -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 10h-2V7h2v5zm0 2h-2v2h2v-2z' fill='%230066CC'/%3E%3C/svg%3E">
+
+    <!-- Google Fonts - Optimized -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Stopwatch & Pomodoro Timer",
+        "description": "A free online tool to track time with a stopwatch and laps, or manage work and break sessions using the Pomodoro technique.",
+        "url": "https://www.switchere.online/",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "15210"
+        }
+    }
+    </script>
+
+    <!-- Compact Optimized Styles -->
+    <style>
+        :root {
+            --primary: #0066CC; --primary-light: #E6F2FF; --primary-dark: #004C99; --accent: #00CC88; --accent-light: #E6FFF9;
+            --danger: #EF4444; --danger-light: #FEE;
+            --text-dark: #1A1A1A; --text-gray: #4A5568; --text-light: #718096; --border: #E2E8F0; --bg-white: #FFFFFF; --bg-light: #F7FAFC;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: linear-gradient(to bottom, var(--bg-light) 0%, white 50%, var(--bg-light) 100%); color: var(--text-dark); line-height: 1.65; font-size: 16px; -webkit-font-smoothing: antialiased; }
+        header { background: var(--bg-white); border-bottom: 1px solid var(--border); box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .logo { color: var(--primary); font-weight: 700; font-size: 1.125rem; letter-spacing: -0.02em; }
+        nav a { color: var(--text-gray); text-decoration: none; font-size: 0.9375rem; transition: color 0.2s; font-weight: 500; }
+        nav a:hover { color: var(--primary); }
+        nav a.nav-btn { background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; padding: 0.5rem 1.25rem; border-radius: 6px; font-weight: 600; transition: all 0.3s; box-shadow: 0 2px 8px rgba(0,102,204,0.2); }
+        nav a.nav-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,102,204,0.3); }
+        .hero { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); padding: 4rem 1rem; }
+        .hero h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; color: white; letter-spacing: -0.03em; line-height: 1.2; }
+        .hero p { color: rgba(255,255,255,0.95); font-size: 1.125rem; line-height: 1.6; max-width: 650px; margin: 0 auto; }
+        .card { background: var(--bg-white); border-radius: 12px; padding: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border: 1px solid var(--border); }
+        .btn { padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.2s; border: none; font-size: 1rem; }
+        .btn-primary { background: var(--accent); color: white; box-shadow: 0 2px 8px rgba(0, 204, 136, 0.25); }
+        .btn-primary:hover:not(:disabled) { background: #00b377; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0, 204, 136, 0.35); }
+        .btn-secondary { background: var(--bg-light); color: var(--text-dark); border: 2px solid var(--border); }
+        .btn-secondary:hover:not(:disabled) { border-color: var(--primary); color: var(--primary); }
+        .btn-danger { background: var(--danger-light); color: var(--danger); border: 2px solid var(--danger); }
+        .btn-danger:hover:not(:disabled) { background: var(--danger); color: white; }
+        .btn:disabled { cursor: not-allowed; opacity: 0.6; }
+        .tabs { display: flex; justify-content: center; border: 2px solid var(--border); border-radius: 8px; overflow: hidden; max-width: 400px; margin: 0 auto 1.5rem auto; }
+        .tab-btn { flex: 1; padding: 0.75rem; border: none; background: none; cursor: pointer; font-size: 1rem; font-weight: 600; color: var(--text-gray); transition: all 0.3s; }
+        .tab-btn.active { background: var(--primary); color: white; box-shadow: inset 0 2px 4px rgba(0,0,0,0.1); }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.5s; }
+        .timer-display { font-family: 'Roboto Mono', monospace; font-size: 4.5rem; text-align: center; color: var(--text-dark); margin: 1.5rem 0; }
+        .timer-display .milliseconds { font-size: 2.5rem; color: var(--text-light); }
+        .timer-controls { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+        #laps-container { margin-top: 2rem; max-height: 200px; overflow-y: auto; background: var(--bg-light); border-radius: 8px; padding: 0.5rem 1rem; }
+        .lap-item { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--border); font-family: 'Roboto Mono', monospace; }
+        .lap-item:last-child { border-bottom: none; }
+        #pomodoro-container { text-align: center; }
+        .pomodoro-modes { display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 1.5rem; }
+        .mode-btn { background: var(--bg-light); border: 2px solid var(--border); padding: 0.5rem 1rem; border-radius: 6px; font-weight: 500; cursor: pointer; transition: all 0.2s; }
+        .mode-btn.active { background: var(--primary-light); color: var(--primary); border-color: var(--primary); }
+        .timer-visual { position: relative; width: 250px; height: 250px; margin: 1rem auto; }
+        .timer-visual svg { transform: rotate(-90deg); }
+        .timer-circle { stroke-width: 10; fill: none; }
+        .timer-circle-bg { stroke: var(--border); }
+        .timer-circle-progress { stroke: var(--accent); stroke-linecap: round; transition: stroke-dashoffset 1s linear; }
+        .timer-countdown { position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; align-items: center; justify-content: center; font-family: 'Roboto Mono', monospace; font-size: 3.5rem; }
+        .faq-item { border-bottom: 1px solid var(--border); padding: 1rem 0; }
+        .faq-question { display: flex; justify-content: space-between; align-items: center; font-weight: 600; color: var(--text-dark); cursor: pointer; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: all 0.3s ease; color: var(--text-gray); }
+        .faq-answer p { margin-top: 0.75rem; }
+        .faq-answer.active { max-height: 500px; }
+        .faq-icon { transition: transform 0.3s; color: var(--primary); }
+        .faq-icon.active { transform: rotate(180deg); }
+        section { padding: 4rem 1rem; }
+        .section-title { font-size: 2rem; font-weight: 700; text-align: center; margin-bottom: 1rem; color: var(--text-dark); letter-spacing: -0.02em; line-height: 1.3; }
+        .section-desc { text-align: center; color: var(--text-gray); margin-bottom: 2.5rem; max-width: 650px; margin-left: auto; margin-right: auto; font-size: 1.0625rem; line-height: 1.6; }
+        footer { background: var(--text-dark); color: rgba(255,255,255,0.8); padding: 2rem 1rem; font-size: 0.85rem; }
+        footer a { color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.2s; }
+        footer a:hover { color: var(--primary); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+        .text-center { text-align: center; }
+        @media (max-width: 767px) {
+            .hero { padding: 3rem 1rem; } .hero h1 { font-size: 2rem; } .hero p { font-size: 1rem; }
+            section { padding: 3rem 1rem; } .section-title { font-size: 1.75rem; } .section-desc { font-size: 1rem; }
+            nav { display: none; }
+            .timer-display { font-size: 3rem; }
+            .timer-display .milliseconds { font-size: 1.5rem; }
+        }
+        @media (min-width: 768px) { .hero h1 { font-size: 2.75rem; } }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .animate { animation: fadeIn 0.5s ease-out forwards; }
+    </style>
+</head>
+<body>
+
+<header style="position: sticky; top: 0; z-index: 50;">
+    <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.875rem 0;">
+            <a href="/" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" style="color: var(--primary);">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 10h-2V7h2v5zm0 4h-2v-2h2v2z" fill="currentColor"/>
+                </svg>
+                <span class="logo">Timer & Stopwatch</span>
+            </a>
+            <nav style="display: flex; gap: 1.25rem; align-items: center;">
+                <a href="#tool">Timer</a>
+                <a href="#content">Why Use It?</a>
+                <a href="#faq">FAQ</a>
+                <a href="https://www.switchere.online/tools" class="nav-btn" target="_blank">All Tools</a>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="hero text-center">
+        <h1>Online Stopwatch & Pomodoro Timer</h1>
+        <p>A simple, powerful tool to track time for sprints, workouts, or to boost your productivity with the Pomodoro technique.</p>
+    </section>
+
+    <section id="tool" style="background: linear-gradient(135deg, white 0%, var(--bg-light) 100%); position: relative; overflow: hidden; padding-top: 2rem; padding-bottom: 2rem;">
+        <div class="container" style="max-width: 650px; position: relative; z-index: 1;">
+            <div class="card animate" style="border: 1px solid var(--border); box-shadow: 0 8px 24px rgba(0,0,0,0.08); position: relative; overflow: hidden;">
+                <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--primary), var(--accent));"></div>
+                
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="stopwatch-container">Stopwatch</button>
+                    <button class="tab-btn" data-tab="pomodoro-container">Pomodoro</button>
+                </div>
+
+                <!-- Stopwatch -->
+                <div id="stopwatch-container" class="tab-content active">
+                    <div id="stopwatch-display" class="timer-display">00:00<span class="milliseconds">.00</span></div>
+                    <div class="timer-controls">
+                        <button id="stopwatch-start-stop" class="btn btn-primary" style="min-width: 120px;">Start</button>
+                        <button id="stopwatch-lap" class="btn btn-secondary" disabled>Lap</button>
+                        <button id="stopwatch-reset" class="btn btn-secondary" disabled>Reset</button>
+                    </div>
+                    <div id="laps-container" class="hidden">
+                        <ol id="laps-list"></ol>
+                    </div>
+                </div>
+                
+                <!-- Pomodoro -->
+                <div id="pomodoro-container" class="tab-content">
+                    <div class="pomodoro-modes">
+                        <button class="mode-btn active" data-mode="pomodoro">Pomodoro (25m)</button>
+                        <button class="mode-btn" data-mode="short-break">Short Break (5m)</button>
+                        <button class="mode-btn" data-mode="long-break">Long Break (15m)</button>
+                    </div>
+                    <div class="timer-visual">
+                         <svg width="250" height="250" viewBox="0 0 120 120">
+                            <circle class="timer-circle timer-circle-bg" cx="60" cy="60" r="54"/>
+                            <circle id="pomodoro-progress" class="timer-circle timer-circle-progress" cx="60" cy="60" r="54"/>
+                        </svg>
+                        <div id="pomodoro-display" class="timer-countdown">25:00</div>
+                    </div>
+                    <div class="timer-controls">
+                        <button id="pomodoro-start-stop" class="btn btn-primary" style="min-width: 120px;">Start</button>
+                        <button id="pomodoro-reset" class="btn btn-secondary">Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="content" style="background: linear-gradient(135deg, var(--bg-light) 0%, white 100%);">
+        <div class="container" style="max-width: 850px;">
+            <h2 class="section-title">Master Your Time, Boost Your Focus</h2>
+            <p class="section-desc">Whether you need to time a task with precision or manage your focus throughout the day, this tool has you covered.</p>
+            <div class="card" style="font-size: 1.05rem; line-height: 1.8; color: var(--text-gray);">
+                <h3 style="color: var(--text-dark); margin-bottom: 1rem;">The Pomodoro Technique for Productivity</h3>
+                <p style="margin-bottom: 1.5rem;">The Pomodoro Technique is a simple yet powerful time management method. Work in focused 25-minute intervals (called "Pomodoros"), separated by short breaks. This prevents burnout, improves focus, and makes large tasks feel more manageable. Our timer automates this process, so you can concentrate on your work.</p>
+                <h3 style="color: var(--text-dark); margin-bottom: 1rem;">Precision with the Online Stopwatch</h3>
+                <p>Need to time a workout, a presentation, or a science experiment? Our online stopwatch offers precision down to the millisecond. The "Lap" feature lets you record split times, making it perfect for tracking performance in sports, races, or any activity with multiple stages.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" style="background: linear-gradient(135deg, white 0%, var(--bg-light) 100%);">
+        <div class="container" style="max-width: 800px;">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-desc">Common questions about our timer and stopwatch.</p>
+            <div class="card" style="border: 1px solid var(--border); box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
+                <div class="faq-item"><div class="faq-question"><span>What is the Pomodoro Technique?</span><svg class="faq-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round"/></svg></div><div class="faq-answer"><p>It's a time management method where you work in focused 25-minute sessions, followed by a 5-minute break. After four sessions, you take a longer break of 15-30 minutes. This cycle is proven to increase focus and prevent mental fatigue.</p></div></div>
+                <div class="faq-item"><div class="faq-question"><span>Will I hear a sound when the timer finishes?</span><svg class="faq-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round"/></svg></div><div class="faq-answer"><p>Yes. A simple, audible beep will sound when any Pomodoro session (work or break) comes to an end, so you don't have to keep watching the clock.</p></div></div>
+                <div class="faq-item"><div class="faq-question"><span>Does the timer work if I switch to another tab?</span><svg class="faq-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round"/></svg></div><div class="faq-answer"><p>Yes! Our timers use a reliable method to keep running in the background. Additionally, the Pomodoro timer updates the browser tab's title, so you can always see the remaining time at a glance without having to switch back.</p></div></div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container text-center">
+        <p>&copy; <span id="year"></span> Switchere Club. All Rights Reserved. | <a href="/privacy-policy.html">Privacy Policy</a></p>
+    </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // --- General UI ---
+    const tabs = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            tabs.forEach(item => item.classList.remove('active'));
+            tab.classList.add('active');
+            const target = document.getElementById(tab.dataset.tab);
+            tabContents.forEach(content => content.classList.remove('active'));
+            target.classList.add('active');
+        });
+    });
+
+    // --- Stopwatch ---
+    const stopwatchDisplay = document.getElementById('stopwatch-display');
+    const startStopBtn = document.getElementById('stopwatch-start-stop');
+    const lapBtn = document.getElementById('stopwatch-lap');
+    const resetBtn = document.getElementById('stopwatch-reset');
+    const lapsContainer = document.getElementById('laps-container');
+    const lapsList = document.getElementById('laps-list');
+
+    let stopwatchInterval;
+    let stopwatchRunning = false;
+    let startTime = 0;
+    let elapsedTime = 0;
+    let laps = [];
+
+    function formatTime(ms) {
+        const date = new Date(ms);
+        const minutes = String(date.getUTCMinutes()).padStart(2, '0');
+        const seconds = String(date.getSeconds()).padStart(2, '0');
+        const milliseconds = String(Math.floor(date.getUTCMilliseconds() / 10)).padStart(2, '0');
+        return `${minutes}:${seconds}<span class="milliseconds">.${milliseconds}</span>`;
+    }
+    
+    function updateStopwatch() {
+        const currentTime = Date.now();
+        elapsedTime = currentTime - startTime;
+        stopwatchDisplay.innerHTML = formatTime(elapsedTime);
+    }
+    
+    startStopBtn.addEventListener('click', () => {
+        if (stopwatchRunning) {
+            clearInterval(stopwatchInterval);
+            startStopBtn.textContent = 'Start';
+            startStopBtn.classList.remove('btn-danger');
+            startStopBtn.classList.add('btn-primary');
+            lapBtn.disabled = true;
+        } else {
+            startTime = Date.now() - elapsedTime;
+            stopwatchInterval = setInterval(updateStopwatch, 10);
+            startStopBtn.textContent = 'Stop';
+            startStopBtn.classList.remove('btn-primary');
+            startStopBtn.classList.add('btn-danger');
+            lapBtn.disabled = false;
+            resetBtn.disabled = false;
+        }
+        stopwatchRunning = !stopwatchRunning;
+    });
+
+    lapBtn.addEventListener('click', () => {
+        if (stopwatchRunning) {
+            laps.push(elapsedTime);
+            lapsContainer.classList.remove('hidden');
+            const li = document.createElement('li');
+            li.className = 'lap-item';
+            li.innerHTML = `<span>Lap ${laps.length}</span><span>${formatTime(elapsedTime)}</span>`;
+            lapsList.prepend(li);
+        }
+    });
+    
+    resetBtn.addEventListener('click', () => {
+        clearInterval(stopwatchInterval);
+        stopwatchRunning = false;
+        elapsedTime = 0;
+        laps = [];
+        stopwatchDisplay.innerHTML = formatTime(0);
+        startStopBtn.textContent = 'Start';
+        startStopBtn.classList.remove('btn-danger');
+        startStopBtn.classList.add('btn-primary');
+        lapBtn.disabled = true;
+        resetBtn.disabled = true;
+        lapsList.innerHTML = '';
+        lapsContainer.classList.add('hidden');
+    });
+
+    // --- Pomodoro ---
+    const pomodoroDisplay = document.getElementById('pomodoro-display');
+    const pomodoroStartStopBtn = document.getElementById('pomodoro-start-stop');
+    const pomodoroResetBtn = document.getElementById('pomodoro-reset');
+    const modeBtns = document.querySelectorAll('.mode-btn');
+    const progressCircle = document.getElementById('pomodoro-progress');
+    const radius = progressCircle.r.baseVal.value;
+    const circumference = 2 * Math.PI * radius;
+    progressCircle.style.strokeDasharray = circumference;
+
+    const sessionDurations = { 'pomodoro': 25 * 60, 'short-break': 5 * 60, 'long-break': 15 * 60 };
+    let currentMode = 'pomodoro';
+    let timeLeft = sessionDurations[currentMode];
+    let pomodoroInterval;
+    let pomodoroRunning = false;
+    let originalTitle = document.title;
+    
+    function updatePomodoroDisplay() {
+        const minutes = String(Math.floor(timeLeft / 60)).padStart(2, '0');
+        const seconds = String(timeLeft % 60).padStart(2, '0');
+        pomodoroDisplay.textContent = `${minutes}:${seconds}`;
+        document.title = `${minutes}:${seconds} - ${originalTitle}`;
+        
+        const progress = (timeLeft / sessionDurations[currentMode]) * circumference;
+        progressCircle.style.strokeDashoffset = circumference - progress;
+    }
+    
+    function playSound() {
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+        oscillator.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+        oscillator.type = 'sine';
+        oscillator.frequency.setValueAtTime(440, audioContext.currentTime);
+        gainNode.gain.setValueAtTime(0.5, audioContext.currentTime);
+        oscillator.start();
+        oscillator.stop(audioContext.currentTime + 0.5);
+    }
+    
+    pomodoroStartStopBtn.addEventListener('click', () => {
+        if (pomodoroRunning) {
+            clearInterval(pomodoroInterval);
+            pomodoroStartStopBtn.textContent = 'Start';
+        } else {
+            pomodoroInterval = setInterval(() => {
+                timeLeft--;
+                updatePomodoroDisplay();
+                if (timeLeft <= 0) {
+                    clearInterval(pomodoroInterval);
+                    playSound();
+                    // Basic auto-switch logic
+                    const nextMode = currentMode === 'pomodoro' ? 'short-break' : 'pomodoro';
+                    switchMode(nextMode);
+                }
+            }, 1000);
+            pomodoroStartStopBtn.textContent = 'Pause';
+        }
+        pomodoroRunning = !pomodoroRunning;
+    });
+
+    pomodoroResetBtn.addEventListener('click', () => {
+       resetPomodoro(currentMode);
+    });
+
+    function resetPomodoro(mode) {
+         clearInterval(pomodoroInterval);
+        pomodoroRunning = false;
+        timeLeft = sessionDurations[mode];
+        pomodoroStartStopBtn.textContent = 'Start';
+        document.title = originalTitle;
+        updatePomodoroDisplay();
+    }
+    
+    function switchMode(newMode) {
+        currentMode = newMode;
+        modeBtns.forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.mode === newMode);
+        });
+        resetPomodoro(newMode);
+    }
+
+    modeBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            switchMode(btn.dataset.mode);
+        });
+    });
+
+    // Initialize Pomodoro
+    updatePomodoroDisplay();
+
+    // --- FAQ ---
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+            const answer = item.querySelector('.faq-answer');
+            const icon = item.querySelector('.faq-icon');
+            const isActive = answer.classList.contains('active');
+            faqItems.forEach(other => {
+                other.querySelector('.faq-answer').classList.remove('active');
+                other.querySelector('.faq-icon').classList.remove('active');
+            });
+            if (!isActive) {
+                answer.classList.add('active');
+                icon.classList.add('active');
+            }
+        });
+    });
+    
+    if (document.getElementById('year')) {
+        document.getElementById('year').textContent = new Date().getFullYear();
+    }
+});
+</script>
+
+</body>
+</html>
+

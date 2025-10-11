@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Coin Flip & Dice Roller - Online Random Generator</title>
+    <meta name="description" content="A free and fun online tool to flip a coin or roll dice. Get an instant random result with realistic 3D animations. Perfect for games, decisions, and more.">
+    <meta name="keywords" content="coin flip, flip a coin online, roll dice, dice roller, online dice roller, random number generator, heads or tails">
+    <meta name="author" content="Switchere Club">
+    <link rel="canonical" href="https://www.switchere.online/"> <!-- Replace with your final domain -->
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Coin Flip & Dice Roller - Online Random Generator">
+    <meta property="og:description" content="Make a random choice with our beautifully animated 3D coin flip and dice roller. Free, fast, and easy to use.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.switchere.online/">
+    <meta property="og:image" content="https://www.switchere.online/og-image.jpg"> <!-- Replace with a link to a compelling image -->
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Online Coin Flip & Dice Roller">
+    <meta name="twitter:description" content="Need to make a random choice? Flip a 3D coin or roll virtual dice with our fun online tool.">
+
+    <!-- Favicon (Inline SVG) -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z' fill='%230066CC'/%3E%3Crect x='11' y='7' width='2' height='2' fill='%230066CC'/%3E%3Crect x='11' y='11' width='2' height='2' fill='%230066CC'/%3E%3Crect x='11' y='15' width='2' height='2' fill='%230066CC'/%3E%3C/svg%3E">
+
+    <!-- Google Fonts - Optimized -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Coin Flip & Dice Roller",
+        "description": "A free online tool to simulate flipping a coin or rolling one or more dice with 3D animations.",
+        "url": "https://www.switchere.online/",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+
+    <!-- Compact Optimized Styles -->
+    <style>
+        :root {
+            --primary: #0066CC; --primary-light: #E6F2FF; --primary-dark: #004C99; --accent: #00CC88; --accent-light: #E6FFF9;
+            --text-dark: #1A1A1A; --text-gray: #4A5568; --text-light: #718096; --border: #E2E8F0; --bg-white: #FFFFFF; --bg-light: #F7FAFC;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: linear-gradient(300deg, var(--bg-light), var(--primary-light), var(--accent-light), var(--bg-light)); background-size: 400% 400%; animation: gradientBG 25s ease infinite; color: var(--text-dark); line-height: 1.65; font-size: 16px; -webkit-font-smoothing: antialiased; }
+        @keyframes gradientBG { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+        header { background: rgba(255,255,255,0.8); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
+        .logo { color: var(--primary); font-weight: 700; font-size: 1.125rem; letter-spacing: -0.02em; }
+        nav a { color: var(--text-gray); text-decoration: none; font-size: 0.9375rem; transition: color 0.2s; font-weight: 500; }
+        nav a:hover { color: var(--primary); }
+        nav a.nav-btn { background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; padding: 0.5rem 1.25rem; border-radius: 6px; font-weight: 600; transition: all 0.3s; box-shadow: 0 2px 8px rgba(0,102,204,0.2); }
+        nav a.nav-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,102,204,0.3); }
+        .hero { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); padding: 4rem 1rem; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 700; margin-bottom: 1rem; color: white; letter-spacing: -0.03em; line-height: 1.2; }
+        .hero p { color: rgba(255,255,255,0.95); font-size: 1.125rem; line-height: 1.6; max-width: 650px; margin: 0 auto; }
+        .card { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px); border-radius: 16px; padding: 2rem; box-shadow: 0 8px 32px rgba(0,0,0,0.1); border: 1px solid rgba(255,255,255,0.2); }
+        .btn { padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.2s; border: none; font-size: 1.125rem; }
+        .btn-primary { background: var(--primary); color: white; box-shadow: 0 4px 12px rgba(0,102,204,0.25); }
+        .btn-primary:hover:not(:disabled) { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,102,204,0.35); }
+        .btn-primary:disabled { cursor: not-allowed; opacity: 0.6; }
+        .tabs { display: flex; border-bottom: 2px solid var(--border); margin-bottom: 2rem; }
+        .tab-btn { padding: 0.75rem 1.5rem; border: none; background: none; cursor: pointer; font-size: 1rem; font-weight: 600; color: var(--text-light); position: relative; transition: color 0.3s; flex-grow: 1; }
+        .tab-btn::after { content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 2px; background: var(--accent); transform: scaleX(0); transition: transform 0.3s; }
+        .tab-btn.active { color: var(--accent); }
+        .tab-btn.active::after { transform: scaleX(1); }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.5s; }
+        .tool-container { min-height: 400px; display: flex; flex-direction: column; align-items: center; justify-content: space-between; }
+        
+        /* Coin */
+        #coin-area { perspective: 1000px; width: 150px; height: 150px; margin: 2rem 0; cursor: pointer; }
+        #coin-container { width: 100%; height: 100%; position: relative; transform-style: preserve-3d; }
+        #coin-container.flipping { animation: toss 2s cubic-bezier(0.2, 0.9, 0.4, 1); }
+        @keyframes toss {
+            0%   { transform: rotateY(0) rotateX(0) translateY(0); }
+            50%  { transform: rotateY(1080deg) rotateX(720deg) translateY(-120px); }
+            100% { transform: rotateY(2160deg) rotateX(1440deg) translateY(0); }
+        }
+        .coin-face { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.75rem; font-weight: 700; color: #a1a1aa; background: linear-gradient(135deg, #fefefe, #d1d5db); box-shadow: inset 0 0 10px rgba(0,0,0,0.2), 0 0 15px rgba(255,255,255,0.5); border: 4px solid #a1a1aa; }
+        .coin-face.tails { transform: rotateY(180deg); }
+        #coin-shadow { width: 150px; height: 20px; background: rgba(0,0,0,0.2); border-radius: 50%; filter: blur(5px); position: absolute; bottom: -20px; transform: scaleX(0.5); }
+        .flipping + #coin-shadow { animation: shadow-anim 2s cubic-bezier(0.2, 0.9, 0.4, 1); }
+        @keyframes shadow-anim { 50% { transform: scaleX(1.1); opacity: 0.5; } }
+
+        /* Dice */
+        #dice-area { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; align-items: center; min-height: 150px; margin: 2rem 0; perspective: 1000px; }
+        .dice { width: 80px; height: 80px; position: relative; transform-style: preserve-3d; }
+        .dice-face { position: absolute; width: 80px; height: 80px; background: white; border: 1px solid var(--border); border-radius: 8px; display: grid; padding: 8px; box-shadow: inset 0 0 5px rgba(0,0,0,0.1); }
+        .pip { width: 14px; height: 14px; background: var(--text-dark); border-radius: 50%; }
+        .face-1 { transform: rotateY(0deg) translateZ(40px); grid-template-areas: ". . ." ". p ." ". . ."; align-items: center; justify-items: center; }
+        .face-2 { transform: rotateY(90deg) translateZ(40px); grid-template-areas: "p . ." ". . ." ". . p"; }
+        .face-3 { transform: rotateX(90deg) translateZ(40px); grid-template-areas: "p . ." ". p ." ". . p"; }
+        .face-4 { transform: rotateX(-90deg) translateZ(40px); grid-template-areas: "p . p" ". . ." "p . p"; }
+        .face-5 { transform: rotateY(-90deg) translateZ(40px); grid-template-areas: "p . p" ". p ." "p . p"; }
+        .face-6 { transform: rotateY(180deg) translateZ(40px); grid-template-areas: "p . p" "p . p" "p . p"; }
+        .face-1 .pip:nth-child(1) { grid-area: p; }
+        .face-2 .pip:nth-child(1) { grid-area: p; } .face-2 .pip:nth-child(2) { grid-area: p; justify-self: end; align-self: end; }
+        .face-3 .pip:nth-child(1) { grid-area: p; } .face-3 .pip:nth-child(2) { grid-area: p; justify-self: center; align-self: center; } .face-3 .pip:nth-child(3) { grid-area: p; justify-self: end; align-self: end; }
+        .face-4 .pip:nth-child(n) { grid-area: p; } .face-4 .pip:nth-child(2) { justify-self: end; } .face-4 .pip:nth-child(3) { align-self: end; } .face-4 .pip:nth-child(4) { justify-self: end; align-self: end; }
+        .face-5 .pip:nth-child(n) { grid-area: p; } .face-5 .pip:nth-child(2) { justify-self: end; } .face-5 .pip:nth-child(3) { justify-self: center; align-self: center; } .face-5 .pip:nth-child(4) { align-self: end; } .face-5 .pip:nth-child(5) { justify-self: end; align-self: end; }
+        .face-6 .pip:nth-child(n) { grid-area: p; } .face-6 .pip:nth-child(2) { justify-self: end; } .face-6 .pip:nth-child(3) { justify-self: start; align-self: center; } .face-6 .pip:nth-child(4) { justify-self: end; align-self: center; } .face-6 .pip:nth-child(5) { align-self: end; } .face-6 .pip:nth-child(6) { justify-self: end; align-self: end; }
+        #dice-controls { display: flex; align-items: center; gap: 1rem; }
+        .result-display { text-align: center; min-height: 80px; display: flex; flex-direction: column; justify-content: center; }
+        .result-text { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 700; color: var(--primary-dark); }
+        .tally { font-size: 0.9rem; color: var(--text-gray); }
+        .faq-item { border-bottom: 1px solid var(--border); padding: 1rem 0; }
+        .faq-question { display: flex; justify-content: space-between; align-items: center; font-weight: 600; color: var(--text-dark); cursor: pointer; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: all 0.3s ease; color: var(--text-gray); }
+        .faq-answer p { margin-top: 0.75rem; }
+        .faq-answer.active { max-height: 500px; }
+        .faq-icon { transition: transform 0.3s; color: var(--primary); }
+        .faq-icon.active { transform: rotate(180deg); }
+        section { padding: 4rem 1rem; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 700; text-align: center; margin-bottom: 1rem; color: var(--text-dark); letter-spacing: -0.02em; line-height: 1.3; }
+        .section-desc { text-align: center; color: var(--text-gray); margin-bottom: 2.5rem; max-width: 650px; margin-left: auto; margin-right: auto; font-size: 1.0625rem; line-height: 1.6; }
+        footer { background: var(--text-dark); color: rgba(255,255,255,0.8); padding: 2rem 1rem; font-size: 0.85rem; }
+        footer a { color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.2s; }
+        footer a:hover { color: var(--accent); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+        .text-center { text-align: center; }
+        @media (max-width: 767px) {
+            .hero { padding: 3rem 1rem; } .hero h1 { font-size: 2.5rem; } .hero p { font-size: 1rem; }
+            section { padding: 3rem 1rem; } .section-title { font-size: 2rem; } .section-desc { font-size: 1rem; }
+            nav { display: none; }
+        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .animate { animation: fadeIn 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards; }
+    </style>
+</head>
+<body>
+
+<header style="position: sticky; top: 0; z-index: 50;">
+    <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.875rem 0;">
+            <a href="/" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" style="color: var(--primary);">
+                    <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z" fill="currentColor"/>
+                    <rect x="11" y="7" width="2" height="2" fill="currentColor"/>
+                    <rect x="11" y="11" width="2" height="2" fill="currentColor"/>
+                    <rect x="11" y="15" width="2" height="2" fill="currentColor"/>
+                </svg>
+                <span class="logo">Randomizer</span>
+            </a>
+            <nav style="display: flex; gap: 1.25rem; align-items: center;">
+                <a href="#tool">Tools</a>
+                <a href="#content">Why Use It?</a>
+                <a href="#faq">FAQ</a>
+                <a href="https://www.switchere.online/tools" class="nav-btn" target="_blank">All Tools</a>
+            </nav>
+        </div>
+    </div>
+</main>
+
+<section class="hero text-center">
+    <h1>Coin Flip & Dice Roller</h1>
+    <p>Make a random choice the fun way with our beautifully animated 3D coin flip and dice roller.</p>
+</section>
+
+<section id="tool" style="padding-top: 2rem; padding-bottom: 2rem;">
+    <div class="container" style="max-width: 650px; position: relative; z-index: 1;">
+        <div class="card animate">
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="coin-flipper">Coin Flip</button>
+                <button class="tab-btn" data-tab="dice-roller">Dice Roller</button>
+            </div>
+
+            <!-- Coin Flip -->
+            <div id="coin-flipper" class="tab-content active">
+                <div class="tool-container">
+                    <div id="coin-area">
+                        <div id="coin-container">
+                            <div class="coin-face heads">H</div>
+                            <div class="coin-face tails">T</div>
+                        </div>
+                        <div id="coin-shadow"></div>
+                    </div>
+                    <div id="coin-result-display" class="result-display">
+                        <p id="coin-result-text" class="result-text"></p>
+                        <p id="coin-tally" class="tally"></p>
+                    </div>
+                    <button id="flip-btn" class="btn btn-primary" style="min-width: 200px;">Flip Coin</button>
+                </div>
+            </div>
+            
+            <!-- Dice Roller -->
+            <div id="dice-roller" class="tab-content">
+                <div class="tool-container">
+                    <div id="dice-area">
+                        <!-- Dice will be generated here by JS -->
+                    </div>
+                     <div id="dice-result-display" class="result-display">
+                        <p id="dice-result-text" class="result-text"></p>
+                        <p id="dice-tally" class="tally"></p>
+                    </div>
+                    <div id="dice-controls">
+                        <label for="dice-count" style="font-weight: 500; color: var(--text-gray);">Number of Dice:</label>
+                        <select id="dice-count" style="padding: 0.5rem; border-radius: 6px; border: 2px solid var(--border);">
+                            <option value="1" selected>1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select>
+                        <button id="roll-btn" class="btn btn-primary">Roll Dice</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="content" style="background: linear-gradient(135deg, var(--bg-light) 0%, white 100%);">
+    <div class="container" style="max-width: 850px;">
+        <h2 class="section-title">Why Use a Digital Coin or Die?</h2>
+        <p class="section-desc">From resolving debates to playing games, a random generator is a timeless tool, now with a modern twist.</p>
+        <div class="card" style="font-size: 1.05rem; line-height: 1.8; color: var(--text-gray);">
+            <h3 style="color: var(--text-dark); margin-bottom: 1rem;">Instant & Fair Decisions</h3>
+            <p style="margin-bottom: 1.5rem;">Can't decide who goes first or what to have for dinner? A quick coin flip is a classic and fair way to settle any debate. Our tool provides a truly random outcome every time, right in your browser.</p>
+            <h3 style="color: var(--text-dark); margin-bottom: 1rem;">Game Night Ready</h3>
+            <p style="margin-bottom: 1.5rem;">Lost your dice or need more than you have? Our online dice roller is perfect for board games, tabletop RPGs, or any activity that requires a random number. Choose from one to six dice to suit any game.</p>
+             <h3 style="color: var(--text-dark); margin-bottom: 1rem;">A Fun, Engaging Experience</h3>
+            <p>We believe tools should be functional *and* fun. Our realistic 3D animations and sound effects make the simple act of flipping a coin or rolling a die a small, satisfying moment of delight.</p>
+        </div>
+    </div>
+</section>
+
+<section id="faq" style="background: linear-gradient(135deg, var(--bg-light) 0%, white 100%);">
+    <div class="container" style="max-width: 800px;">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="card">
+            <div class="faq-item"><div class="faq-question"><span>Is the coin flip / dice roll truly random?</span><svg class="faq-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round"/></svg></div><div class="faq-answer"><p>Yes! Our tool uses JavaScript's standard `Math.random()` function, which generates a pseudo-random number to determine the outcome. For all practical purposes, the results are completely random and unbiased.</p></div></div>
+            <div class="faq-item"><div class="faq-question"><span>Can I roll different types of dice (e.g., 20-sided)?</span><svg class="faq-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round"/></svg></div><div class="faq-answer"><p>Currently, our tool simulates standard six-sided dice. We're always looking to add new features, so stay tuned for more options in the future!</p></div></div>
+             <div class="faq-item"><div class="faq-question"><span>Do I need to download anything?</span><svg class="faq-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round"/></svg></div><div class="faq-answer"><p>No! This tool runs entirely in your web browser. There's no software to install or download. It works on your desktop, tablet, and smartphone.</p></div></div>
+        </div>
+    </div>
+</section>
+
+<footer style="background: var(--text-dark); color: rgba(255,255,255,0.8);">
+    <div class="container text-center">
+        <p>&copy; <span id="year"></span> Switchere Club. All Rights Reserved. | <a href="/privacy-policy.html" style="color: rgba(255,255,255,0.8);">Privacy Policy</a></p>
+    </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const UIElements = {
+        tabs: document.querySelectorAll('.tab-btn'),
+        tabContents: document.querySelectorAll('.tab-content'),
+        faqItems: document.querySelectorAll('.faq-item'),
+        yearSpan: document.getElementById('year'),
+    };
+
+    UIElements.tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            UIElements.tabs.forEach(item => item.classList.remove('active'));
+            tab.classList.add('active');
+            const targetId = tab.dataset.tab;
+            UIElements.tabContents.forEach(content => content.classList.remove('active'));
+            document.getElementById(targetId).classList.add('active');
+        });
+    });
+
+    let audioContext;
+    try { audioContext = new (window.AudioContext || window.webkitAudioContext)(); } 
+    catch(e) { console.warn('Web Audio API not supported.'); }
+
+    function playSound(type) {
+        if (!audioContext) return;
+        const time = audioContext.currentTime;
+        if (type === 'flip') {
+            const osc = audioContext.createOscillator();
+            const gain = audioContext.createGain();
+            osc.connect(gain);
+            gain.connect(audioContext.destination);
+            osc.frequency.setValueAtTime(200, time);
+            osc.frequency.exponentialRampToValueAtTime(1200, time + 0.5);
+            gain.gain.setValueAtTime(0.2, time);
+            gain.gain.linearRampToValueAtTime(0, time + 0.5);
+            osc.start(time);
+            osc.stop(time + 0.5);
+        } else if (type === 'land') {
+            const osc = audioContext.createOscillator();
+            const gain = audioContext.createGain();
+            osc.type = 'triangle';
+            osc.connect(gain);
+            gain.connect(audioContext.destination);
+            osc.frequency.setValueAtTime(800, time);
+            osc.frequency.exponentialRampToValueAtTime(200, time + 0.2);
+            gain.gain.setValueAtTime(0.3, time);
+            gain.gain.exponentialRampToValueAtTime(0.01, time + 0.2);
+            osc.start(time);
+            osc.stop(time + 0.2);
+        } else if (type === 'dice') {
+            const gainNode = audioContext.createGain();
+            gainNode.connect(audioContext.destination);
+            gainNode.gain.setValueAtTime(0.3, time);
+            gainNode.gain.exponentialRampToValueAtTime(0.001, time + 1.5);
+            for (let i = 0; i < 15; i++) {
+                const osc = audioContext.createOscillator();
+                osc.connect(gainNode);
+                osc.type = 'square';
+                osc.frequency.setValueAtTime(Math.random() * 600 + 300, time + i * 0.08);
+                const startTime = time + i * 0.08 * Math.random();
+                osc.start(startTime);
+                osc.stop(startTime + 0.05);
+            }
+        }
+    }
+    
+    // --- Coin Flip Logic ---
+    const coinArea = document.getElementById('coin-area');
+    const coinContainer = document.getElementById('coin-container');
+    const flipBtn = document.getElementById('flip-btn');
+    const coinResultText = document.getElementById('coin-result-text');
+    const coinTally = document.getElementById('coin-tally');
+    let headsCount = 0;
+    let tailsCount = 0;
+    
+    const triggerFlip = () => {
+        if (flipBtn.disabled) return;
+        coinResultText.textContent = '';
+        flipBtn.disabled = true;
+        playSound('flip');
+
+        const result = Math.random() < 0.5 ? 'Heads' : 'Tails';
+        
+        coinContainer.classList.add('flipping');
+        coinContainer.style.transform = ''; // Clear previous transform
+
+        setTimeout(() => {
+            coinContainer.classList.remove('flipping');
+            coinContainer.style.transition = 'transform 0.5s ease-out';
+            if (result === 'Heads') {
+                coinContainer.style.transform = 'rotateY(0deg)';
+                headsCount++;
+            } else {
+                coinContainer.style.transform = 'rotateY(180deg)';
+                tailsCount++;
+            }
+            coinResultText.textContent = result;
+            coinResultText.classList.add('animate');
+            coinTally.textContent = `Heads: ${headsCount} | Tails: ${tailsCount}`;
+            flipBtn.disabled = false;
+            playSound('land');
+        }, 1900);
+        
+        coinResultText.classList.remove('animate');
+    };
+    flipBtn.addEventListener('click', triggerFlip);
+    coinArea.addEventListener('click', triggerFlip);
+
+
+    // --- Dice Roller Logic ---
+    const diceArea = document.getElementById('dice-area');
+    const rollBtn = document.getElementById('roll-btn');
+    const diceCountSelect = document.getElementById('dice-count');
+    const diceResultText = document.getElementById('dice-result-text');
+    const diceTally = document.getElementById('dice-tally');
+
+    function createDice() {
+        const numDice = parseInt(diceCountSelect.value);
+        diceArea.innerHTML = '';
+        for (let i = 0; i < numDice; i++) {
+            const dice = document.createElement('div');
+            dice.className = 'dice';
+            dice.id = `dice-${i}`;
+            let facesHTML = '';
+            for (let j = 1; j <= 6; j++) {
+                let pipsHTML = '';
+                for (let k = 0; k < j; k++) pipsHTML += '<span class="pip"></span>';
+                facesHTML += `<div class="dice-face face-${j}">${pipsHTML}</div>`;
+            }
+            dice.innerHTML = facesHTML;
+            diceArea.appendChild(dice);
+        }
+    }
+
+    rollBtn.addEventListener('click', () => {
+        diceResultText.textContent = '';
+        diceTally.textContent = '';
+        rollBtn.disabled = true;
+        playSound('dice');
+
+        const diceElements = diceArea.querySelectorAll('.dice');
+        let total = 0;
+        let individualResults = [];
+        
+        diceElements.forEach((die, index) => {
+            die.style.transition = 'transform 1.5s ease-out';
+            const randomX = (Math.floor(Math.random() * 8) + 12) * 90;
+            const randomY = (Math.floor(Math.random() * 8) + 12) * 90;
+            
+            setTimeout(() => {
+                 die.style.transform = `rotateX(${randomX}deg) rotateY(${randomY}deg)`;
+            }, index * 100);
+
+            const result = Math.floor(Math.random() * 6) + 1;
+            total += result;
+            individualResults.push(result);
+
+            setTimeout(() => {
+                let finalTransform = '';
+                switch (result) {
+                    case 1: finalTransform = 'rotateY(0deg)'; break;
+                    case 2: finalTransform = 'rotateY(90deg)'; break;
+                    case 3: finalTransform = 'rotateX(-90deg)'; break;
+                    case 4: finalTransform = 'rotateX(90deg)'; break;
+                    case 5: finalTransform = 'rotateY(-90deg)'; break;
+                    case 6: finalTransform = 'rotateY(180deg)'; break;
+                }
+                 die.style.transform = finalTransform;
+
+                if (index === diceElements.length - 1) {
+                    diceResultText.textContent = `Total: ${total}`;
+                    diceResultText.classList.add('animate');
+                    if(diceElements.length > 1) {
+                         diceTally.textContent = `(${individualResults.join(' + ')})`;
+                    }
+                    rollBtn.disabled = false;
+                }
+            }, 1500 + (index * 100));
+        });
+    });
+    
+    diceCountSelect.addEventListener('change', createDice);
+
+    // FAQ
+    UIElements.faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+            const answer = item.querySelector('.faq-answer');
+            const icon = item.querySelector('.faq-icon');
+            const isActive = answer.classList.contains('active');
+            
+            UIElements.faqItems.forEach(other => {
+                other.querySelector('.faq-answer').classList.remove('active');
+                other.querySelector('.faq-icon').classList.remove('active');
+            });
+            if (!isActive) {
+                answer.classList.add('active');
+                icon.classList.add('active');
+            }
+        });
+    });
+    
+    if (UIElements.yearSpan) {
+        UIElements.yearSpan.textContent = new Date().getFullYear();
+    }
+    
+    createDice();
+});
+</script>
+
+</body>
+</html>
+

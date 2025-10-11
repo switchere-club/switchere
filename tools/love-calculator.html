@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Love Compatibility Calculator - Test Your Relationship Archetype</title>
+    <meta name="description" content="Our fun Love Calculator reveals your compatibility score and relationship archetype. Enter two names to see if you are soulmates, a power couple, and more!">
+    <meta name="keywords" content="love calculator, compatibility test, love compatibility, relationship calculator, name compatibility, couple compatibility test, love meter, relationship archetype">
+    <meta name="author" content="Switchere Club">
+    <link rel="canonical" href="https://www.switchere.online/"> <!-- Replace with your final domain -->
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Love Compatibility Calculator - What's Your Relationship Archetype?">
+    <meta property="og:description" content="Curious about your love compatibility? Enter two names to get a fun compatibility score and discover your unique relationship archetype.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.switchere.online/">
+    <meta property="og:image" content="https://www.switchere.online/og-image.jpg"> <!-- Replace with a link to a compelling image -->
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Online Love Compatibility Calculator">
+    <meta name="twitter:description" content="Find out your love score and relationship archetype! A fun and shareable tool to test the compatibility between two names.">
+
+    <!-- Favicon (Inline SVG) -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z' fill='%230066CC'/%3E%3C/svg%3E">
+
+    <!-- Google Fonts - Optimized -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Love Compatibility Calculator",
+        "description": "A fun, entertainment-focused tool that calculates a 'love score' and a relationship archetype based on two names.",
+        "url": "https://www.switchere.online/",
+        "applicationCategory": "EntertainmentApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+
+    <!-- Compact Optimized Styles -->
+    <style>
+        :root {
+            --primary: #0066CC;
+            --primary-light: #E6F2FF;
+            --primary-dark: #004C99;
+            --accent: #00CC88;
+            --accent-light: #E6FFF9;
+            --text-dark: #1A1A1A;
+            --text-gray: #4A5568;
+            --text-light: #718096;
+            --border: #E2E8F0;
+            --bg-white: #FFFFFF;
+            --bg-light: #F7FAFC;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: linear-gradient(300deg, var(--bg-light), var(--primary-light), var(--accent-light), var(--bg-light));
+            background-size: 400% 400%;
+            animation: gradientBG 25s ease infinite;
+            color: var(--text-dark); 
+            line-height: 1.65; 
+            font-size: 16px; 
+            -webkit-font-smoothing: antialiased; 
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        header { background: rgba(255,255,255,0.8); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
+        .logo { color: var(--primary); font-weight: 700; font-size: 1.125rem; letter-spacing: -0.02em; }
+        nav a { color: var(--text-gray); text-decoration: none; font-size: 0.9375rem; transition: color 0.2s; font-weight: 500; }
+        nav a:hover { color: var(--primary); }
+        nav a.nav-btn { background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; padding: 0.5rem 1.25rem; border-radius: 6px; font-weight: 600; transition: all 0.3s; box-shadow: 0 2px 8px rgba(0,102,204,0.2); }
+        nav a.nav-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,102,204,0.3); }
+        .hero { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); padding: 4rem 1rem; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 700; margin-bottom: 1rem; color: white; letter-spacing: -0.03em; line-height: 1.2; }
+        .hero p { color: rgba(255,255,255,0.95); font-size: 1.125rem; line-height: 1.6; max-width: 650px; margin: 0 auto; }
+        .card { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px); border-radius: 16px; padding: 2rem; box-shadow: 0 8px 32px rgba(0,0,0,0.1); border: 1px solid rgba(255,255,255,0.2); }
+        .btn { padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.2s; border: none; font-size: 1.125rem; }
+        .btn-primary { background: var(--primary); color: white; box-shadow: 0 4px 12px rgba(0,102,204,0.25); }
+        .btn-primary:hover:not(:disabled) { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,102,204,0.35); }
+        .btn-primary:disabled { cursor: not-allowed; opacity: 0.6; }
+        .names-grid { display: flex; flex-direction: column; gap: 1.5rem; align-items: center; }
+        @media (min-width: 640px) { .names-grid { flex-direction: row; } }
+        .name-input-container { text-align: center; width: 100%; }
+        .profile-icon { width: 64px; height: 64px; border-radius: 50%; background: var(--primary-light); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: var(--primary); }
+        .input-field { width: 100%; padding: 0.75rem 1rem; border: 2px solid var(--border); border-radius: 8px; font-size: 1.25rem; font-family: 'Inter', sans-serif; transition: all 0.2s; background: var(--bg-white); text-align: center; color: var(--text-dark); }
+        .input-field:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-light); }
+        .heart-separator { color: var(--accent); font-size: 2.5rem; flex-shrink: 0; padding: 0 1rem; transform: translateY(52px); }
+        #results-container { text-align: center; margin-top: 2rem; }
+        #result-visual { position: relative; width: 200px; height: 200px; margin: 0 auto 1.5rem; animation: pulse 2.5s infinite; }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+        #result-visual svg { width: 100%; height: 100%; }
+        .heart-outline { fill: var(--primary-light); }
+        .heart-fill { fill: url(#heart-gradient); }
+        #result-percentage { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 3rem; font-weight: 700; color: var(--text-dark); text-shadow: 0 1px 2px rgba(255,255,255,0.5); }
+        #archetype-title { font-family: 'Playfair Display', serif; font-size: 2.25rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 0.5rem; }
+        #archetype-description { font-size: 1rem; color: var(--text-gray); margin-bottom: 1.5rem; max-width: 400px; margin-left: auto; margin-right: auto; }
+        .social-share { display: flex; align-items: center; justify-content: center; gap: 1rem; }
+        .share-btn { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; text-decoration: none; color: white; transition: all 0.2s; }
+        .share-btn:hover { transform: translateY(-2px) scale(1.1); }
+        .share-twitter { background-color: #1DA1F2; } .share-facebook { background-color: #1877F2; } .share-whatsapp { background-color: #25D366; }
+        .spinner { display: inline-block; width: 20px; height: 20px; border: 3px solid rgba(255,255,255,0.3); border-radius: 50%; border-top-color: #fff; animation: spin 1s ease-in-out infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .faq-item { border-bottom: 1px solid var(--border); padding: 1rem 0; }
+        .faq-question { display: flex; justify-content: space-between; align-items: center; font-weight: 600; color: var(--text-dark); cursor: pointer; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: all 0.3s ease; color: var(--text-gray); }
+        .faq-answer p { margin-top: 0.75rem; }
+        .faq-answer.active { max-height: 500px; }
+        .faq-icon { transition: transform 0.3s; color: var(--primary); }
+        .faq-icon.active { transform: rotate(180deg); }
+        section { padding: 4rem 1rem; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 700; text-align: center; margin-bottom: 1rem; color: var(--text-dark); letter-spacing: -0.02em; line-height: 1.3; }
+        .section-desc { text-align: center; color: var(--text-gray); margin-bottom: 2.5rem; max-width: 650px; margin-left: auto; margin-right: auto; font-size: 1.0625rem; line-height: 1.6; }
+        footer { background: var(--text-dark); color: rgba(255,255,255,0.8); padding: 2rem 1rem; font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.1); }
+        footer a { color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.2s; }
+        footer a:hover { color: var(--accent); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+        .text-center { text-align: center; }
+        .hidden { display: none; }
+        @media (max-width: 767px) {
+            .hero { padding: 3rem 1rem; } .hero h1 { font-size: 2.5rem; } .hero p { font-size: 1rem; }
+            section { padding: 3rem 1rem; } .section-title { font-size: 2rem; } .section-desc { font-size: 1rem; }
+            nav { display: none; }
+            .heart-separator { transform: translateY(0); }
+        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .animate { animation: fadeIn 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards; }
+    </style>
+</head>
+<body>
+
+<header style="position: sticky; top: 0; z-index: 50;">
+    <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.875rem 0;">
+            <a href="/" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" style="color: var(--primary);">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="currentColor"/>
+                </svg>
+                <span class="logo">Love Calculator</span>
+            </a>
+            <nav style="display: flex; gap: 1.25rem; align-items: center;">
+                <a href="#tool">Calculator</a>
+                <a href="#content">How It Works</a>
+                <a href="#faq">FAQ</a>
+                <a href="https://www.switchere.online/tools" class="nav-btn" target="_blank">All Tools</a>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="hero text-center">
+        <h1>Love Compatibility Calculator</h1>
+        <p>Curious about your connection? Enter your names to discover your love compatibility and unique relationship archetype.</p>
+    </section>
+
+    <section id="tool" style="padding-top: 2rem; padding-bottom: 2rem;">
+        <div class="container" style="max-width: 750px; position: relative; z-index: 1;">
+            <div class="card animate">
+                <form id="love-form">
+                    <div class="names-grid">
+                        <div class="name-input-container">
+                            <div class="profile-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                            </div>
+                            <input type="text" id="name1" class="input-field" placeholder="Your Name" required>
+                        </div>
+                        <div class="heart-separator text-center">❤️</div>
+                        <div class="name-input-container">
+                             <div class="profile-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                            </div>
+                            <input type="text" id="name2" class="input-field" placeholder="Partner's Name" required>
+                        </div>
+                    </div>
+                    <div class="text-center" style="margin-top: 2rem;">
+                         <button id="calculate-btn" type="submit" class="btn btn-primary" style="min-width: 200px;">
+                             <span id="calculate-btn-content">Calculate Love</span>
+                         </button>
+                    </div>
+                </form>
+                
+                <div id="results-container" class="hidden">
+                    <div id="result-visual">
+                         <svg viewBox="0 0 100 95">
+                             <defs>
+                                <linearGradient id="heart-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color:var(--accent)" />
+                                    <stop offset="100%" style="stop-color:var(--primary)" />
+                                </linearGradient>
+                                 <clipPath id="heart-clip">
+                                    <rect id="clip-rect" x="0" y="95" width="100" height="95" />
+                                </clipPath>
+                            </defs>
+                            <path class="heart-outline" stroke-width="4" stroke="var(--border)" fill="var(--primary-light)" d="M 50,15 A 20,20,0,0,1,85,50 A 20,20,0,0,1,50,85 A 20,20,0,0,1,15,50 A 20,20,0,0,1,50,15 Z"/>
+                            <path class="heart-fill" clip-path="url(#heart-clip)" fill="url(#heart-gradient)" d="M 50,15 A 20,20,0,0,1,85,50 A 20,20,0,0,1,50,85 A 20,20,0,0,1,15,50 A 20,20,0,0,1,50,15 Z"/>
+                        </svg>
+                        <div id="result-percentage">0%</div>
+                    </div>
+                    <h2 id="archetype-title" class="hidden"></h2>
+                    <p id="archetype-description" class="hidden"></p>
+                    <div id="social-share" class="social-share hidden">
+                        <a href="#" id="share-twitter" class="share-btn share-twitter" target="_blank" title="Share on X"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                        <a href="#" id="share-facebook" class="share-btn share-facebook" target="_blank" title="Share on Facebook"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4z"/></svg></a>
+                        <a href="#" id="share-whatsapp" class="share-btn share-whatsapp" target="_blank" title="Share on WhatsApp"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M16.75 13.96c.25.42.42.88.5 1.38l.1 1.43c.08.67-.18 1.34-.67 1.83c-.5.5-1.18.77-1.88.68l-1.44-.18c-.5-.08-1-.25-1.42-.5c-1.88-1.08-3.5-2.7-4.58-4.58c-.25-.42-.42-.88-.5-1.42l-.18-1.44c-.08-.67.18-1.34.68-1.83c.5-.5 1.18-.77 1.88-.68l1.43.1c.5.08 1 .25 1.38.5c.33.25.6.58.75 1s.18.88 0 1.33l-.83 2.08c-.17.42-.17.88 0 1.33l2.08.83c.42.17.88.18 1.33 0s.75-.42 1-.75zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2z"/></svg></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="content" style="background: linear-gradient(135deg, var(--bg-light) 0%, white 100%);">
+        <div class="container" style="max-width: 850px;">
+            <h2 class="section-title">How Does the Love Calculator Work?</h2>
+            <p class="section-desc">Our calculator uses a fun, proprietary algorithm to determine the compatibility between two names.</p>
+            <div class="card" style="font-size: 1.05rem; line-height: 1.8; color: var(--text-gray);">
+                <h3 style="color: var(--text-dark); margin-bottom: 1rem;">A Modern Approach to an Old Tradition</h3>
+                <p style="margin-bottom: 1.5rem;">For centuries, people have looked for signs and signals in names and numbers to find meaning in their relationships. Our calculator is a modern, lighthearted take on this tradition. It analyzes the characters in both names to generate a unique compatibility score that is consistent every time.</p>
+                <h3 style="color: var(--text-dark); margin-bottom: 1rem;">Just for Fun!</h3>
+                <p>Remember, this tool is designed for entertainment purposes only! A high score is a fun reason to smile, and a lower score is a great excuse to prove the calculator wrong. The most important ingredients for a successful relationship—trust, respect, and communication—can't be measured by any algorithm.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" style="background: linear-gradient(135deg, var(--bg-light) 0%, white 100%);">
+        <div class="container" style="max-width: 800px;">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="card">
+                <div class="faq-item"><div class="faq-question"><span>Is this love calculator real or accurate?</span><svg class="faq-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round"/></svg></div><div class="faq-answer"><p>This calculator is for entertainment purposes only. While it uses a consistent formula to generate a score based on the names you enter, it is not based on any scientific study. True compatibility is about much more than names!</p></div></div>
+                <div class="faq-item"><div class="faq-question"><span>How is the score calculated?</span><svg class="faq-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round"/></svg></div><div class="faq-answer"><p>Our algorithm combines the names into a unique string and processes the character values to generate a consistent score. This means that the same two names will always result in the same love score, but it is not a random number.</p></div></div>
+                <div class="faq-item"><div class="faq-question"><span>Can I use nicknames?</span><svg class="faq-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round"/></svg></div><div class="faq-answer"><p>Yes! You can use full names, nicknames, or any combination. Different names will produce different scores, so have fun experimenting to see all the possibilities.</p></div></div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer style="background: var(--text-dark); color: rgba(255,255,255,0.8);">
+    <div class="container text-center">
+        <p>&copy; <span id="year"></span> Switchere Club. All Rights Reserved. | <a href="/privacy-policy.html" style="color: rgba(255,255,255,0.8);">Privacy Policy</a></p>
+    </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const UIElements = {
+        form: document.getElementById('love-form'),
+        name1: document.getElementById('name1'),
+        name2: document.getElementById('name2'),
+        calculateBtn: document.getElementById('calculate-btn'),
+        calculateBtnContent: document.getElementById('calculate-btn-content'),
+        resultsContainer: document.getElementById('results-container'),
+        clipRect: document.getElementById('clip-rect'),
+        resultPercentage: document.getElementById('result-percentage'),
+        archetypeTitle: document.getElementById('archetype-title'),
+        archetypeDescription: document.getElementById('archetype-description'),
+        socialShare: document.getElementById('social-share'),
+        shareTwitter: document.getElementById('share-twitter'),
+        shareFacebook: document.getElementById('share-facebook'),
+        shareWhatsapp: document.getElementById('share-whatsapp'),
+        faqItems: document.querySelectorAll('.faq-item'),
+        yearSpan: document.getElementById('year'),
+    };
+    
+    const archetypes = {
+        100: { title: "The Soulmates", description: "An unbreakable, once-in-a-lifetime bond. You two are perfectly in sync, sharing a deep and intuitive understanding of one another." },
+        90: { title: "The Power Couple", description: "A dynamic and ambitious duo. Together, you inspire each other to reach new heights and can conquer any challenge the world throws your way." },
+        80: { title: "The Best Friends", description: "Your connection is built on a deep foundation of laughter, trust, and mutual respect. You're partners in every sense of the word." },
+        70: { title: "The Adventurous Duo", description: "Life is an exciting journey for you two, always seeking new experiences, places, and moments to share together." },
+        60: { title: "The Sweethearts", description: "A classic romance story full of affection, tender moments, and a genuine care for each other's happiness." },
+        50: { title: "The Curious Connection", description: "There's definitely a spark here. With a little effort and communication, this connection has the potential to grow into a beautiful flame." },
+        40: { title: "The Friendly Banter", description: "You have a fun and playful dynamic with plenty of laughs, but might find your strongest connection is as great friends." }
+    };
+
+    UIElements.form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name1 = UIElements.name1.value.trim();
+        const name2 = UIElements.name2.value.trim();
+        if (name1 === '' || name2 === '') {
+            alert('Please enter both names.');
+            return;
+        }
+        
+        UIElements.calculateBtn.disabled = true;
+        UIElements.calculateBtnContent.innerHTML = `<span class="spinner"></span>`;
+        UIElements.resultsContainer.classList.add('hidden');
+        
+        UIElements.archetypeTitle.classList.add('hidden');
+        UIElements.archetypeDescription.classList.add('hidden');
+        UIElements.socialShare.classList.add('hidden');
+
+        setTimeout(() => {
+            calculateAndShowResult(name1, name2);
+            UIElements.calculateBtn.disabled = false;
+            UIElements.calculateBtnContent.textContent = 'Calculate Love';
+        }, 1500);
+    });
+
+    function calculateAndShowResult(name1, name2) {
+        const combinedNames = (name1 + name2).toLowerCase().replace(/\s/g, '');
+        let sum = 0;
+        for (let i = 0; i < combinedNames.length; i++) {
+            sum += combinedNames.charCodeAt(i) * (i + 1);
+        }
+        const score = (sum % 61) + 40;
+
+        const archetypeKey = Math.floor(score / 10) * 10;
+        const archetype = archetypes[archetypeKey] || archetypes[40];
+
+        UIElements.resultsContainer.classList.remove('hidden');
+        UIElements.resultsContainer.classList.add('animate');
+
+        const fillHeight = 95 * (score / 100);
+        UIElements.clipRect.style.transition = 'y 2s cubic-bezier(0.25, 1, 0.5, 1), height 2s cubic-bezier(0.25, 1, 0.5, 1)';
+        UIElements.clipRect.setAttribute('y', 95 - fillHeight);
+        UIElements.clipRect.setAttribute('height', fillHeight);
+
+        animateValue(UIElements.resultPercentage, 0, score, 2000);
+        
+        setTimeout(() => {
+            UIElements.archetypeTitle.textContent = archetype.title;
+            UIElements.archetypeTitle.classList.remove('hidden');
+            UIElements.archetypeTitle.classList.add('animate');
+        }, 500);
+        setTimeout(() => {
+            UIElements.archetypeDescription.textContent = archetype.description;
+            UIElements.archetypeDescription.classList.remove('hidden');
+            UIElements.archetypeDescription.classList.add('animate');
+        }, 800);
+         setTimeout(() => {
+            UIElements.socialShare.classList.remove('hidden');
+            UIElements.socialShare.classList.add('animate');
+        }, 1100);
+        
+        const shareText = `Our relationship archetype is "${archetype.title}" with a ${score}% compatibility score! ❤️ What's yours?`;
+        const shareUrl = "https://www.switchere.online/";
+        UIElements.shareTwitter.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
+        UIElements.shareFacebook.href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}&quote=${encodeURIComponent(shareText)}`;
+        UIElements.shareWhatsapp.href = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareText + " " + shareUrl)}`;
+    }
+
+    function animateValue(obj, start, end, duration) {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            obj.innerHTML = Math.floor(progress * (end - start) + start) + '%';
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            }
+        };
+        window.requestAnimationFrame(step);
+    }
+    
+    UIElements.faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+            const answer = item.querySelector('.faq-answer');
+            const icon = item.querySelector('.faq-icon');
+            const isActive = answer.classList.contains('active');
+            
+            UIElements.faqItems.forEach(other => {
+                other.querySelector('.faq-answer').classList.remove('active');
+                other.querySelector('.faq-icon').classList.remove('active');
+            });
+            if (!isActive) {
+                answer.classList.add('active');
+                icon.classList.add('active');
+            }
+        });
+    });
+    
+    if (UIElements.yearSpan) {
+        UIElements.yearSpan.textContent = new Date().getFullYear();
+    }
+});
+</script>
+
+</body>
+</html>
+
